@@ -1,1 +1,1 @@
-View the site on https://maabra.github.io/vila-sanja-example/
+https://maabra.github.io/vila-sanja-web/
