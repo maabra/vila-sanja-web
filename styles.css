@@ -248,6 +248,21 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 2000;
+    padding: 8px 14px;
+    background: var(--sun);
+    color: var(--text);
+    border-radius: 6px;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
 body {
     font-family: 'Nunito', 'Helvetica', Arial, sans-serif;
     margin: 0;
@@ -369,6 +384,14 @@ nav ul li.dropdown:focus-within .dropdown-menu,
     width: 28px; height: 20px;
     cursor: pointer;
     z-index: 1001;
+}
+
+.menu-toggle:focus-visible,
+.dark-mode-toggle:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--sun);
+    outline-offset: 3px;
 }
 
 .menu-toggle span {

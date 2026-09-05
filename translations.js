@@ -1644,7 +1644,10 @@ function applyLang(lang) {
 
   /* Update the nav dropdown label */
   const toggle = document.getElementById('lang-current');
-  if (toggle) toggle.textContent = lang.toUpperCase();
+  if (toggle) {
+    const label = Array.from(toggle.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+    if (label) label.textContent = lang.toUpperCase();
+  }
 
   /* Highlight active language in dropdown */
   document.querySelectorAll('.lang-option').forEach(a =>
@@ -1727,6 +1730,24 @@ function observeElfsightRating() {
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem('vs-lang') || 'en';
   applyLang(lang);
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        menuToggle.click();
+      }
+    });
+    const syncMenuState = () => {
+      const isOpen = nav.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    };
+    syncMenuState();
+    new MutationObserver(syncMenuState).observe(nav, { attributes: true, attributeFilter: ['class'] });
+  }
 
   const langToggle = document.getElementById('lang-current');
   if (langToggle) {

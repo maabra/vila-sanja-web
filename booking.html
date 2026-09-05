@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/depo/logo.png">
     <title>Book Your Stay - Vila Sanja, Premantura</title>
+    <link rel="canonical" href="https://maabra.github.io/vila-sanja-example/booking.html">
     <meta name="description" content="Reserve your holiday at Vila Sanja in Premantura, Istria. Check availability and get in touch to secure your dates.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Vila Sanja">
@@ -16,20 +17,22 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Book Your Stay – Vila Sanja | Premantura, Istria">
     <meta name="twitter:description" content="Reserve your holiday at Vila Sanja in Premantura, Istria. Check availability and get in touch to secure your dates.">
-    <meta name="twitter:image" content="https://maabra.github.io/vila-sanja-example/images/depo/sunset.jpg>
-    <link rel="icon" type="image/png" href="images/depo/logo.png">
+    <meta name="twitter:image" content="https://maabra.github.io/vila-sanja-example/images/depo/sunset.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('vs-theme')||'light')}catch(e){}</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header id="site-header">
     <a href="index.html" class="header-logo">
         <img src="images/depo/logo.png" alt="Vila Sanja Logo" style="height:42px;width:auto;">
         <div class="logo">Vila Sanja</div>
     </a>
-    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <div class="menu-toggle" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></div>
     <nav>
         <ul>
             <li><a href="index.html" data-i18n="nav.home">Home</a></li>
@@ -60,7 +63,7 @@
     </nav>
 </header>
 
-<main>
+<main id="main-content">
     <section class="hero-mini">
         <h1 data-i18n="bk.hero">Book Your Stay</h1>
     </section>
