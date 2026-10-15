@@ -301,6 +301,7 @@ header {
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .header-logo:hover .logo { color: var(--sun); }
@@ -377,6 +378,21 @@ nav ul li.dropdown:focus-within .dropdown-menu,
 }
 
 /* ── HAMBURGER ── */
+/* Space desktop menus below their trigger; bridge the gap for pointer travel. */
+@media (min-width: 801px) {
+    nav .dropdown > .dropdown-menu {
+        top: calc(100% + 14px);
+    }
+    nav .dropdown::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 14px;
+    }
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -682,10 +698,16 @@ main {
     flex-wrap: wrap;
     text-align: center;
     padding: 40px 24px;
-    background: var(--sea);
+    background: linear-gradient(to right, transparent, var(--sea) 16%, var(--sea) 84%, transparent)
+                center / min(100%, 1280px) 100% no-repeat;
     color: var(--white);
     position: relative;
     z-index: 1;
+}
+@media (max-width: 750px) {
+    .stats-bar {
+        background-image: linear-gradient(to right, transparent, var(--sea) 6%, var(--sea) 94%, transparent);
+    }
 }
 .stat-num { display: block; font-size: 2.6rem; font-weight: 800; color: var(--sun); }
 .stat-lbl { font-size: 0.95rem; opacity: 0.9; }
@@ -1282,69 +1304,6 @@ footer .wa-link:hover { color: #25D366; }
     .reveal { transform: none; transition: opacity 0.3s ease; }
 }
 
-/* ── PART ANIMATION ── */
-.part-scene {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    clip-path: inset(0);
-    transform: translateZ(0);
-    background: var(--sand);
-}
-.part-left,
-.part-right {
-    position: absolute;
-    top: 0;
-    height: 400px;
-    width: auto;
-    z-index: 1;
-}
-.part-left  { left: 0; transform: translateX(-60px); animation: partLeftSlide 12s ease-in-out infinite; }
-.part-right { right: 0; transform: translateX(60px); animation: partRightSlide 12s ease-in-out infinite; }
-.part-middle {
-    position: absolute;
-    top: 0;
-    height: 400px;
-    width: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    animation: partSlide 12s ease-in-out infinite;
-}
-@keyframes partSlide {
-    0%   { transform: translateX(-50%) translateX(0); }
-    8%   { transform: translateX(-50%) translateX(0); }
-    25%  { transform: translateX(-50%) translateX(120px); }
-    33%  { transform: translateX(-50%) translateX(120px); }
-    50%  { transform: translateX(-50%) translateX(0); }
-    58%  { transform: translateX(-50%) translateX(0); }
-    75%  { transform: translateX(-50%) translateX(-120px); }
-    83%  { transform: translateX(-50%) translateX(-120px); }
-    100% { transform: translateX(-50%) translateX(0); }
-}
-@keyframes partLeftSlide {
-    0%   { transform: translateX(-60px); }
-    8%   { transform: translateX(-60px); }
-    25%  { transform: translateX(0); }
-    33%  { transform: translateX(0); }
-    50%  { transform: translateX(-60px); }
-    100% { transform: translateX(-60px); }
-}
-@keyframes partRightSlide {
-    0%   { transform: translateX(60px); }
-    50%  { transform: translateX(60px); }
-    58%  { transform: translateX(60px); }
-    75%  { transform: translateX(0); }
-    83%  { transform: translateX(0); }
-    100% { transform: translateX(60px); }
-}
-.part-middle-mobile { display: none; }
-
-@media (prefers-reduced-motion: reduce) {
-    .part-left, .part-middle, .part-right, .part-middle-mobile { animation: none; }
-}
-
 @media (max-width: 600px) {
     .feat-grid {
         grid-template-columns: 1fr !important;
@@ -1352,74 +1311,109 @@ footer .wa-link:hover { color: #25D366; }
     .feat-grid .card[style*="grid-column"] {
         grid-column: 1 !important;
     }
+}
+
+/* Layered feature photo. Reserve space for the entire moving foreground. */
+.part-scene {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: 400px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: var(--sand);
+}
+.part-scene img {
+    position: absolute;
+    display: block;
+    max-width: none;
+    pointer-events: none;
+}
+.part-left, .part-right {
+    top: 0;
+    width: calc(55% + 28px);
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.part-left {
+    left: -14px;
+    object-position: left center;
+    animation: partRevealLeft 6s ease-in-out infinite alternate;
+}
+.part-right {
+    right: -14px;
+    object-position: right center;
+    animation: partRevealRight 6s ease-in-out infinite alternate;
+}
+@keyframes partRevealLeft {
+    from { transform: translateX(-14px); }
+    to { transform: translateX(14px); }
+}
+@keyframes partRevealRight {
+    from { transform: translateX(-14px); }
+    to { transform: translateX(14px); }
+}
+.part-middle {
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: partDriftHorizontal 6s ease-in-out infinite alternate;
+}
+.part-scene .part-middle-mobile { display: none; }
+@keyframes partDriftHorizontal {
+    from { transform: translateX(calc(-50% - 28px)); }
+    to { transform: translateX(calc(-50% + 28px)); }
+}
+@media (max-width: 800px) {
+    /* The mobile PNG is almost square: a fixed 400px frame crops its top.
+       Its natural aspect ratio plus 44px reserves the full vertical travel. */
     .part-scene {
-        height: 600px;
-        display: flex;
-        flex-direction: column;
+        height: auto;
+        padding-block: 22px;
     }
-    /* vertical: left image goes on top, right on bottom */
-    .part-left,
-    .part-right {
-        position: absolute;
-        width: 100%;
-        height: calc(50% + 45px);
-        object-fit: cover;
+    .part-left, .part-right {
         left: 0;
-        right: 0;
-        transform: none;
-        animation: none;
+        right: auto;
+        width: 100%;
+        height: calc(55% + 24px);
     }
-    .part-left  {
-        top: 0;
+    .part-left {
+        top: -12px;
         object-position: center bottom;
-        transform: translateY(-45px);
-        animation: partTopSlide 12s ease-in-out infinite;
+        animation-name: partRevealTop;
     }
     .part-right {
-        bottom: 0;
         top: auto;
+        bottom: -12px;
         object-position: center top;
-        transform: translateY(45px);
-        animation: partBottomSlide 12s ease-in-out infinite;
+        animation-name: partRevealBottom;
     }
-    .part-middle { display: none; }
-    .part-middle-mobile {
+    .part-scene .part-middle { display: none; }
+    .part-scene .part-middle-mobile {
+        position: relative;
         display: block;
-        position: absolute;
         width: 100%;
-        height: calc(50% + 100px);
-        object-fit: cover;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        height: auto;
         z-index: 2;
-        animation: partSlideV 12s ease-in-out infinite;
+        animation: partDriftVertical 6s ease-in-out infinite alternate;
     }
-    @keyframes partSlideV {
-        0%   { transform: translateY(-50%) translateY(0); }
-        8%   { transform: translateY(-50%) translateY(0); }
-        25%  { transform: translateY(-50%) translateY(90px); }
-        33%  { transform: translateY(-50%) translateY(90px); }
-        50%  { transform: translateY(-50%) translateY(0); }
-        58%  { transform: translateY(-50%) translateY(0); }
-        75%  { transform: translateY(-50%) translateY(-90px); }
-        83%  { transform: translateY(-50%) translateY(-90px); }
-        100% { transform: translateY(-50%) translateY(0); }
-    }
-    @keyframes partTopSlide {
-        0%   { transform: translateY(-45px); }
-        8%   { transform: translateY(-45px); }
-        25%  { transform: translateY(0); }
-        33%  { transform: translateY(0); }
-        50%  { transform: translateY(-45px); }
-        100% { transform: translateY(-45px); }
-    }
-    @keyframes partBottomSlide {
-        0%   { transform: translateY(45px); }
-        50%  { transform: translateY(45px); }
-        58%  { transform: translateY(45px); }
-        75%  { transform: translateY(0); }
-        83%  { transform: translateY(0); }
-        100% { transform: translateY(45px); }
-    }
+}
+@keyframes partDriftVertical {
+    from { transform: translateY(-22px); }
+    to { transform: translateY(22px); }
+}
+@keyframes partRevealTop {
+    from { transform: translateY(-10px); }
+    to { transform: translateY(10px); }
+}
+@keyframes partRevealBottom {
+    from { transform: translateY(-10px); }
+    to { transform: translateY(10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .part-scene img { animation: none; }
 }
