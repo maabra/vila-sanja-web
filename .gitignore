@@ -2,4 +2,6 @@
 hosting-ready.zip
 prepare_hosting.py
 upload_hosting.py
+HOSTING.md
+.htaccess
 hosting-ready/
