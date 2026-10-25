@@ -1,81 +1,68 @@
 (function () {
     'use strict';
 
-    var storageKey = 'vs-privacy-consent-v1';
+    var storageKey = 'vs-privacy-consent-v3';
     var lifetime = 180 * 24 * 60 * 60 * 1000;
     var consent = null;
     var language = 'en';
     var messages = {
         en: {
-            title: 'Your privacy matters',
-            text: 'This site uses browser storage for your language, theme, and consent choice. Optional external content (Google Maps, guest reviews, and font services) is off until you choose to allow it. No analytics or advertising cookies are used.',
-            privacy: 'Privacy notice',
-            cookieSettings: 'Cookie settings',
-            accept: 'Allow optional content',
-            reject: 'Reject optional content',
-            settings: 'Settings',
-            settingsTitle: 'Privacy settings',
-            necessary: 'Necessary site storage',
-            necessaryText: 'Language, theme, and remembering this choice. Always active; these settings stay in your browser.',
-            external: 'Optional external content',
-            externalText: 'Load Google Maps, the Elfsight guest-review widget, Google Fonts, and Font Awesome from their providers. These providers may receive your IP address and device/browser information.',
-            save: 'Save choices',
-            cancel: 'Cancel',
-            mapTitle: 'Map not loaded',
-            mapText: 'Google Maps is an external service. Allow optional content to load the map, or open the location directly on Google Maps.',
-            mapLink: 'Open in Google Maps',
-            mapButton: 'Review privacy settings',
-            reviewsTitle: 'Guest reviews',
-            reviewsText: 'The review widget is provided by Elfsight and loads only after you allow optional external content.',
+            title: 'A little privacy, please', eyebrow: 'Vila Sanja · Your preferences',
+            text: 'Make yourself at home. We remember your language, theme and privacy choices on this device. Maps and guest reviews stay off until you choose to load them.',
+            detail: 'Google Maps and Elfsight may receive your IP address and device details and use cookies. Browse freely without them, and change your mind anytime in Cookie settings.',
+            privacy: 'Read our privacy notice', cookieSettings: 'Cookie settings',
+            accept: 'Allow all', reject: 'Reject optional', settings: 'Choose settings',
+            settingsTitle: 'Your stay. Your choices.', settingsIntro: 'Choose the extras you would like to see. Everything else on the site works without them.',
+            necessary: 'The essentials', necessaryText: 'Your language, theme and privacy choice stay in your browser.', alwaysOn: 'Always on',
+            externalText: 'Optional services may receive your IP address and device details and use their own cookies. You can withdraw consent here at any time.',
+            save: 'Save my choices', cancel: 'Back',
+            categories: { maps: 'Interactive map', reviews: 'Guest reviews' },
+            providers: { maps: 'Google Maps', reviews: 'Elfsight' },
+            descriptions: { maps: 'See where to find us and explore the neighbourhood.', reviews: 'Read guest experiences in the live review widget.' },
+            mapTitle: 'Find your way to Vila Sanja', mapText: 'Our interactive map is provided by Google Maps. You can enable it in your settings or open directions in a new tab.',
+            mapLink: 'Open Google Maps', mapButton: 'Choose privacy settings',
+            reviewsTitle: 'A few words from our guests', reviewsText: 'These reviews are provided by Elfsight. Enable guest reviews in your privacy settings to see what visitors have shared.',
             storageError: 'Your browser could not save this preference. Your choice applies for this page only and will be asked again on your next visit.'
         },
         hr: {
-            title: 'Vaša privatnost nam je važna',
-            text: 'Ova stranica koristi pohranu u pregledniku za jezik, temu i vaš odabir privatnosti. Neobavezni vanjski sadržaji (Google karte, recenzije gostiju i fontovi) isključeni su dok ih ne dopustite. Ne koristimo analitičke ni oglašivačke kolačiće.',
-            privacy: 'Obavijest o privatnosti',
-            cookieSettings: 'Postavke kolačića',
-            accept: 'Dopusti neobavezne sadržaje',
-            reject: 'Odbij neobavezne sadržaje',
-            settings: 'Postavke',
-            settingsTitle: 'Postavke privatnosti',
-            necessary: 'Nužna pohrana stranice',
-            necessaryText: 'Jezik, tema i pamćenje ovog odabira. Uvijek aktivno; postavke ostaju u vašem pregledniku.',
-            external: 'Neobavezni vanjski sadržaji',
-            externalText: 'Učitavanje Google karata, Elfsight widgeta s recenzijama gostiju, Google Fontsa i Font Awesomea od njihovih pružatelja. Ti pružatelji mogu primiti vašu IP adresu te podatke o uređaju i pregledniku.',
-            save: 'Spremi odabir',
-            cancel: 'Odustani',
-            mapTitle: 'Karta nije učitana',
-            mapText: 'Google karte su vanjska usluga. Dopustite neobavezne sadržaje za učitavanje karte ili otvorite lokaciju izravno na Google kartama.',
-            mapLink: 'Otvori u Google kartama',
-            mapButton: 'Pregledaj postavke privatnosti',
-            reviewsTitle: 'Recenzije gostiju',
-            reviewsText: 'Widget s recenzijama pruža Elfsight i učitava se samo nakon što dopustite neobavezne vanjske sadržaje.',
-            storageError: 'Preglednik nije mogao spremiti ovu postavku. Odabir vrijedi samo za ovu stranicu, a pri sljedećem posjetu bit će ponovno zatražen.'
+            title: 'Malo privatnosti, molim', eyebrow: 'Vila Sanja · Vaše postavke',
+            text: 'Osjećajte se kao kod kuće. Na ovom uređaju pamtimo vaš jezik, temu i odabir privatnosti. Karte i recenzije gostiju učitavaju se tek kada ih dopustite.',
+            detail: 'Google karte i Elfsight mogu primiti vašu IP adresu i podatke o uređaju te koristiti kolačiće. Stranicu možete pregledavati i bez njih, a odabir promijeniti u Postavkama kolačića.',
+            privacy: 'Pročitajte obavijest o privatnosti', cookieSettings: 'Postavke kolačića',
+            accept: 'Dopusti sve', reject: 'Odbij neobavezno', settings: 'Odaberi postavke',
+            settingsTitle: 'Vaš boravak. Vaš odabir.', settingsIntro: 'Odaberite dodatne sadržaje koje želite vidjeti. Ostatak stranice radi i bez njih.',
+            necessary: 'Osnovne postavke', necessaryText: 'Vaš jezik, tema i odabir privatnosti ostaju u pregledniku.', alwaysOn: 'Uvijek aktivno',
+            externalText: 'Neobavezne usluge mogu primiti vašu IP adresu i podatke o uređaju te koristiti vlastite kolačiće. Privolu ovdje možete povući u svakom trenutku.',
+            save: 'Spremi moj odabir', cancel: 'Natrag',
+            categories: { maps: 'Interaktivna karta', reviews: 'Recenzije gostiju' },
+            providers: { maps: 'Google karte', reviews: 'Elfsight' },
+            descriptions: { maps: 'Pronađite nas i istražite okolicu.', reviews: 'Pročitajte iskustva gostiju u widgetu s recenzijama.' },
+            mapTitle: 'Pronađite put do Vile Sanja', mapText: 'Interaktivnu kartu pruža Google. Omogućite je u postavkama privatnosti ili otvorite upute u novoj kartici.',
+            mapLink: 'Otvori Google karte', mapButton: 'Odaberi postavke privatnosti',
+            reviewsTitle: 'Nekoliko riječi naših gostiju', reviewsText: 'Ove recenzije pruža Elfsight. Omogućite recenzije u postavkama privatnosti i pročitajte iskustva naših gostiju.',
+            storageError: 'Preglednik nije mogao spremiti postavku. Odabir vrijedi samo za ovu stranicu i bit će ponovno zatražen pri sljedećem posjetu.'
         },
         de: {
-            title: 'Ihre Privatsphäre ist uns wichtig',
-            text: 'Diese Website speichert Ihre Sprache, Ihr Design und Ihre Einwilligung im Browser. Optionale externe Inhalte (Google Maps, Gästebewertungen und Schriftarten) bleiben deaktiviert, bis Sie zustimmen. Wir verwenden keine Analyse- oder Werbe-Cookies.',
-            privacy: 'Datenschutzhinweis',
-            cookieSettings: 'Cookie-Einstellungen',
-            accept: 'Optionale Inhalte erlauben',
-            reject: 'Optionale Inhalte ablehnen',
-            settings: 'Einstellungen',
-            settingsTitle: 'Datenschutzeinstellungen',
-            necessary: 'Notwendiger Website-Speicher',
-            necessaryText: 'Sprache, Design und Speicherung dieser Auswahl. Immer aktiv; diese Einstellungen bleiben in Ihrem Browser.',
-            external: 'Optionale externe Inhalte',
-            externalText: 'Google Maps, das Elfsight-Gästebewertungs-Widget, Google Fonts und Font Awesome werden von deren Anbietern geladen. Diese Anbieter können Ihre IP-Adresse sowie Geräte- und Browserinformationen erhalten.',
-            save: 'Auswahl speichern',
-            cancel: 'Abbrechen',
-            mapTitle: 'Karte nicht geladen',
-            mapText: 'Google Maps ist ein externer Dienst. Erlauben Sie optionale Inhalte, um die Karte zu laden, oder öffnen Sie den Standort direkt in Google Maps.',
-            mapLink: 'In Google Maps öffnen',
-            mapButton: 'Datenschutzeinstellungen ansehen',
-            reviewsTitle: 'Gästebewertungen',
-            reviewsText: 'Das Bewertungs-Widget wird von Elfsight bereitgestellt und erst geladen, wenn Sie optionale externe Inhalte erlauben.',
+            title: 'Ein wenig Privatsphäre, bitte', eyebrow: 'Vila Sanja · Ihre Einstellungen',
+            text: 'Fühlen Sie sich wie zu Hause. Wir merken uns Ihre Sprache, Ihr Design und Ihre Datenschutzauswahl auf diesem Gerät. Karten und Gästebewertungen laden erst mit Ihrer Zustimmung.',
+            detail: 'Google Maps und Elfsight können Ihre IP-Adresse und Gerätedaten erhalten und Cookies verwenden. Sie können die Website auch ohne diese Dienste nutzen und Ihre Auswahl jederzeit in den Cookie-Einstellungen ändern.',
+            privacy: 'Unseren Datenschutzhinweis lesen', cookieSettings: 'Cookie-Einstellungen',
+            accept: 'Alle erlauben', reject: 'Optionale ablehnen', settings: 'Auswahl anpassen',
+            settingsTitle: 'Ihr Aufenthalt. Ihre Wahl.', settingsIntro: 'Wählen Sie die Extras, die Sie sehen möchten. Alle anderen Inhalte funktionieren auch ohne sie.',
+            necessary: 'Die Grundeinstellungen', necessaryText: 'Sprache, Design und Datenschutzauswahl bleiben in Ihrem Browser.', alwaysOn: 'Immer aktiv',
+            externalText: 'Optionale Dienste können Ihre IP-Adresse und Gerätedaten erhalten und eigene Cookies verwenden. Sie können Ihre Einwilligung hier jederzeit widerrufen.',
+            save: 'Meine Auswahl speichern', cancel: 'Zurück',
+            categories: { maps: 'Interaktive Karte', reviews: 'Gästebewertungen' },
+            providers: { maps: 'Google Maps', reviews: 'Elfsight' },
+            descriptions: { maps: 'Finden Sie uns und erkunden Sie die Umgebung.', reviews: 'Lesen Sie Gästeerfahrungen im Bewertungs-Widget.' },
+            mapTitle: 'Ihr Weg zur Vila Sanja', mapText: 'Unsere interaktive Karte wird von Google Maps bereitgestellt. Aktivieren Sie sie in den Einstellungen oder öffnen Sie die Wegbeschreibung in einem neuen Tab.',
+            mapLink: 'Google Maps öffnen', mapButton: 'Datenschutz auswählen',
+            reviewsTitle: 'Ein paar Worte unserer Gäste', reviewsText: 'Diese Bewertungen werden von Elfsight bereitgestellt. Aktivieren Sie Gästebewertungen in Ihren Datenschutzeinstellungen, um die Erfahrungen unserer Gäste zu lesen.',
             storageError: 'Ihr Browser konnte diese Einstellung nicht speichern. Sie gilt nur für diese Seite und wird beim nächsten Besuch erneut abgefragt.'
         }
     };
+
+    var returnFocus = null;
 
     function getLanguage() {
         try {
@@ -90,7 +77,7 @@
     function readConsent() {
         try {
             var saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
-            if (saved && saved.version === 1 && typeof saved.external === 'boolean' &&
+            if (saved && saved.version === 3 && ['maps', 'reviews'].every(function (key) { return typeof saved[key] === 'boolean'; }) &&
                 Number.isFinite(saved.savedAt) && saved.savedAt <= Date.now() &&
                 Date.now() - saved.savedAt < lifetime) {
                 return saved;
@@ -101,53 +88,14 @@
         return null;
     }
 
-    function addStylesheet(id, href) {
-        if (document.getElementById(id)) return;
-        var link = document.createElement('link');
-        link.id = id;
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
-    }
-
-    function removeExternalContent() {
-        document.querySelectorAll('[data-external-frame]').forEach(function (frame) {
-            frame.remove();
-        });
+    function applyConsent() {
+        var choices = consent || {};
         document.querySelectorAll('[data-external-map]').forEach(function (placeholder) {
-            placeholder.hidden = false;
-            delete placeholder.dataset.loaded;
-        });
-        document.querySelectorAll('[data-external-placeholder]').forEach(function (placeholder) {
-            placeholder.hidden = false;
-        });
-        var widget = document.querySelector('[data-elfsight-widget]');
-        if (widget) {
-            widget.innerHTML = '';
-            widget.hidden = true;
-            if (widget.previousElementSibling) {
-                widget.previousElementSibling.hidden = false;
-            }
-        }
-        var widgetScript = document.getElementById('elfsight-platform');
-        if (widgetScript) widgetScript.remove();
-        document.getElementById('google-fonts-css')?.remove();
-        document.getElementById('fontawesome-css')?.remove();
-    }
-
-    function loadExternalContent() {
-        addStylesheet(
-            'google-fonts-css',
-            'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap'
-        );
-        addStylesheet(
-            'fontawesome-css',
-            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'
-        );
-
-        document.querySelectorAll('[data-external-map]').forEach(function (placeholder) {
-            if (placeholder.dataset.loaded === 'true') return;
-            var frame = document.createElement('iframe');
+            var frame = placeholder.parentNode.querySelector('[data-external-frame]');
+            if (!choices.maps && frame) frame.remove();
+            placeholder.hidden = !!choices.maps;
+            if (!choices.maps || frame) return;
+            frame = document.createElement('iframe');
             frame.src = placeholder.dataset.externalMap;
             frame.title = placeholder.dataset.mapTitle || 'Vila Sanja location on Google Maps';
             frame.width = '100%';
@@ -156,41 +104,30 @@
             frame.referrerPolicy = 'no-referrer';
             frame.allowFullscreen = true;
             frame.style.border = '0';
-            frame.style.display = 'block';
             frame.dataset.externalFrame = 'true';
-            placeholder.hidden = true;
             placeholder.parentNode.appendChild(frame);
-            placeholder.dataset.loaded = 'true';
         });
-
-        var reviews = document.querySelector('[data-elfsight-widget]');
-        if (reviews && !document.getElementById('elfsight-platform')) {
-            reviews.hidden = false;
-            if (reviews.previousElementSibling) {
-                reviews.previousElementSibling.hidden = true;
+        document.querySelectorAll('[data-elfsight-widget]').forEach(function (widget) {
+            widget.hidden = !choices.reviews;
+            widget.previousElementSibling.hidden = !!choices.reviews;
+            if (!choices.reviews) {
+                // Removing the browsing context stops the provider's running code.
+                widget.replaceChildren();
+            } else if (!widget.firstChild) {
+                var frame = document.createElement('iframe');
+                frame.title = messages[language].reviewsTitle;
+                frame.width = '100%';
+                frame.height = '600';
+                frame.style.border = '0';
+                frame.referrerPolicy = 'no-referrer';
+                frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c" data-elfsight-app-lazy></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
+                widget.appendChild(frame);
             }
-            reviews.innerHTML = '<div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c" data-elfsight-app-lazy></div>';
-            var script = document.createElement('script');
-            script.id = 'elfsight-platform';
-            script.src = 'https://static.elfsight.com/platform/platform.js';
-            script.async = true;
-            script.onerror = function () {
-                console.error('The optional guest-review widget could not be loaded.');
-            };
-            document.body.appendChild(script);
-        }
+        });
     }
 
-    function applyConsent() {
-        if (consent && consent.external) {
-            loadExternalContent();
-        } else {
-            removeExternalContent();
-        }
-    }
-
-    function saveChoice(external) {
-        consent = { version: 1, external: external, savedAt: Date.now() };
+    function saveChoice(choices) {
+        consent = { version: 3, maps: !!choices.maps, reviews: !!choices.reviews, savedAt: Date.now() };
         try {
             localStorage.setItem(storageKey, JSON.stringify(consent));
         } catch (error) {
@@ -204,6 +141,7 @@
     function closePanel() {
         var panel = document.querySelector('.consent-panel');
         if (panel) panel.remove();
+        if (returnFocus && returnFocus.isConnected) returnFocus.focus();
     }
 
     function element(tag, className, text) {
@@ -214,52 +152,73 @@
     }
 
     function openPanel(settings) {
+        var previousFocus = document.activeElement;
         closePanel();
+        if (previousFocus && !previousFocus.closest('.consent-panel')) returnFocus = previousFocus;
         var t = messages[language];
         var panel = element('section', 'consent-panel');
         panel.setAttribute('role', 'dialog');
         panel.setAttribute('aria-label', settings ? t.settingsTitle : t.title);
+        var brand = element('div', 'consent-brand');
+        var logo = document.createElement('img');
+        logo.src = 'images/depo/logo.png';
+        logo.alt = '';
+        logo.width = 48;
+        logo.height = 48;
+        brand.appendChild(logo);
+        brand.appendChild(element('span', '', t.eyebrow));
+        panel.appendChild(brand);
         var heading = element('h2', '', settings ? t.settingsTitle : t.title);
+        heading.id = 'consent-heading';
+        panel.setAttribute('aria-labelledby', heading.id);
         panel.appendChild(heading);
 
         if (settings) {
-            var necessary = element('p', '', t.necessaryText);
-            var necessaryLabel = element('strong', '', t.necessary);
-            panel.appendChild(necessaryLabel);
-            panel.appendChild(necessary);
-            var label = element('label', 'consent-toggle');
-            var checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.checked = !!(consent && consent.external);
-            var description = element('span');
-            description.appendChild(element('strong', '', t.external));
-            description.appendChild(document.createElement('br'));
-            description.appendChild(document.createTextNode(t.externalText));
-            label.appendChild(checkbox);
-            label.appendChild(description);
-            panel.appendChild(label);
-
+            panel.appendChild(element('p', 'consent-intro', t.settingsIntro));
+            var essential = element('div', 'consent-essential');
+            var essentialCopy = element('div');
+            essentialCopy.appendChild(element('strong', '', t.necessary));
+            essentialCopy.appendChild(element('p', '', t.necessaryText));
+            essential.appendChild(essentialCopy);
+            essential.appendChild(element('span', 'consent-badge', t.alwaysOn));
+            panel.appendChild(essential);
+            var toggles = {};
+            ['maps', 'reviews'].forEach(function (key) {
+                var label = element('label', 'consent-toggle');
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = !!(consent && consent[key]);
+                toggles[key] = checkbox;
+                var copy = element('span', 'consent-option-copy');
+                copy.appendChild(element('strong', '', t.categories[key]));
+                copy.appendChild(element('span', 'consent-provider', t.providers[key]));
+                copy.appendChild(element('span', 'consent-description', t.descriptions[key]));
+                label.appendChild(copy);
+                checkbox.setAttribute('role', 'switch');
+                checkbox.setAttribute('aria-label', t.categories[key]);
+                label.appendChild(checkbox);
+                panel.appendChild(label);
+            });
+            panel.appendChild(element('p', 'consent-detail', t.externalText));
             var save = element('button', 'consent-save', t.save);
             save.type = 'button';
             save.addEventListener('click', function () {
-                saveChoice(checkbox.checked);
+                saveChoice({ maps: toggles.maps.checked, reviews: toggles.reviews.checked });
             });
             var cancel = element('button', 'consent-secondary', t.cancel);
             cancel.type = 'button';
-            cancel.addEventListener('click', closePanel);
+            cancel.addEventListener('click', function () { openPanel(false); });
             var settingsActions = element('div', 'consent-actions');
             settingsActions.appendChild(save);
             settingsActions.appendChild(cancel);
             panel.appendChild(settingsActions);
         } else {
-            panel.appendChild(element('p', '', t.text));
-            var privacyLink = element('a', '', t.privacy);
-            privacyLink.href = 'privacy.html';
-            panel.appendChild(privacyLink);
+            panel.appendChild(element('p', 'consent-intro', t.text));
+            panel.appendChild(element('p', 'consent-detail', t.detail));
             var actions = element('div', 'consent-actions');
             [
                 ['accept', true, ''],
-                ['reject', false, 'consent-secondary'],
+                ['reject', false, ''],
                 ['settings', null, 'consent-secondary']
             ].forEach(function (item) {
                 var button = element('button', item[2], t[item[0]]);
@@ -268,17 +227,25 @@
                     if (item[0] === 'settings') {
                         openPanel(true);
                     } else {
-                        saveChoice(item[1]);
+                        saveChoice({ maps: item[1], reviews: item[1] });
                     }
                 });
                 actions.appendChild(button);
             });
             panel.appendChild(actions);
         }
+        var privacyLink = element('a', 'consent-privacy-link', t.privacy);
+        privacyLink.href = 'privacy.html';
+        panel.appendChild(privacyLink);
         var error = element('p', 'consent-error');
         error.setAttribute('aria-live', 'polite');
         panel.appendChild(error);
+        panel.tabIndex = -1;
+        panel.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closePanel();
+        });
         document.body.appendChild(panel);
+        if (settings) panel.focus();
     }
 
     function refreshLanguageLabels() {
@@ -298,10 +265,19 @@
         }
     }
 
+    function embedIcon(kind) {
+        var icon = element('span', 'external-content-icon');
+        icon.setAttribute('aria-hidden', 'true');
+        var glyph = element('i', kind === 'map' ? 'fa-solid fa-map-location-dot' : 'fa-solid fa-comments');
+        icon.appendChild(glyph);
+        return icon;
+    }
+
     function createEmbedPlaceholders() {
         document.querySelectorAll('[data-external-map]').forEach(function (placeholder) {
             var t = messages[language];
             placeholder.classList.add('external-content-placeholder');
+            placeholder.appendChild(embedIcon('map'));
             var title = element('strong', '', t.mapTitle);
             title.dataset.privacyCopy = 'mapTitle';
             placeholder.appendChild(title);
@@ -326,6 +302,7 @@
             var t = messages[language];
             widget.hidden = true;
             var placeholder = element('div', 'external-content-placeholder');
+            placeholder.appendChild(embedIcon('reviews'));
             var title = element('strong', '', t.reviewsTitle);
             title.dataset.privacyCopy = 'reviewsTitle';
             placeholder.appendChild(title);
@@ -346,6 +323,7 @@
 
     function setPrivacyLanguage(nextLanguage) {
         language = messages[nextLanguage] ? nextLanguage : 'en';
+        if (typeof window.applyLang === 'function') window.applyLang(language);
         document.querySelectorAll('[data-privacy-language]').forEach(function (section) {
             section.hidden = section.dataset.privacyLanguage !== language;
         });
@@ -380,6 +358,10 @@
         });
         document.querySelectorAll('.lang-option').forEach(function (option) {
             option.addEventListener('click', function () {
+                if (document.querySelector('[data-privacy-language]')) {
+                    setPrivacyLanguage(getLanguage());
+                    return;
+                }
                 language = getLanguage();
                 refreshLanguageLabels();
                 refreshOpenPanel();
@@ -389,6 +371,21 @@
         window.openCookieSettings = function () {
             openPanel(true);
         };
+        window.addEventListener('storage', function (event) {
+            if (event.key !== storageKey && event.key !== null) return;
+            consent = readConsent();
+            applyConsent();
+            if (consent) closePanel(); else openPanel(false);
+        });
+        // Re-check expiry when a long-lived tab becomes active again.
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) return;
+            if (consent && Date.now() - consent.savedAt >= lifetime) {
+                consent = null;
+                applyConsent();
+                openPanel(false);
+            }
+        });
         consent = readConsent();
         if (consent) {
             applyConsent();

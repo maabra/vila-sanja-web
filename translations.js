@@ -1654,7 +1654,7 @@ function applyLang(lang) {
     a.classList.toggle('active', a.dataset.lang === lang)
   );
 
-  localStorage.setItem('vs-lang', lang);
+  try { localStorage.setItem('vs-lang', lang); } catch (e) {}
   document.documentElement.lang = lang;
 }
 
@@ -1728,7 +1728,8 @@ function observeElfsightRating() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const lang = localStorage.getItem('vs-lang') || 'en';
+  let lang = 'en';
+  try { lang = localStorage.getItem('vs-lang') || 'en'; } catch (e) {}
   applyLang(lang);
 
   const menuToggle = document.querySelector('.menu-toggle');
@@ -1850,7 +1851,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Dark mode toggle
-  const savedTheme = localStorage.getItem('vs-theme') || 'light';
+  let savedTheme = 'light';
+  try { savedTheme = localStorage.getItem('vs-theme') || 'light'; } catch (e) {}
   document.documentElement.setAttribute('data-theme', savedTheme);
 
   const darkBtn = document.getElementById('dark-mode-btn');
@@ -1860,7 +1862,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('vs-theme', next);
+      try { localStorage.setItem('vs-theme', next); } catch (e) {}
       updateDarkIcon(darkBtn, next);
     });
   }
