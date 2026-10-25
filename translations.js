@@ -38,7 +38,7 @@ const LANG_DATA = {
     'idx.card.rooms.desc': 'Comfortable, air-conditioned units for families, couples, and solo travellers.',
     'idx.card.rooms.btn':  'View all',
     'idx.card.rev.title':  'Guests Love Us',
-    'idx.card.rev.desc':   '100+ happy guests and an overall rating of 4.4/5. Our visitors keep coming back - read what they have to say!',
+    'idx.card.rev.desc':   '100+ happy guests and an overall rating of 4.5/5. Our visitors keep coming back - read what they have to say!',
     'idx.card.rev.btn':    'Read reviews',
 
     'idx.card.villa.btn':  'Learn more',
@@ -113,7 +113,7 @@ const LANG_DATA = {
     'abt.tbl.air':     'Nearest Airports',
     'abt.tbl.note':    'Shortest estimated distances on foot or by vehicle; actual distances may differ.',
     'abt.fac.title':   'Facilities at Vila Sanja',
-    'abt.fac.rating':  'Excellent facilities. Guest rating: 4.4/5',
+    'abt.fac.rating':  'Excellent facilities. Guest rating: 4.5/5',
     'abt.fac.pop':     'Most popular:',
     'abt.fac.t1':  'Great for your stay', 'abt.fac.t2':  'Bathroom',     'abt.fac.t3':  'Bedroom',
     'abt.fac.t4':  'View',               'abt.fac.t5':  'Yard',          'abt.fac.t6':  'Kitchen',

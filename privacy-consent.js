@@ -5,6 +5,8 @@
     var lifetime = 180 * 24 * 60 * 60 * 1000;
     var consent = null;
     var language = 'en';
+    var initialized = false;
+    var pageOnlyChoice = false;
     var messages = {
         en: {
             title: 'A little privacy, please', eyebrow: 'Vila Sanja · Your preferences',
@@ -130,7 +132,9 @@
         consent = { version: 3, maps: !!choices.maps, reviews: !!choices.reviews, savedAt: Date.now() };
         try {
             localStorage.setItem(storageKey, JSON.stringify(consent));
+            pageOnlyChoice = false;
         } catch (error) {
+            pageOnlyChoice = true;
             console.error('Could not save the privacy choice.', error);
             window.alert(messages[language].storageError);
         }
@@ -141,6 +145,7 @@
     function closePanel() {
         var panel = document.querySelector('.consent-panel');
         if (panel) panel.remove();
+        document.documentElement.classList.remove('consent-open');
         if (returnFocus && returnFocus.isConnected) returnFocus.focus();
     }
 
@@ -156,8 +161,9 @@
         closePanel();
         if (previousFocus && !previousFocus.closest('.consent-panel')) returnFocus = previousFocus;
         var t = messages[language];
-        var panel = element('section', 'consent-panel');
+        var panel = element('dialog', 'consent-panel');
         panel.setAttribute('role', 'dialog');
+        panel.setAttribute('aria-modal', 'true');
         panel.setAttribute('aria-label', settings ? t.settingsTitle : t.title);
         var brand = element('div', 'consent-brand');
         var logo = document.createElement('img');
@@ -168,6 +174,37 @@
         brand.appendChild(logo);
         brand.appendChild(element('span', '', t.eyebrow));
         panel.appendChild(brand);
+        var languages = element('div', 'consent-languages');
+        languages.setAttribute('role', 'group');
+        languages.setAttribute('aria-label', 'Language / Jezik / Sprache');
+        var languageHeading = element('span', 'consent-language-heading', 'Choose language / Odaberite jezik / Sprache w\u00e4hlen');
+        panel.appendChild(languageHeading);
+        [['en', 'English'], ['hr', 'Hrvatski'], ['de', 'Deutsch']].forEach(function (item) {
+            var button = element('button');
+            var flag = element('span', 'consent-language-flag');
+            var flags = {
+                en: '<rect width="30" height="20" fill="#21468b"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="5"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="2"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="7"/><path d="M15 0V20M0 10H30" stroke="#c8102e" stroke-width="4"/>',
+                hr: '<path fill="#f00" d="M0 0h30v7H0z"/><path fill="#fff" d="M0 7h30v6H0z"/><path fill="#171796" d="M0 13h30v7H0z"/><path fill="#fff" stroke="#c8102e" stroke-width=".6" d="M11 6h8v7q-4 5-8 0z"/><path fill="#c8102e" d="M11 6h2v2h-2zm4 0h2v2h-2zm-2 2h2v2h-2zm4 0h2v2h-2zm-6 2h2v2h-2zm4 0h2v2h-2zm-2 2h2v2h-2zm4 0h2v2h-2zm-2 2h2v2h-2z"/>',
+                de: '<path fill="#111" d="M0 0h30v7H0z"/><path fill="#d00" d="M0 7h30v6H0z"/><path fill="#ffce00" d="M0 13h30v7H0z"/>'
+            };
+            flag.innerHTML = '<svg viewBox="0 0 30 20" width="30" height="20" focusable="false" aria-hidden="true">' + flags[item[0]] + '</svg>';
+            flag.setAttribute('aria-hidden', 'true');
+            button.appendChild(flag);
+            button.appendChild(element('span', '', item[1]));
+            if (language === item[0]) {
+                var selected = element('span', 'consent-language-selected', '\u2713');
+                selected.setAttribute('aria-hidden', 'true');
+                button.appendChild(selected);
+            }
+            button.type = 'button';
+            button.lang = item[0];
+            button.setAttribute('aria-pressed', String(language === item[0]));
+            button.addEventListener('click', function () {
+                setPrivacyLanguage(item[0]);
+            });
+            languages.appendChild(button);
+        });
+        panel.appendChild(languages);
         var heading = element('h2', '', settings ? t.settingsTitle : t.title);
         heading.id = 'consent-heading';
         panel.setAttribute('aria-labelledby', heading.id);
@@ -244,8 +281,14 @@
         panel.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') closePanel();
         });
+        panel.addEventListener('cancel', function (event) {
+            event.preventDefault();
+            closePanel();
+        });
         document.body.appendChild(panel);
-        if (settings) panel.focus();
+        document.documentElement.classList.add('consent-open');
+        panel.showModal();
+        panel.focus();
     }
 
     function refreshLanguageLabels() {
@@ -340,7 +383,23 @@
         refreshOpenPanel();
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
+    function syncConsent() {
+        // Keep an unsaved choice for this page when browser storage is unavailable.
+        if (pageOnlyChoice && consent && Date.now() - consent.savedAt < lifetime) return;
+        var previous = consent;
+        consent = readConsent();
+        applyConsent();
+        if (!consent) {
+            if (!document.querySelector('.consent-panel')) openPanel(false);
+        } else if (!previous || previous.savedAt !== consent.savedAt ||
+            previous.maps !== consent.maps || previous.reviews !== consent.reviews) {
+            closePanel();
+        }
+    }
+
+    function initialize() {
+        if (initialized) return;
+        initialized = true;
         language = getLanguage();
         createEmbedPlaceholders();
         document.querySelectorAll('[data-privacy-lang-button]').forEach(function (button) {
@@ -373,24 +432,22 @@
         };
         window.addEventListener('storage', function (event) {
             if (event.key !== storageKey && event.key !== null) return;
-            consent = readConsent();
-            applyConsent();
-            if (consent) closePanel(); else openPanel(false);
+            pageOnlyChoice = false;
+            syncConsent();
         });
-        // Re-check expiry when a long-lived tab becomes active again.
+        // Back/Forward restoration and returning to an open tab must re-read storage.
+        window.addEventListener('pageshow', syncConsent);
+        window.addEventListener('focus', syncConsent);
         document.addEventListener('visibilitychange', function () {
-            if (document.hidden) return;
-            if (consent && Date.now() - consent.savedAt >= lifetime) {
-                consent = null;
-                applyConsent();
-                openPanel(false);
-            }
+            if (!document.hidden) syncConsent();
         });
-        consent = readConsent();
-        if (consent) {
-            applyConsent();
-        } else {
-            openPanel(false);
-        }
-    });
+        syncConsent();
+    }
+
+    // Also initialize when the script is loaded after DOMContentLoaded has fired.
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize, { once: true });
+    } else {
+        initialize();
+    }
 })();
