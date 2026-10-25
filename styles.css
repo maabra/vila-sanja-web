@@ -1039,21 +1039,24 @@ main {
     background-position-x: left;
 }
 
+/* Bend the artwork while gently swaying around the original placement. */
 @media (prefers-reduced-motion: no-preference) {
     @keyframes leaf-sway {
-        0%   { translate:  0px   0px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        15%  { translate:  5px  -6px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        30%  { translate:  3px -14px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        45%  { translate: -4px -10px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        60%  { translate: -6px -18px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        75%  { translate: -2px  -8px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        88%  { translate:  4px  -4px; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
-        100% { translate:  0px   0px; }
+        0%, 100% { translate: 0px 0px; }
+        20% { translate: 4px -5px; }
+        40% { translate: -2px -10px; }
+        60% { translate: -5px -7px; }
+        80% { translate: 2px -3px; }
     }
-    .deco-l { animation: leaf-sway 14s linear infinite -4s; }
-    .deco-r { animation: leaf-sway 14s linear infinite -0.5s; }
+    .deco-l {
+        filter: url("#floral-wind-left");
+        animation: leaf-sway 14s ease-in-out infinite -4s;
+    }
+    .deco-r {
+        filter: url("#floral-wind-right");
+        animation: leaf-sway 17s ease-in-out infinite -0.5s;
+    }
 }
-
 /* Narrow gutters — hide left first */
 @media (max-width: 1100px) {
     .deco-l { display: none; }
