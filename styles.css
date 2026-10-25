@@ -1,6 +1,4 @@
 /* === VILA SANJA – Sunny Beach Pastel Theme === */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-
 :root {
     --sand:      #FFF8EF;
     --sand-mid:  #FFF0DC;
@@ -18,6 +16,164 @@
     --white:     #FFFFFF;
     --border:    #F0DFC8;
     --radius:    12px;
+}
+
+/* Privacy and consent */
+.privacy-links {
+    margin: 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+    font-size: 0.9rem;
+}
+.privacy-links a,
+.privacy-links button {
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.consent-panel {
+    position: fixed;
+    z-index: 10000;
+    left: 16px;
+    bottom: 16px;
+    width: min(560px, calc(100vw - 32px));
+    padding: 22px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+}
+.consent-panel h2 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+.consent-panel p {
+    margin: 0 0 14px;
+    line-height: 1.5;
+}
+.consent-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.consent-actions button,
+.consent-panel button {
+    min-height: 42px;
+}
+.consent-actions button,
+.consent-save {
+    padding: 9px 14px;
+    color: #fff;
+    background: var(--sea-deep);
+    border: 1px solid var(--sea-deep);
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+.consent-actions .consent-secondary {
+    color: var(--text);
+    background: transparent;
+    border-color: var(--border);
+}
+.consent-panel a {
+    color: var(--sea-deep);
+}
+.consent-toggle {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 12px 0;
+}
+.consent-toggle input {
+    margin-top: 4px;
+}
+.consent-error {
+    margin-top: 10px !important;
+    color: var(--coral-dk);
+}
+.external-content-placeholder {
+    display: grid;
+    gap: 10px;
+    justify-items: start;
+    padding: 20px;
+    background: var(--sand-mid);
+    color: var(--text);
+    border-radius: var(--radius);
+}
+.external-content-placeholder p {
+    margin: 0;
+}
+.external-content-placeholder button {
+    padding: 9px 14px;
+    color: #fff;
+    background: var(--sea-deep);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+}
+.privacy-page {
+    max-width: 900px;
+    margin: 36px auto;
+    padding: 28px;
+    color: var(--text);
+    background: var(--white);
+    border-radius: var(--radius);
+    line-height: 1.7;
+}
+.privacy-page h1,
+.privacy-page h2 {
+    line-height: 1.25;
+}
+.privacy-page h2 {
+    margin-top: 28px;
+}
+.privacy-languages {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.privacy-languages button {
+    padding: 7px 12px;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.privacy-languages button[aria-pressed="true"] {
+    color: #fff;
+    background: var(--sea-deep);
+}
+.privacy-language[hidden] {
+    display: none;
+}
+[data-theme="dark"] .consent-panel,
+[data-theme="dark"] .privacy-page {
+    background: #1A2B3D;
+}
+[data-theme="dark"] .external-content-placeholder {
+    background: #152031;
+}
+@media (max-width: 600px) {
+    .consent-panel {
+        left: 8px;
+        bottom: 8px;
+        width: calc(100vw - 16px);
+        padding: 17px;
+    }
+    .privacy-page {
+        margin: 16px 10px;
+        padding: 20px;
+    }
 }
 
 /* === DARK MODE PALETTE === */
