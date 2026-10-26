@@ -1747,6 +1747,17 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     };
     syncMenuState();
+    window.matchMedia('(max-width: 1200px)').addEventListener('change', () => {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+      document.querySelectorAll('nav .dropdown-menu').forEach(menu => { menu.style.display = ''; });
+      document.querySelectorAll('nav .lang-open, nav .mob-open').forEach(item => {
+        item.classList.remove('lang-open', 'mob-open');
+      });
+      const header = document.getElementById('site-header');
+      if (header) header.style.transform = '';
+      syncMenuState();
+    });
     new MutationObserver(syncMenuState).observe(nav, { attributes: true, attributeFilter: ['class'] });
   }
 
@@ -1786,7 +1797,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navDropdowns.forEach(({ toggle, li, menu }) => {
     toggle.addEventListener('click', e => {
-      if (window.innerWidth > 800) return;
+      if (window.innerWidth > 1200) return;
       const isOpen = menu.style.display === 'block';
       document.querySelectorAll('.dropdown-menu').forEach(m => { m.style.display = ''; });
       if (!isOpen) {
@@ -1822,7 +1833,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!hdr) return;
     var lastY = window.scrollY;
     window.addEventListener('scroll', function() {
-      if (window.innerWidth > 800) { hdr.style.transform = ''; return; }
+      if (window.innerWidth > 1200) { hdr.style.transform = ''; return; }
       var y = window.scrollY;
       hdr.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : '';
       lastY = y;
@@ -1896,7 +1907,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('nav li.dropdown > a.dropdown-toggle').forEach(function(toggle) {
     if (toggle.id === 'lang-current') return; /* lang toggle has its own handler */
     toggle.addEventListener('click', function(e) {
-      if (window.innerWidth > 800) return; /* CSS hover handles desktop */
+      if (window.innerWidth > 1200) return; /* CSS hover handles desktop */
       var li = toggle.closest('li.dropdown');
       if (li.classList.contains('mob-open')) {
         /* second tap → navigate */

@@ -47,7 +47,6 @@ html.consent-open { overflow: hidden; }
     backdrop-filter: blur(7px) grayscale(.6);
 }
 .consent-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-.consent-language-heading { display: block; margin-bottom: 8px; color: var(--text-lt); font-size: .76rem; font-weight: 800; }
 .consent-languages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 22px; }
 .consent-languages button { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; min-height: 52px; padding: 10px 6px; border: 2px solid var(--border); border-radius: 12px; background: var(--white); color: var(--text); font: 800 .86rem 'Nunito', sans-serif; cursor: pointer; transition: border-color .15s, background .15s; }
 .consent-languages button:hover { border-color: var(--sea-deep); background: var(--sand-mid); }
@@ -172,7 +171,7 @@ html.consent-open { overflow: hidden; }
 }
 
 /* ── Mobile nav sidebar ── */
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     [data-theme="dark"] nav {
         background: #0d3a3e;
     }
@@ -318,7 +317,7 @@ html.consent-open { overflow: hidden; }
 /* Label hidden on desktop, shown in mobile nav */
 .dm-label { display: none; }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .dark-mode-toggle {
         width: 100%;
         height: auto;
@@ -386,11 +385,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     transition: transform 0.25s ease, box-shadow 0.2s;
 }
 
 .header-logo {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -480,7 +481,13 @@ nav ul li.dropdown:focus-within .dropdown-menu,
 
 /* ── HAMBURGER ── */
 /* Space desktop menus below their trigger; bridge the gap for pointer travel. */
-@media (min-width: 801px) {
+@media (min-width: 1201px) {
+    nav { flex-shrink: 0; }
+    nav .dropdown:has(.lang-toggle) > .dropdown-menu {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
     nav .dropdown > .dropdown-menu {
         top: calc(100% + 14px);
     }
@@ -1284,7 +1291,7 @@ footer a:hover { text-decoration: underline; }
 .booking-card .cta-button { width: 100%; text-align: center; margin-top: auto; box-sizing: border-box; }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .menu-toggle { display: flex; }
     nav {
         position: fixed; top: 0; right: -100%;

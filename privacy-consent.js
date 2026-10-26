@@ -115,8 +115,11 @@
             if (!choices.reviews) {
                 // Removing the browsing context stops the provider's running code.
                 widget.replaceChildren();
-            } else if (!widget.firstChild) {
+            } else if (!widget.querySelector('iframe[data-elfsight-frame]')) {
+                // A noscript fallback is not a loaded widget (including with saved consent).
+                widget.replaceChildren();
                 var frame = document.createElement('iframe');
+                frame.dataset.elfsightFrame = 'true';
                 frame.title = messages[language].reviewsTitle;
                 frame.width = '100%';
                 frame.height = '600';
@@ -177,8 +180,6 @@
         var languages = element('div', 'consent-languages');
         languages.setAttribute('role', 'group');
         languages.setAttribute('aria-label', 'Language / Jezik / Sprache');
-        var languageHeading = element('span', 'consent-language-heading', 'Choose language / Odaberite jezik / Sprache w\u00e4hlen');
-        panel.appendChild(languageHeading);
         [['en', 'English'], ['hr', 'Hrvatski'], ['de', 'Deutsch']].forEach(function (item) {
             var button = element('button');
             var flag = element('span', 'consent-language-flag');
