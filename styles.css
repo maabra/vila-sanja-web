@@ -1759,3 +1759,23 @@ footer .footer-copy { opacity: 1; color: var(--text-lt); margin-top: 16px; font-
 @media (min-width: 1201px) {
     nav ul li .dropdown-toggle.active { color: var(--coral); background: transparent; }
 }
+
+/* Faded green shutters distinguish the navigation from limestone pages. */
+:root { --nav-surface: #49665e; --nav-ink: #fff8ec; --nav-accent: #f0dca9; }
+[data-theme="dark"] { --nav-surface: #293f37; }
+header#site-header { background: var(--nav-surface); color: var(--nav-ink); border-bottom: 1px solid #ffffff26; box-shadow: none; }
+header .header-logo .logo, header .header-logo:hover .logo { color: var(--nav-ink); }
+header .header-logo > img { filter: brightness(1.08) saturate(.85); }
+header nav ul li a, header nav ul li .dropdown-toggle { color: var(--nav-ink); border-radius: 2px; }
+header nav ul li a.active, header nav ul li a:hover,
+header nav ul li .dropdown-toggle.active, header nav ul li .dropdown-toggle:hover {
+    color: var(--nav-accent); background: #ffffff0d;
+}
+header .dark-mode-toggle { color: var(--nav-ink); background: #ffffff12; }
+header .dark-mode-toggle:hover { color: var(--nav-accent); background: #ffffff20; }
+header .menu-toggle span { background: var(--nav-ink); }
+header nav .dropdown-menu { background: var(--nav-surface); border-color: #ffffff26; border-radius: 2px; box-shadow: 0 10px 24px #16251e18; }
+@media (max-width: 1200px) {
+    header nav { background: var(--nav-surface); }
+    header nav .dropdown-menu { background: #ffffff08; box-shadow: none; }
+}
