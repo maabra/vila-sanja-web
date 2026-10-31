@@ -767,26 +767,43 @@ main {
 .cta-button.sea:hover {
     background: var(--sea-deep);
 }
-.book-now {
+body .book-now {
     position: fixed;
     bottom: 24px;
     right: 34px;
-    background: var(--coral);
-    color: var(--white);
-    padding: 13px 24px;
-    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    box-sizing: border-box;
+    min-height: 58px;
+    background: #ead39a;
+    color: #233f35;
+    border: 1px solid #bba36a;
+    padding: 16px 28px;
+    border-radius: 999px;
     text-decoration: none;
     font-weight: 800;
-    font-size: 0.95rem;
-    box-shadow: rgba(255, 143, 112, 0.5) 0px 4px 18px;
+    font-size: 1rem;
+    letter-spacing: 0.025em;
+    box-shadow: 0 6px 22px rgba(23, 46, 37, 0.28), inset 0 1px 0 rgba(255,255,255,.55);
     transition: transform 0.2s, background 0.2s, opacity 0.35s;
     z-index: 999;
 }
-.book-now:hover {
-    background: var(--coral-dk);
-    transform: translateY(-3px);
-    color: var(--white);
+body .book-now::after {
+    content: "\2197";
+    font-size: 1.25em;
+    margin-left: 12px;
 }
+body .book-now:hover {
+    background: #f4dfac;
+    color: #233f35;
+}
+body .book-now:focus-visible {
+    outline: 3px solid var(--sea-deep);
+    outline-offset: 5px;
+}
+body .book-now:active { transform: translateY(1px); }
 .book-now.scroll-hidden {
     opacity: 0;
     pointer-events: none;
@@ -3133,7 +3150,7 @@ body .card:hover, body .info-card:hover, body .booking-card:hover {
 .feat-grid > .card:first-child .card-body {
     padding: 24px 0px;
 }
-.cta-button, .cta-button.sea, .book-now {
+.cta-button, .cta-button.sea {
     border-radius: 2px;
     box-shadow: none;
     font-size: 0.86rem;
@@ -3788,7 +3805,7 @@ body .privacy-summary, body .booking-contact-info, body .beach-highlight, body .
     background-image: linear-gradient(135deg, var(--light-wash), transparent 70%);
     box-shadow: rgba(28, 56, 45, 0.4) 0px 10px 28px -24px;
 }
-body .cta-button, body .book-now, body .back-to-top {
+body .cta-button, body .back-to-top {
     box-shadow: inset 0 1px 1px var(--button-light), var(--soft-shadow);
 }
 body .card .cta-button.sea, body .about-text .cta-button.sea {
@@ -4166,15 +4183,15 @@ body .gallery-thumb {
 .stay-booking .cta-button {
     min-width: min(100%, 240px);
 }
-body .cta-button, body .book-now {
+body .cta-button {
     background: var(--sea);
     color: rgb(255, 248, 236);
 }
-body .cta-button:hover, body .book-now:hover {
+body .cta-button:hover {
     background: rgb(60, 93, 80);
     color: rgb(255, 248, 236);
 }
-[data-theme="dark"] .cta-button, [data-theme="dark"] .book-now {
+[data-theme="dark"] .cta-button {
     color: rgb(255, 248, 236);
 }
 body .card .cta-button.sea, body .about-text .cta-button.sea {
