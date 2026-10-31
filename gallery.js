@@ -13,6 +13,21 @@
     let returnFocus = null;
     const source = index => `${base}/${index + 1}.webp`;
     const words = () => LANG_DATA[document.documentElement.lang] || LANG_DATA.en;
+    const nearbyImages = new Map();
+    function preloadNeighbours() {
+        const neighbours = [(current + 1) % count, (current - 1 + count) % count];
+        for (const index of neighbours) {
+            if (nearbyImages.has(index)) continue;
+            const image = new Image();
+            image.decoding = 'async';
+            image.fetchPriority = 'low';
+            image.src = source(index);
+            nearbyImages.set(index, image);
+        }
+        for (const index of nearbyImages.keys()) {
+            if (index !== current && !neighbours.includes(index)) nearbyImages.delete(index);
+        }
+    }
     function update() {
         const text = words();
         const label = `${text[gallery.dataset.stayTitle]} · ${text['gallery.photo']} ${current + 1} / ${count}`;
@@ -36,6 +51,7 @@
         main.src = source(current);
         if (box.classList.contains('open')) enlarged.src = source(current);
         update();
+        preloadNeighbours();
     }
     for (let index = 0; index < count; index++) {
         const button = document.createElement('button');
@@ -96,4 +112,5 @@
     });
     document.addEventListener('site:language', update);
     update();
+    preloadNeighbours();
 })();

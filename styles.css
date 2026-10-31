@@ -4264,7 +4264,7 @@ button:disabled, [aria-disabled="true"] {
     opacity: 0.5;
     cursor: not-allowed;
 }
-button:active:not(:disabled), .cta-button:active {
+button:active:not(:disabled):not(.gallery-arrow):not(.lb-btn):not(.lb-close), .cta-button:active {
     transform: translateY(1px);
 }
 .sr-only {

@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Stay at Vila Sanja in Premantura, Istria. Comfortable accomodations for all parties, just minutes from the sea and Cape Kamenjak.">
     <meta name="twitter:image" content="https://vilasanja.com/images/index/Vila%20Sanja_banner.png">
     <link rel="preload" as="image" href="images/optimized/depo/sunset.webp">
-    <link rel="stylesheet" href="styles.css?v=20261031-grass-sway">
+    <link rel="stylesheet" href="styles.css?v=20261031-gallery-controls">
     <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('vs-theme')||'light')}catch(e){}</script>
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta property="og:image:alt" content="Vila Sanja accommodation in Premantura, Istria">
@@ -298,6 +298,7 @@
 })();
 (function() {
     var imgs = ['images/optimized/index/fronthouse.webp', 'images/index/fronthouse2.jpg'];
+    imgs.forEach(function(src) { var photo = new Image(); photo.fetchPriority = "low"; photo.src = src; });
     var cur = 0;
     var el = document.getElementById('fronthouse-img');
     var wrap = el ? el.closest('.slideshow-wrap') : null;
@@ -306,12 +307,8 @@
     var cooldownTimer = null;
     function goTo(i) {
         cur = ((i % imgs.length) + imgs.length) % imgs.length;
-        el.style.opacity = '0';
-        setTimeout(function() {
-            el.src = imgs[cur];
-            dots.forEach(function(d, j) { d.classList.toggle('active', j === cur); });
-            el.style.opacity = '1';
-        }, 250);
+        el.src = imgs[cur];
+        dots.forEach(function(d, j) { d.classList.toggle('active', j === cur); });
     }
     function startAuto() {
         if (autoTimer) clearInterval(autoTimer);
