@@ -55,13 +55,15 @@ class Refinement(unittest.TestCase):
                         self.page.set_viewport_size({'width': width, 'height': 900})
                         self.assertFalse(self.page.evaluate('document.documentElement.scrollWidth>innerWidth'), (source.name, language, theme, width))
 
-    def test_gallery_keyboard_captions_and_uncropped_images(self):
+    def test_gallery_keyboard_labels_and_uncropped_images(self):
         for source in ('room.html', 'one-bedroom.html', 'duplex-apartment.html'):
             self.site.go(source, consent=False)
             for language in ('en', 'hr', 'de'):
                 self.page.evaluate('language => applyLang(language)', language)
-                self.assertNotIn('undefined', self.page.locator('#galleryCaption').inner_text())
-                self.assertTrue(self.page.locator('#galleryCaption').inner_text())
+                label = self.page.locator('#mainGalleryImage').get_attribute('aria-label')
+                self.assertNotIn('undefined', label)
+                self.assertTrue(label)
+                self.assertEqual(self.page.locator('#galleryCaption').count(), 0)
             self.assertEqual(self.page.locator('#mainGalleryImage').evaluate('(e)=>getComputedStyle(e).objectFit'), 'contain')
             self.page.locator('#mainGalleryImage').focus()
             self.page.keyboard.press('Enter')

@@ -7,7 +7,6 @@
     const main = document.getElementById('mainGalleryImage');
     const box = document.getElementById('lightbox');
     const enlarged = document.getElementById('lbImg');
-    const caption = document.getElementById('galleryCaption');
     const thumbnails = gallery.querySelector('.gallery-thumbnails');
     const buttons = [];
     let current = 0;
@@ -16,7 +15,7 @@
     const words = () => LANG_DATA[document.documentElement.lang] || LANG_DATA.en;
     function update() {
         const text = words();
-        const label = `${text[caption.dataset.stayTitle]} · ${text['gallery.photo']} ${current + 1} / ${count}`;
+        const label = `${text[gallery.dataset.stayTitle]} · ${text['gallery.photo']} ${current + 1} / ${count}`;
         main.alt = label;
         main.setAttribute('aria-label', text['gallery.open'] + ': ' + label);
         gallery.querySelector('.gallery-arrow.left').setAttribute('aria-label', text['gallery.previous']);
@@ -26,7 +25,6 @@
         document.getElementById('lbClose').setAttribute('aria-label', text['gallery.close']);
         box.setAttribute('aria-label', text['gallery.label']);
         enlarged.alt = label;
-        caption.textContent = current === 0 ? text[caption.dataset.firstCaption] : label;
         buttons.forEach((button, index) => {
             button.setAttribute('aria-label', `${text['gallery.photo']} ${index + 1} / ${count}`);
             button.setAttribute('aria-pressed', String(index === current));
