@@ -347,7 +347,7 @@ const LANG_DATA = {
 
     /* NAV - Near Us */
     'nav.nearus':   'Near Us',
-    'nav.beaches':  'Rt Kamenjak',
+    'nav.beaches':  'Cape Kamenjak',
     'nav.attr':     'Local Attractions',
     'nav.towns':    'Nearby Towns',
 
@@ -380,8 +380,8 @@ const LANG_DATA = {
     'prem.chk6':               "Accommodation for families",
 
     /* BEACHES page */
-    'bch.hero':      'Rt Kamenjak',
-    'bch.crumb':     'Rt Kamenjak',
+    'bch.hero':      'Cape Kamenjak',
+    'bch.crumb':     'Cape Kamenjak',
     'bch.intro.h2':  "Cape Kamenjak",
     'bch.intro.p':   "Cape Kamenjak is a protected area at the southern tip of Istria, about 5 minutes by car from Vila Sanja. The cape has rocky and pebble coves, cliffs, walking paths and beach bars.",
     'bch.intro.fig': 'Aerial view of Cape Kamenjak\'s turquoise coves stretching into the Adriatic Sea.',
@@ -466,7 +466,7 @@ const LANG_DATA = {
     'bch.tips.bring.l4':  'Snorkel mask',
     'bch.tips.bring.l5':  'Beach umbrella',
     'bch.tips.getting.h4':'Getting There from Vila Sanja',
-    'bch.tips.getting.p': 'The entrance to Cape Kamenjak is approximately 5 minutes by car from Vila Sanja. Follow signs for "Rt Kamenjak" from the village. Cycling is possible but requires fitness, the route inside the park has rough terrain.',
+    'bch.tips.getting.p': 'The entrance to Cape Kamenjak is approximately 5 minutes by car from Vila Sanja. Follow signs for "Cape Kamenjak" from the village. Cycling is possible but requires fitness, the route inside the park has rough terrain.',
     'bch.cta.p':     "For accommodation near Cape Kamenjak, see the booking options.",
     'bch.cta.book':  'Book your stay →',
     'bch.back':      'Back to Premantura',
