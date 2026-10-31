@@ -770,7 +770,7 @@ main {
 body .book-now {
     position: fixed;
     bottom: 24px;
-    right: 34px;
+    right: clamp(72px, 10vw, 180px);
     display: inline-flex;
     align-items: center;
     justify-content: center;
