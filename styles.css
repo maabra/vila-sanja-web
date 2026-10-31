@@ -4719,3 +4719,8 @@ body footer { position: relative; }
 }
 
 .page-premantura-towns .town-entry:last-child:not(.town-feature) { grid-column: 1 / -1; }
+
+body .viber-link, body .f-viber { color: #795497; }
+body .viber-link:hover, body .f-viber:hover { color: #563676; }
+[data-theme="dark"] .viber-link, [data-theme="dark"] .f-viber { color: #cfb5e5; }
+[data-theme="dark"] .viber-link:hover, [data-theme="dark"] .f-viber:hover { color: #e8d6f6; }
