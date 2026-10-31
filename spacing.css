@@ -1,0 +1,89 @@
+/* Load last: the shared spacing contract for every page. */
+:root {
+    --content-width: 1200px;
+    --page-gutter: 24px;
+    --section-space: 64px;
+    --layout-gap: 40px;
+    --header-height: 70px;
+}
+
+body .section,
+body .section-alt > .inner,
+body .section-sea > .inner,
+body .room-intro,
+body .booking-wrap {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--section-space) var(--page-gutter);
+}
+/* A nested wrapper never adds a second set of page gutters. */
+body .section > .inner { max-width: none; margin: 0; padding: 0; }
+body .contact-wrap, body .rules-wrap { max-width: none; margin: 0; padding: 0; }
+body .section + .section { padding-top: 0; }
+body.privacy-body .privacy-page {
+    width: 100%; max-width: var(--content-width); margin: 0 auto;
+    padding: calc(var(--header-height) + var(--section-space)) var(--page-gutter) var(--section-space);
+}
+body .hero-mini { min-height: 0; padding: 48px var(--page-gutter) 64px; }
+body .hero-content { margin-inline: max(var(--page-gutter), calc((100vw - var(--content-width)) / 2 + var(--page-gutter))); }
+body .room-gallery { padding: var(--section-space) var(--page-gutter); }
+
+body .about-flex, body .room-intro { gap: var(--layout-gap); }
+body .accom-grid, body .attr-grid, body .towns-grid,
+body .preman-hub-grid, body .info-grid, body .apt-amen-grid,
+body .beach-tip-grid, body .booking-options { gap: 32px; }
+body .feat-grid { column-gap: 32px !important; row-gap: 40px !important; }
+body .accom-grid, body .attr-grid, body .towns-grid,
+body .preman-hub-grid, body .booking-options { margin-top: 32px; }
+body .zigzag-row { gap: var(--layout-gap); margin-bottom: 48px; }
+body .zigzag-row:last-child { margin-bottom: 0; }
+
+body .about-card, body .contact-block, body .rule-card,
+body .privacy-section { padding: 0; margin: 0 0 32px; }
+body .about-card:last-child, body .contact-block:last-child,
+body .rule-card:last-child, body .privacy-section:last-child { margin-bottom: 0; }
+body .card-body, body .feat-grid > .card:first-child .card-body,
+body .attr-card .attr-body, body .preman-hub-card .hub-body { padding: 24px 0 0; }
+body .town-card, body .apt-amen-col, body .beach-tip-card,
+body .info-card, body .host-box { padding: 0; }
+body .booking-card { padding: 0; }
+body .apt-sleep-card { padding: 16px; }
+body .privacy-summary, body .beach-highlight,
+body .booking-contact-info, body .info-banner, body .note-box { padding: 24px; }
+body .booking-contact-info { width: 100%; }
+
+body .section-title, body .page-section-title,
+body .about-text h2, body .room-desc h2 { margin: 0 0 16px; }
+body .section-sub { margin: 0 0 32px; }
+body .divider { margin-bottom: 24px; }
+body .divider-c { margin-inline: auto; }
+body .card-desc, body .about-text p, body .room-desc p { margin: 0 0 16px; }
+body .faq-section { margin-top: 32px; }
+body .faq-question, body .faq-answer { padding: 16px 0; }
+body .features-bar { gap: 16px 24px; margin-top: 24px; }
+body .apt-sleep-row { gap: 24px; margin: 24px 0 32px; }
+body .cat-heading { margin-top: 40px; margin-bottom: 16px; padding-bottom: 0; }
+
+body footer { padding: 48px var(--page-gutter) 24px; }
+body .footer-main, body footer .privacy-links,
+body .footer-counter { max-width: calc(var(--content-width) - 2 * var(--page-gutter)); }
+body .footer-icons { margin-top: 24px; gap: 16px; }
+body .footer-counter, body footer .privacy-links { margin-top: 32px; padding-top: 40px; }
+body footer .footer-copy { margin-top: 16px; }
+
+@media (max-width: 750px) {
+    :root { --page-gutter: 20px; --section-space: 40px; --layout-gap: 32px; }
+    body .hero-mini { padding-top: 32px; padding-bottom: 56px; }
+    body .accom-grid, body .attr-grid, body .towns-grid,
+    body .preman-hub-grid, body .info-grid, body .apt-amen-grid,
+    body .beach-tip-grid, body .booking-options { gap: 32px; }
+    body .zigzag-row { margin-bottom: 32px; }
+    body .privacy-summary, body .beach-highlight,
+    body .booking-contact-info, body .info-banner, body .note-box { padding: 20px; }
+    body footer { padding-top: 40px; }
+}
+@media (max-width: 480px) { :root { --header-height: 60px; } }
+
+/* Keep each phone number and its WhatsApp icon together when wrapping. */
+.phone-pair { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
