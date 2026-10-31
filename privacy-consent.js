@@ -24,6 +24,7 @@
             mapTitle: 'Find your way to Vila Sanja', mapText: 'Our interactive map is provided by Google Maps. You can enable it in your settings or open directions in a new tab.',
             mapLink: 'Open Google Maps', mapButton: 'Choose privacy settings',
             reviewsTitle: 'A few words from our guests', reviewsText: 'These reviews are provided by Elfsight. Enable guest reviews in your privacy settings to see what visitors have shared.',
+            reviewsLoading: 'Loading guest reviews…', reviewsUnavailable: 'Reviews are taking longer than expected. You can wait or try again.', reviewsRetry: 'Try again',
             storageError: 'Your browser could not save this preference. Your choice applies for this page only and will be asked again on your next visit.'
         },
         hr: {
@@ -42,6 +43,7 @@
             mapTitle: 'Pronađite put do Vile Sanja', mapText: 'Interaktivnu kartu pruža Google. Omogućite je u postavkama privatnosti ili otvorite upute u novoj kartici.',
             mapLink: 'Otvori Google karte', mapButton: 'Odaberi postavke privatnosti',
             reviewsTitle: 'Nekoliko riječi naših gostiju', reviewsText: 'Ove recenzije pruža Elfsight. Omogućite recenzije u postavkama privatnosti i pročitajte iskustva naših gostiju.',
+            reviewsLoading: 'Učitavanje recenzija gostiju…', reviewsUnavailable: 'Recenzije se učitavaju dulje od očekivanog. Pričekajte ili pokušajte ponovno.', reviewsRetry: 'Pokušaj ponovno',
             storageError: 'Preglednik nije mogao spremiti postavku. Odabir vrijedi samo za ovu stranicu i bit će ponovno zatražen pri sljedećem posjetu.'
         },
         de: {
@@ -60,6 +62,7 @@
             mapTitle: 'Ihr Weg zur Vila Sanja', mapText: 'Unsere interaktive Karte wird von Google Maps bereitgestellt. Aktivieren Sie sie in den Einstellungen oder öffnen Sie die Wegbeschreibung in einem neuen Tab.',
             mapLink: 'Google Maps öffnen', mapButton: 'Datenschutz auswählen',
             reviewsTitle: 'Ein paar Worte unserer Gäste', reviewsText: 'Diese Bewertungen werden von Elfsight bereitgestellt. Aktivieren Sie Gästebewertungen in Ihren Datenschutzeinstellungen, um die Erfahrungen unserer Gäste zu lesen.',
+            reviewsLoading: 'Gästebewertungen werden geladen…', reviewsUnavailable: 'Die Bewertungen brauchen länger als erwartet. Warten Sie oder versuchen Sie es erneut.', reviewsRetry: 'Erneut versuchen',
             storageError: 'Ihr Browser konnte diese Einstellung nicht speichern. Sie gilt nur für diese Seite und wird beim nächsten Besuch erneut abgefragt.'
         }
     };
@@ -114,21 +117,77 @@
             widget.previousElementSibling.hidden = !!choices.reviews;
             if (!choices.reviews) {
                 // Removing the browsing context stops the provider's running code.
+                if (widget.cancelReviewLoad) widget.cancelReviewLoad();
                 widget.replaceChildren();
             } else if (!widget.querySelector('iframe[data-elfsight-frame]')) {
                 // A noscript fallback is not a loaded widget (including with saved consent).
-                widget.replaceChildren();
-                var frame = document.createElement('iframe');
-                frame.dataset.elfsightFrame = 'true';
-                frame.title = messages[language].reviewsTitle;
-                frame.width = '100%';
-                frame.height = '600';
-                frame.style.border = '0';
-                frame.referrerPolicy = 'no-referrer';
-                frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c" data-elfsight-app-lazy></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
-                widget.appendChild(frame);
+                loadReviews(widget);
             }
         });
+    }
+
+    function loadReviews(widget) {
+        if (!consent || !consent.reviews) return;
+        if (widget.cancelReviewLoad) widget.cancelReviewLoad();
+        widget.replaceChildren();
+        var status = element('div', 'reviews-load-status');
+        status.setAttribute('role', 'status');
+        var text = element('p', '', messages[language].reviewsLoading);
+        text.dataset.privacyCopy = 'reviewsLoading';
+        var retry = element('button', 'reviews-retry', messages[language].reviewsRetry);
+        retry.type = 'button';
+        retry.hidden = true;
+        retry.dataset.privacyCopy = 'reviewsRetry';
+        retry.addEventListener('click', function () { loadReviews(widget); });
+        status.appendChild(text);
+        status.appendChild(retry);
+        widget.appendChild(status);
+        var frame = document.createElement('iframe');
+        frame.dataset.elfsightFrame = 'true';
+        frame.title = messages[language].reviewsTitle;
+        frame.width = '100%';
+        frame.height = '600';
+        frame.style.border = '0';
+        frame.referrerPolicy = 'no-referrer';
+        // Consent already controls loading; a second lazy gate can stall an iframe.
+        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
+        widget.appendChild(frame);
+        var timeout = setTimeout(function () {
+            text.dataset.privacyCopy = 'reviewsUnavailable';
+            text.textContent = messages[language].reviewsUnavailable;
+            retry.hidden = false;
+        }, 20000);
+        var observer = null;
+        function checkRendered() {
+            if (!frame.isConnected) { cancel(); return; }
+            try {
+                var app = frame.contentDocument.querySelector('[class^="elfsight-app-"]');
+                if (app && app.innerText.trim()) {
+                    status.remove();
+                    cancel();
+                }
+            } catch (error) {
+                // Keep the retry available if a provider changes iframe origin.
+                if (observer) observer.disconnect();
+            }
+        }
+        function watchFrame() {
+            try {
+                observer = new MutationObserver(checkRendered);
+                observer.observe(frame.contentDocument.body, { childList: true, subtree: true, characterData: true });
+                checkRendered();
+            } catch (error) {
+                // The timeout offers recovery when the provider cannot be inspected.
+            }
+        }
+        frame.addEventListener('load', watchFrame);
+        function cancel() {
+            clearTimeout(timeout);
+            if (observer) observer.disconnect();
+            frame.removeEventListener('load', watchFrame);
+            widget.cancelReviewLoad = null;
+        }
+        widget.cancelReviewLoad = cancel;
     }
 
     function saveChoice(choices) {
@@ -145,11 +204,11 @@
         closePanel();
     }
 
-    function closePanel() {
+    function closePanel(restoreFocus) {
         var panel = document.querySelector('.consent-panel');
         if (panel) panel.remove();
         document.documentElement.classList.remove('consent-open');
-        if (returnFocus && returnFocus.isConnected) returnFocus.focus();
+        if (restoreFocus !== false && returnFocus && returnFocus.isConnected) returnFocus.focus();
     }
 
     function element(tag, className, text) {
@@ -159,9 +218,9 @@
         return node;
     }
 
-    function openPanel(settings) {
+    function openPanel(settings, draftChoices) {
         var previousFocus = document.activeElement;
-        closePanel();
+        closePanel(false);
         if (previousFocus && !previousFocus.closest('.consent-panel')) returnFocus = previousFocus;
         var t = messages[language];
         var panel = element('dialog', 'consent-panel');
@@ -225,7 +284,8 @@
                 var label = element('label', 'consent-toggle');
                 var checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
-                checkbox.checked = !!(consent && consent[key]);
+                var choices = draftChoices || consent;
+                checkbox.checked = !!(choices && choices[key]);
                 toggles[key] = checkbox;
                 var copy = element('span', 'consent-option-copy');
                 copy.appendChild(element('strong', '', t.categories[key]));
@@ -305,7 +365,9 @@
     function refreshOpenPanel() {
         var panel = document.querySelector('.consent-panel');
         if (panel) {
-            openPanel(!!panel.querySelector('.consent-toggle'));
+            var toggles = panel.querySelectorAll('.consent-toggle input');
+            var draft = toggles.length ? { maps: toggles[0].checked, reviews: toggles[1].checked } : null;
+            openPanel(!!draft, draft);
         }
     }
 

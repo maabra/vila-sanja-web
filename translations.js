@@ -1745,8 +1745,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = nav.classList.contains('active');
       menuToggle.setAttribute('aria-expanded', String(isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      if (!isOpen) {
+        document.querySelectorAll('nav .dropdown').forEach(item => {
+          item.classList.remove('mob-open', 'lang-open');
+          const toggle = item.querySelector('.dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+          item.querySelector('.dropdown-menu').style.display = '';
+        });
+      }
     };
     syncMenuState();
+    window.addEventListener('pageshow', () => {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+      const header = document.getElementById('site-header');
+      if (header) header.style.transform = '';
+      syncMenuState();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      const wasOpen = nav.classList.contains('active');
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+      syncMenuState();
+      if (wasOpen) menuToggle.focus();
+    });
     window.matchMedia('(max-width: 1200px)').addEventListener('change', () => {
       nav.classList.remove('active');
       menuToggle.classList.remove('active');
@@ -1764,11 +1787,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const langToggle = document.getElementById('lang-current');
   if (langToggle) {
     const langLi = langToggle.closest('li.dropdown');
-    const langMenu = langLi.querySelector('.dropdown-menu');
+    langToggle.setAttribute('aria-haspopup', 'true');
+    langToggle.setAttribute('aria-expanded', 'false');
     langToggle.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
       langLi.classList.toggle('lang-open');
+      langToggle.setAttribute('aria-expanded', String(langLi.classList.contains('lang-open')));
     });
 
     document.querySelectorAll('.lang-option').forEach(opt => {
@@ -1784,34 +1809,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', e => {
-      if (!langLi.contains(e.target)) langLi.classList.remove('lang-open');
-    });
-  }
-
-  /* Mobile dropdown intercept for Accommodations and Near Us */
-  const navDropdowns = Array.from(document.querySelectorAll('.dropdown-toggle:not(.lang-toggle)')).map(toggle => ({
-    toggle,
-    li: toggle.closest('li.dropdown'),
-    menu: toggle.closest('li.dropdown')?.querySelector('.dropdown-menu'),
-  })).filter(d => d.li && d.menu);
-
-  navDropdowns.forEach(({ toggle, li, menu }) => {
-    toggle.addEventListener('click', e => {
-      if (window.innerWidth > 1200) return;
-      const isOpen = menu.style.display === 'block';
-      document.querySelectorAll('.dropdown-menu').forEach(m => { m.style.display = ''; });
-      if (!isOpen) {
-        e.preventDefault();
-        menu.style.display = 'block';
+      if (!langLi.contains(e.target)) {
+        langLi.classList.remove('lang-open');
+        langToggle.setAttribute('aria-expanded', 'false');
       }
     });
-  });
-
-  document.addEventListener('click', e => {
-    navDropdowns.forEach(({ li, menu }) => {
-      if (!li.contains(e.target)) menu.style.display = '';
-    });
-  });
+  }
 
   scheduleGuestRatingUpdate();
   observeElfsightRating();
@@ -1835,7 +1838,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', function() {
       if (window.innerWidth > 1200) { hdr.style.transform = ''; return; }
       var y = window.scrollY;
-      hdr.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : '';
+      const interacting = document.querySelector('nav.active') || document.documentElement.classList.contains('consent-open');
+      hdr.style.transform = (!interacting && y > lastY && y > 80) ? 'translateY(-100%)' : '';
       lastY = y;
     }, { passive: true });
   })();
@@ -1845,19 +1849,50 @@ document.addEventListener('DOMContentLoaded', () => {
     el.innerHTML = el.innerHTML.replace(/\b20\d{2}\b/, new Date().getFullYear());
   });
 
-  // Copy email to clipboard
+  // Clipboard permissions can fail or change while this page is open.
   document.querySelectorAll('.copy-email-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var email = btn.dataset.email || '';
-      navigator.clipboard.writeText(email).then(function() {
+    let pending = false;
+    let resetTimer;
+    const status = document.createElement('span');
+    status.className = 'copy-status';
+    status.setAttribute('role', 'status');
+    btn.after(status);
+    btn.addEventListener('click', async function() {
+      if (pending) return;
+      pending = true;
+      clearTimeout(resetTimer);
+      const icon = btn.querySelector('i');
+      const labels = {
+        en: ['Email copied.', 'Copy unavailable. Select and copy the email address.'],
+        hr: ['E-adresa kopirana.', 'Kopiranje nije dostupno. Označite i kopirajte e-adresu.'],
+        de: ['E-Mail-Adresse kopiert.', 'Kopieren nicht verfügbar. E-Mail-Adresse markieren und kopieren.']
+      };
+      const text = labels[document.documentElement.lang] || labels.en;
+      try {
+        await navigator.clipboard.writeText(btn.dataset.email || '');
         btn.classList.add('copied');
-        var icon = btn.querySelector('i');
         if (icon) icon.className = 'fa-solid fa-check';
-        setTimeout(function() {
+        status.textContent = text[0];
+      } catch (error) {
+        btn.classList.remove('copied');
+        if (icon) icon.className = 'fa-solid fa-copy';
+        status.textContent = text[1];
+        const link = btn.parentNode.querySelector('a[href^="mailto:"]');
+        if (link) {
+          const range = document.createRange();
+          range.selectNodeContents(link);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+      } finally {
+        pending = false;
+        resetTimer = setTimeout(() => {
           btn.classList.remove('copied');
           if (icon) icon.className = 'fa-solid fa-copy';
-        }, 2000);
-      });
+          status.textContent = '';
+        }, 4000);
+      }
     });
   });
 
@@ -1886,6 +1921,9 @@ function addSwipe(el, onLeft, onRight) {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
   }, { passive: true });
+  el.addEventListener('touchcancel', function() {
+    startX = null; startY = null;
+  }, { passive: true });
   el.addEventListener('touchend', function(e) {
     if (startX === null) return;
     var dx = e.changedTouches[0].clientX - startX;
@@ -1901,11 +1939,14 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeMobDropdowns() {
     document.querySelectorAll('nav li.dropdown.mob-open').forEach(function(li) {
       li.classList.remove('mob-open');
+      li.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
     });
   }
 
   document.querySelectorAll('nav li.dropdown > a.dropdown-toggle').forEach(function(toggle) {
     if (toggle.id === 'lang-current') return; /* lang toggle has its own handler */
+    toggle.setAttribute('aria-haspopup', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', function(e) {
       if (window.innerWidth > 1200) return; /* CSS hover handles desktop */
       var li = toggle.closest('li.dropdown');
@@ -1917,6 +1958,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       closeMobDropdowns();
       li.classList.add('mob-open');
+      toggle.setAttribute('aria-expanded', 'true');
     });
   });
 
