@@ -4192,8 +4192,29 @@ body .gallery-thumb {
 .stay-booking p {
     margin: 16px auto 24px;
 }
-.stay-booking .cta-button {
+body .stay-booking .cta-button {
     min-width: min(100%, 240px);
+    min-height: 54px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 28px;
+    background: #ead39a;
+    color: #233f35;
+    border: 1px solid #bba36a;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 800;
+    box-shadow: 0 5px 16px rgba(23, 46, 37, .22), inset 0 1px 0 rgba(255,255,255,.55);
+}
+body .stay-booking .cta-button:hover {
+    background: #f4dfac;
+    color: #233f35;
+}
+body .stay-booking .cta-button:focus-visible {
+    outline: 3px solid #fff8ec;
+    outline-offset: 5px;
 }
 body .cta-button {
     background: var(--sea);
