@@ -1615,7 +1615,7 @@ body .card:hover, body .info-card:hover, body .booking-card:hover { transform: n
 .feat-grid { column-gap: 40px !important; row-gap: 64px !important; }
 .feat-grid > .card:first-child { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
 .feat-grid > .card:first-child .card-body { padding: 24px 0; }
-.feat-grid > .card:first-child img { height: 420px; }
+
 .cta-button, .cta-button.sea, .book-now {
     border-radius: 2px; box-shadow: none; font-size: .86rem; font-weight: 700; letter-spacing: .025em;
 }
@@ -1661,7 +1661,7 @@ footer a, footer .wa-link { color: var(--sea-deep); }
     .about-img img { aspect-ratio: 4 / 3; }
     .feat-grid { grid-template-columns: 1fr !important; row-gap: 40px !important; }
     .feat-grid > .card:first-child { display: flex; gap: 0; }
-    .feat-grid > .card:first-child img { height: 300px; }
+
     .stats-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .info-card { padding: 24px 0; }
 }
@@ -1672,8 +1672,86 @@ main { overflow-wrap: anywhere; }
 
 /* Preserve the original layered villa panorama. */
 .feat-grid > .card:first-child { display: flex; gap: 0; }
-.feat-grid > .card:first-child .part-scene img { height: 100%; }
+
 
 @media (max-width: 480px) {
     .hero { min-height: calc(100vh - 60px); min-height: calc(100dvh - 60px); }
+}
+
+/* Shared finishing details for accommodation and village guide pages. */
+.header-logo > img { filter: brightness(.58) saturate(.8); }
+[data-theme="dark"] .header-logo > img { filter: brightness(1.12) saturate(.8); }
+body .attr-card, body .town-card, body .preman-hub-card,
+body .apt-sleep-card, body .apt-amen-col {
+    background: transparent; border-radius: 0; box-shadow: none;
+    border: 0; border-top: 1px solid var(--border);
+}
+body .attr-card:hover, body .town-card:hover, body .preman-hub-card:hover {
+    transform: none; box-shadow: none;
+}
+body .attr-card .attr-body, body .preman-hub-card .hub-body { padding: 24px 0; }
+body .town-card, body .apt-amen-col { padding: 24px 0; }
+body .apt-sleep-card { padding: 24px 20px; min-width: 0; flex: 1 1 160px; }
+body .preman-hub-card .hub-icon {
+    background: var(--sea-light); color: var(--sea-deep); font-size: 2rem;
+    padding: 32px 0;
+}
+body .attr-card h3, body .town-card h3, body .preman-hub-card h3,
+body .zigzag-row .zz-text h3, .page-section-title, .rules-h1,
+.rule-card h2, .booking-card h2, .faq-section h2, .room-gallery h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400;
+    line-height: 1.25; letter-spacing: -.025em;
+}
+.page-section-title, body .cat-heading {
+    border-bottom: 1px solid var(--border); padding-bottom: 16px;
+    font-family: Georgia, 'Times New Roman', serif; font-weight: 400;
+}
+body .cat-heading { font-size: 1.8rem; }
+.contact-block h2 { font-size: 1.5rem; text-transform: none; letter-spacing: -.025em; font-weight: 400; }
+body .attr-grid, body .towns-grid, body .preman-hub-grid { gap: 32px; }
+body .attr-card p, body .town-card p, body .preman-hub-card p { line-height: 1.85; }
+body .beach-highlight { background: var(--sea-light); color: var(--sea-deep); border-radius: var(--radius); box-shadow: none; }
+body .beach-highlight h2, body .beach-highlight h3 { color: inherit; font-weight: 400; }
+body .info-banner, body .photo-placeholder { background: var(--sand-mid); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); }
+body .photo-placeholder .ph-label { color: var(--text-lt); font-family: inherit; }
+body .town-dist, body .beach-badge { background: var(--sea-light); color: var(--sea-deep); border-radius: var(--radius); }
+body .beach-badge.alt { background: #eddbd7; color: #75464b; }
+body .bch-map-btn { background: var(--sea); border-radius: var(--radius); }
+body .apt-amen-col ul li { border-color: var(--border); }
+body .faq-question { border-left: 0; padding: 18px 0; }
+body .faq-answer { border-radius: 0; padding: 18px 0; background: transparent; }
+.gallery-thumb { border-radius: var(--radius); }
+body .external-content-placeholder button { border-radius: var(--radius); background: var(--sea); }
+[data-theme="dark"] .dropdown-menu { background: var(--sand-mid); border-color: var(--border); box-shadow: none; }
+[data-theme="dark"] .dropdown-menu a { color: var(--text); }
+[data-theme="dark"] .dropdown-menu a:hover { background: var(--sand-dark); color: var(--text); }
+[data-theme="dark"] .feat-chip { background: transparent; color: var(--sea-deep); }
+[data-theme="dark"] .note-box, [data-theme="dark"] .time-slot,
+[data-theme="dark"] .booking-contact-info { background: var(--sand-mid); color: var(--text); }
+@media (max-width: 750px) {
+    body .town-card, body .apt-amen-col { padding: 22px 0; }
+    body .attr-grid, body .towns-grid, body .preman-hub-grid { gap: 28px; }
+}
+
+/* One calm, legible footer across every page. */
+footer { padding: 56px 24px 28px; background: #e2e8e0; color: var(--text); }
+.footer-main { max-width: 1152px; justify-content: space-between; gap: 32px 72px; }
+.footer-brand { display: inline-flex; align-items: center; gap: 16px; color: var(--sea-deep); flex-shrink: 0; text-decoration: none; }
+.footer-brand img { object-fit: contain; filter: brightness(.58) saturate(.8); }
+.footer-brand span { font: 400 2rem/1.2 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; }
+.footer-brand small { display: block; margin-top: 8px; font: 400 .75rem/1.5 'Nunito', sans-serif; letter-spacing: .08em; }
+.footer-info { flex: 0 1 auto; text-align: left; overflow-wrap: anywhere; }
+.footer-icons { justify-content: flex-start; gap: 12px; margin-top: 20px; }
+footer .f-icon { color: var(--sea-deep); background: transparent; border: 1px solid var(--sea); border-radius: var(--radius); font-size: 1rem; }
+footer .f-icon:hover { transform: none; background: var(--sea-light); text-decoration: none; }
+footer .privacy-links { max-width: 1152px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+footer .footer-copy { opacity: 1; color: var(--text-lt); margin-top: 16px; font-size: .78rem; }
+[data-theme="dark"] .footer-brand img { filter: brightness(1.12) saturate(.8); }
+@media (max-width: 600px) {
+    .footer-main { flex-direction: column; align-items: flex-start; gap: 28px; }
+    .footer-info { text-align: left; }
+    .footer-icons { justify-content: flex-start; }
+    footer .privacy-links { justify-content: flex-start; }
+    footer .footer-copy { text-align: left; }
 }
