@@ -3765,7 +3765,7 @@ body {
                       radial-gradient(ellipse at 90% 65%, var(--ambient-sage), transparent 48%);
 }
 header#site-header {
-    box-shadow: rgba(18, 44, 41, 0.4) 0px 5px 20px -12px;
+    box-shadow: inset 0 -1px 0 var(--edge-light), 0 1px 0 var(--edge-shade), 0 6px 16px -9px var(--edge-shadow);
 }
 body .hero {
     box-shadow: rgba(18, 44, 41, 0.5) 0px -64px 72px -72px inset;
@@ -4560,3 +4560,37 @@ body.page-contact .contact-block:last-child { margin-bottom: 0; }
     .page-premantura-attractions .attr-text-grid { grid-template-columns:1fr; gap:32px; }
     .page-premantura-attractions .cat-heading { margin-top:40px; }
 }
+
+/* Soft limestone-like seams: a lit edge with a shallow, fading shadow. */
+:root {
+    --edge-light: rgba(255, 250, 236, .34);
+    --edge-shade: rgba(105, 92, 65, .14);
+    --edge-shadow: rgba(58, 69, 53, .22);
+}
+[data-theme="dark"] {
+    --edge-light: rgba(197, 215, 191, .12);
+    --edge-shade: rgba(0, 0, 0, .25);
+    --edge-shadow: rgba(0, 0, 0, .42);
+}
+main > .section-alt,
+main > .section-sea,
+main > .stats-bar { position: relative; }
+main > .section::before,
+main > .section-alt::before,
+main > .section-sea::before,
+main > .stats-bar::before,
+body footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(calc(100% - 32px), 1200px);
+    height: 12px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, var(--edge-light), var(--edge-light) 1px, var(--edge-shade) 1px, transparent 2px),
+                radial-gradient(ellipse at 50% 0, var(--edge-shadow), transparent 72%);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+}
+body footer { position: relative; }
