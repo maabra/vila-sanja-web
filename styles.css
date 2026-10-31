@@ -1651,3 +1651,39 @@ header nav .dropdown-menu { background: var(--nav-surface); border-color: #fffff
 #site-header nav .dropdown-menu a:focus-visible,
 #site-header nav .dropdown-menu a.active { color: var(--nav-accent); background: #ffffff12; }
 #site-header nav .dropdown-menu { background: var(--nav-surface); }
+
+/* Shared spacing keeps open sections aligned without nested card insets. */
+:root {
+    --page-gutter: clamp(20px, 3vw, 24px);
+    --section-space: clamp(48px, 6vw, 80px);
+}
+.section, .section-alt .inner, .section-sea .inner {
+    padding: var(--section-space) var(--page-gutter);
+}
+.room-intro { margin-block: 0; padding: var(--section-space) var(--page-gutter); gap: clamp(28px, 4vw, 48px); }
+.booking-wrap { padding: var(--section-space) var(--page-gutter); }
+.room-gallery { padding: var(--section-space) var(--page-gutter); }
+body .about-card, body .contact-block, body .rule-card {
+    padding: 28px 0; margin-bottom: 24px;
+}
+body .about-card:last-child, body .contact-block:last-child, body .rule-card:last-child { margin-bottom: 0; }
+.host-box { padding: 24px 0; }
+.info-card { padding: 24px 0; }
+.booking-card { padding: 32px 24px; }
+.section-sub { margin-bottom: 36px; }
+.about-flex { gap: clamp(32px, 5vw, 64px); }
+.feat-grid > .card:first-child { align-items: stretch; }
+.feat-grid > .card:first-child .card-body { padding: 24px 0 0; }
+.hero-content { margin-inline: max(var(--page-gutter), calc((100vw - 1152px) / 2)); }
+body.privacy-body .privacy-page { padding-inline: var(--page-gutter); padding-bottom: var(--section-space); }
+footer { padding: 48px var(--page-gutter) 28px; }
+@media (max-width: 750px) {
+    body .about-card, body .contact-block, body .rule-card { padding: 24px 0; }
+    .booking-card { padding: 24px 0; }
+    .booking-options { gap: 32px; }
+    .hero-content { margin-inline: var(--page-gutter); }
+    .hero-mini { padding: 40px var(--page-gutter); min-height: 180px; }
+    .section-sub { margin-bottom: 28px; }
+    .privacy-summary, .privacy-section { padding: 24px 20px; }
+    footer { padding-top: 40px; }
+}
