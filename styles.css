@@ -1712,3 +1712,77 @@ footer .footer-counter::before, footer .privacy-links::before {
 .booking-online h2, .booking-direct h2,
 .booking-online ul li::before, .booking-direct ul li::before,
 .booking-direct .booking-contact-info a { color: var(--booking-accent); }
+
+/* Mediterranean light: atmospheric layers, dimensional photographs, open text. */
+:root {
+    --ambient-rose: #d7a9a01a;
+    --ambient-sage: #7c9a8b1a;
+    --light-wash: #ffffff52;
+    --photo-shadow: 0 16px 36px -20px #354b4966, 0 3px 10px -5px #354b492b;
+    --soft-shadow: 0 10px 24px -16px #263e3659;
+    --button-light: #ffffff30;
+}
+[data-theme="dark"] {
+    --ambient-rose: #b2806c0b;
+    --ambient-sage: #a2c3ad0d;
+    --light-wash: #ffffff05;
+    --photo-shadow: 0 18px 40px -20px #000000b3, 0 3px 12px -5px #00000080;
+    --soft-shadow: 0 12px 28px -16px #00000099;
+    --button-light: #ffffff18;
+}
+body {
+    background-image: radial-gradient(ellipse at 12% 8%, var(--ambient-rose), transparent 48%),
+                      radial-gradient(ellipse at 90% 65%, var(--ambient-sage), transparent 48%);
+}
+header#site-header { box-shadow: 0 5px 20px -12px #122c2966; }
+body .hero { box-shadow: inset 0 -64px 72px -72px #122c2980; }
+body .hero-mini {
+    background-color: transparent;
+    background-image: radial-gradient(ellipse at 35% 0, var(--light-wash), transparent 70%),
+                      linear-gradient(90deg, transparent, var(--sand-mid) 18%, var(--sand-mid) 82%, transparent);
+}
+body .section-alt {
+    background-color: transparent;
+    background-image: radial-gradient(ellipse at 50% 15%, var(--light-wash), transparent 65%),
+                      linear-gradient(90deg, transparent, var(--sand-mid) 12%, var(--sand-mid) 88%, transparent);
+    background-size: min(100%, 1360px) 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body .card { overflow: visible; }
+body .card > img, body .about-img img, body .room-image img,
+body .zz-figure > img, body .gallery-main,
+body .section figure > img { box-shadow: var(--photo-shadow); }
+/* Keep all moving layers inside their original collage viewport. */
+body .part-scene { box-shadow: var(--photo-shadow); }
+body .part-scene img { box-shadow: none; }
+body .gallery-thumb { box-shadow: 0 3px 8px -4px #203a354d; }
+body .booking-card-icon {
+    display: grid; place-items: center; width: 80px; height: 80px;
+    background: radial-gradient(circle, var(--ambient-sage), transparent 72%);
+}
+body .booking-online .booking-card-icon {
+    background: radial-gradient(circle, var(--ambient-rose), transparent 72%);
+}
+body .privacy-summary, body .booking-contact-info,
+body .beach-highlight, body .note-box, body .info-banner {
+    background-image: linear-gradient(135deg, var(--light-wash), transparent 70%);
+    box-shadow: 0 10px 28px -24px #1c382d66;
+}
+body .cta-button, body .book-now, body .back-to-top {
+    box-shadow: inset 0 1px 1px var(--button-light), var(--soft-shadow);
+}
+body .card .cta-button.sea, body .about-text .cta-button.sea { box-shadow: none; }
+body footer {
+    background-image: radial-gradient(ellipse at 50% 0, var(--light-wash), transparent 65%);
+    box-shadow: 0 -18px 40px -36px #233c3a40;
+}
+#site-header nav .dropdown-menu { box-shadow: 0 16px 32px -16px #102c2a66; }
+@media (max-width: 1200px) {
+    #site-header nav .dropdown-menu { box-shadow: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    body .cta-button, body .book-now { transition: background .2s, box-shadow .2s, transform .2s; }
+    body .cta-button:hover, body .book-now:hover { transform: translateY(-2px); }
+    body .card .cta-button.sea:hover, body .about-text .cta-button.sea:hover { transform: none; }
+}
