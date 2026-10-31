@@ -15,7 +15,7 @@
         });
     }
     const floating = document.querySelector('.book-now');
-    if (floating && 'IntersectionObserver' in window) {
+    if (floating && !floating.hasAttribute('data-always-visible') && 'IntersectionObserver' in window) {
         const visible = new Set();
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));

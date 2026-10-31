@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Stay at Vila Sanja in Premantura, Istria. Comfortable accomodations for all parties, just minutes from the sea and Cape Kamenjak.">
     <meta name="twitter:image" content="https://vilasanja.com/images/index/Vila%20Sanja_banner.png">
     <link rel="preload" as="image" href="images/optimized/depo/sunset.webp">
-    <link rel="stylesheet" href="styles.css?v=20261031-stronger-sway">
+    <link rel="stylesheet" href="styles.css?v=20261031-persistent-booking">
     <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('vs-theme')||'light')}catch(e){}</script>
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta property="og:image:alt" content="Vila Sanja accommodation in Premantura, Istria">
@@ -262,7 +262,7 @@
     </section>
 </main>
 
-<a href="booking.html" class="book-now scroll-hidden" id="book-now-btn" data-i18n="nav.booknow">Book Now!</a>
+<a href="booking.html" class="book-now" id="book-now-btn" data-always-visible data-i18n="nav.booknow">Book Now!</a>
 
 <footer>
     <div class="footer-main">
@@ -290,12 +290,6 @@
 
 <script src="translations.js?v=20261031-grass-sway"></script>
 <script>
-(function() {
-    var btn = document.getElementById('book-now-btn');
-    window.addEventListener('scroll', function() {
-        btn.classList.toggle('scroll-hidden', window.scrollY < 120);
-    }, { passive: true });
-})();
 (function() {
     var imgs = ['images/optimized/index/fronthouse.webp', 'images/index/fronthouse2.jpg'];
     imgs.forEach(function(src) { var photo = new Image(); photo.fetchPriority = "low"; photo.src = src; });
@@ -346,6 +340,6 @@ document.querySelectorAll('nav a:not(.lang-option):not(.lang-toggle):not(.dropdo
 </script>
 <button class="back-to-top" id="back-to-top-btn" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 <script src="privacy-consent.js?v=20261031-review-theme"></script>
-<script src="site.js?v=20261031-refined"></script>
+<script src="site.js?v=20261031-persistent-booking"></script>
 </body>
 </html>

@@ -77,7 +77,7 @@ class Refinement(unittest.TestCase):
             self.page.keyboard.press('Enter')
             self.assertTrue(self.page.locator('#mainGalleryImage').get_attribute('src').endswith('/3.webp'))
 
-    def test_large_edge_flowers_fade_and_mobile_booking_is_in_flow(self):
+    def test_large_edge_flowers_fade_and_home_booking_stays_fixed(self):
         self.site.go(consent=False)
         self.page.set_viewport_size({'width': 1440, 'height': 1000})
         foliage = self.page.locator('.deco-r').evaluate('(e)=>({width:e.getBoundingClientRect().width,mask:getComputedStyle(e).maskImage,size:getComputedStyle(e).backgroundSize})')
@@ -85,7 +85,7 @@ class Refinement(unittest.TestCase):
         self.assertIn('linear-gradient', foliage['mask'])
         self.assertEqual(foliage['size'], '340px auto')
         self.page.set_viewport_size({'width': 390, 'height': 844})
-        self.assertEqual(self.page.locator('.book-now').evaluate('(e)=>getComputedStyle(e).position'), 'static')
+        self.assertEqual(self.page.locator('.book-now').evaluate('(e)=>getComputedStyle(e).position'), 'fixed')
         self.assertLess(float(self.page.locator('.deco-r').evaluate('(e)=>getComputedStyle(e).opacity')), .2)
 
     def test_direct_contact_first_and_counter_failure_does_not_block_contacts(self):
