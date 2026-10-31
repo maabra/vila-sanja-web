@@ -16,7 +16,6 @@ const LANG_DATA = {
 
     /* INDEX - hero */
     'idx.hero.title':  "Vila Sanja — Premantura",
-    'idx.hero.sub':    "Your oasis of calm on the Adriatic",
     'idx.hero.desc':   'Comfortable apartments and room in Premantura, Istria. Air conditioning, private balconies, free WiFi and parking. Just minutes from the sea and Cape Kamenjak.',
     'idx.hero.cta':    'Book your holiday',
     'idx.hero.scroll': 'Scroll down',
@@ -567,7 +566,6 @@ const LANG_DATA = {
     'nav.booknow':     'Rezerviraj!',
 
     'idx.hero.title':  "Vila Sanja — Premantura",
-    'idx.hero.sub':    "Vaša oaza mira na Jadranu",
     'idx.hero.desc':   'Udobni apartmani i soba u Premanturi, Istra. Klima uređaji, privatni balkoni, besplatni WiFi i parking, predivna i mirna lokacija. Ugodni i opremljeni smještaji. Samo nekoliko minuta od mora i rta Kamenjak.',
     'idx.hero.cta':    'Rezervirajte odmor',
     'idx.hero.scroll': 'Skrolajte dolje',
@@ -1104,7 +1102,6 @@ const LANG_DATA = {
     'nav.booknow':     'Buchen!',
 
     'idx.hero.title':  "Vila Sanja — Premantura",
-    'idx.hero.sub':    "Ihre Ruheoase an der Adria",
     'idx.hero.desc':   'Komfortable Apartments und Zimmer in Premantura, Istrien. Klimaanlage, private Balkone, kostenfreies WLAN und Parkplatz. Nur wenige Minuten vom Meer und Kap Kamenjak.',
     'idx.hero.cta':    'Urlaub buchen',
     'idx.hero.scroll': 'Nach unten',
