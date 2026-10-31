@@ -126,6 +126,24 @@
         });
     }
 
+    // Keep the same iframe and consent state when visitors switch themes.
+    function syncReviewTheme() {
+        var dark = document.documentElement.dataset.theme === 'dark';
+        document.querySelectorAll('iframe[data-elfsight-frame]').forEach(function (frame) {
+            try {
+                var root = frame.contentDocument.documentElement;
+                root.style.setProperty('--review-text', dark ? '#e8eee5' : '#344b43');
+                root.style.setProperty('--review-card', dark ? '#2b4037' : '#f3eee4');
+                root.style.colorScheme = dark ? 'dark' : 'light';
+            } catch (error) {
+                // A provider-owned cross-origin frame requires its editor's theme settings.
+            }
+        });
+    }
+    new MutationObserver(syncReviewTheme).observe(document.documentElement, {
+        attributes: true, attributeFilter: ['data-theme']
+    });
+
     function loadReviews(widget) {
         if (!consent || !consent.reviews) return;
         if (widget.cancelReviewLoad) widget.cancelReviewLoad();
@@ -150,7 +168,7 @@
         frame.style.border = '0';
         frame.referrerPolicy = 'no-referrer';
         // Consent already controls loading; a second lazy gate can stall an iframe.
-        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
+        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><style>html,body{margin:0;background:transparent;font-family:Nunito,Arial,sans-serif}body{color:var(--review-text,#344b43)}.global-styles{background:transparent!important}.es-main-container{background:transparent!important}.es-review-background-container{background:var(--review-card,#f3eee4)!important}.es-review-content-text,.es-review-author-name{color:var(--review-text,#344b43)!important}</style></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
         widget.appendChild(frame);
         var timeout = setTimeout(function () {
             text.dataset.privacyCopy = 'reviewsUnavailable';
@@ -172,6 +190,7 @@
             }
         }
         function watchFrame() {
+            syncReviewTheme();
             try {
                 observer = new MutationObserver(checkRendered);
                 observer.observe(frame.contentDocument.body, { childList: true, subtree: true, characterData: true });

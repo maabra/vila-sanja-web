@@ -3620,7 +3620,7 @@ header nav .dropdown-menu {
     background: var(--sea);
 }
 [data-theme="dark"] .deco {
-    opacity: 0.22;
+    opacity: 0.58;
 }
 @media (max-width: 750px) {
     [data-theme="dark"] .deco-r {
@@ -4093,8 +4093,11 @@ body .room-desc > p {
         background-size: 340px auto;
     }
     [data-theme="dark"] .deco-r {
-        opacity: 0.08;
+        opacity: 0.16;
     }
+}
+@media (max-width: 750px) {
+    [data-theme="dark"] .deco-r { opacity: 0.12; }
 }
 @media (min-width: 1201px) {
     .deco-l, .deco-r {
