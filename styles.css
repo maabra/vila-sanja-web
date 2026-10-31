@@ -104,7 +104,6 @@ html.consent-open { overflow: hidden; }
 .privacy-section p:last-child { margin-bottom: 0; }
 .privacy-local-assets { font-size: .88rem; color: var(--text-lt); }
 .privacy-page code { font-size: .85em; overflow-wrap: anywhere; padding: 2px 5px; background: var(--sand-mid); border-radius: 4px; }
-[data-theme="dark"] .consent-panel, [data-theme="dark"] .privacy-section, [data-theme="dark"] .consent-toggle { background: #1A2B3D; }
 @media (max-width: 600px) {
     .consent-panel { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); padding: 22px 20px; border-radius: 16px; }
     .consent-brand { margin-bottom: 14px; }
@@ -120,172 +119,7 @@ html.consent-open { overflow: hidden; }
     .consent-toggle input::after { display: none; }
 }
 
-/* === DARK MODE PALETTE === */
-/*
- * --white stays #fff: it is used for text/icons on colored surfaces (nav, buttons,
- * hero). Card/panel backgrounds are overridden explicitly per-component below.
- */
-[data-theme="dark"] {
-    --sand:      #0F1923;
-    --sand-mid:  #152031;
-    --sand-dark: #1A2B3D;
-    --sea:       #0D8F89;
-    --sea-deep:  #17A09A;
-    --sea-light: #1A4550;
-    --coral:     #E07898;
-    --coral-dk:  #C85E80;
-    --sun:       #FFD26B;
-    --sun-lt:    #251C08;
-    --sky:       #1A3A5C;
-    --text:      #D8E8F2;
-    --text-lt:   #7FA0B5;
-    --white:     #FFFFFF;
-    --border:    #243A4E;
-}
-
-[data-theme="dark"] body {
-    background: #0F1923;
-    color: #D8E8F2;
-}
-
-/* ── Header ── */
-[data-theme="dark"] header {
-    background: #0B1520;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.45);
-}
-
-/* ── Nav dropdown menus ── */
-[data-theme="dark"] .dropdown-menu {
-    background: #152031;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
-    border: 1px solid #243A4E;
-    border-top: none;
-}
-[data-theme="dark"] .dropdown-menu a {
-    color: #17A09A;
-}
-[data-theme="dark"] .dropdown-menu a:hover,
-[data-theme="dark"] .dropdown-menu a.active {
-    background: #1A2B3D;
-    color: #FFD26B;
-}
-
-/* ── Mobile nav sidebar ── */
-@media (max-width: 1200px) {
-    [data-theme="dark"] nav {
-        background: #0d3a3e;
-    }
-    [data-theme="dark"] .dropdown-menu {
-        background: #0d3a3e;
-        border: none;
-        border-top: none;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-}
-
-/* ── Cards and white-background panels ── */
-[data-theme="dark"] .card,
-[data-theme="dark"] .info-card,
-[data-theme="dark"] .host-box,
-[data-theme="dark"] .about-card,
-[data-theme="dark"] .rule-card,
-[data-theme="dark"] .contact-block,
-[data-theme="dark"] .booking-card,
-[data-theme="dark"] .faq-question {
-    background: #1A2B3D;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-[data-theme="dark"] .faq-question:hover { background: #1E3347; }
-[data-theme="dark"] .faq-answer       { background: #0F1923; }
-
-/* ── Sections (hardcoded rgba in base styles — must override explicitly) ── */
-[data-theme="dark"] .section {
-    background: rgba(26, 43, 61, 0.88);
-}
-[data-theme="dark"] .section-alt .inner {
-    background: rgba(21, 32, 49, 0.95);
-}
-[data-theme="dark"] .room-intro {
-    background: rgba(21, 32, 49, 0.97);
-}
-
-/* ── Feat chip — fix near-zero contrast (sea-light bg + sea-deep text) ── */
-[data-theme="dark"] .feat-chip {
-    background: rgba(46, 196, 182, 0.13);
-    color: #17A09A;
-}
-
-/* ── Note box & time slot ── */
-[data-theme="dark"] .note-box {
-    background: #1A1800;
-    border-left-color: #FFD26B;
-    color: #D8E8F2;
-}
-[data-theme="dark"] .time-slot {
-    background: #251C08;
-    color: #FFD26B;
-}
-
-/* ── Booking contact info ── */
-[data-theme="dark"] .booking-contact-info {
-    background: #152031;
-}
-
-/* ── About location table ── */
-[data-theme="dark"] .about-location-table th {
-    background: #152031;
-    border-bottom-color: #243A4E;
-}
-[data-theme="dark"] .about-location-table td {
-    border-bottom-color: #243A4E;
-}
-
-/* ── Page-specific cards (inline <style> blocks in individual pages) ── */
-[data-theme="dark"] .attr-card,
-[data-theme="dark"] .beach-tip-card,
-[data-theme="dark"] .preman-hub-card,
-[data-theme="dark"] .apt-sleep-card,
-[data-theme="dark"] .apt-amen-col {
-    background: #1A2B3D;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-[data-theme="dark"] .town-card {
-    background: #1A2B3D;
-    border-color: #243A4E;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-[data-theme="dark"] .apt-amen-col ul li {
-    border-bottom-color: rgba(255,255,255,0.06);
-}
-
-/* ── Info banner ── */
-[data-theme="dark"] .info-banner {
-    background: #1A1800;
-    border-left-color: var(--coral);
-    color: #D8E8F2;
-}
-
-/* ── Photo placeholder ── */
-[data-theme="dark"] .photo-placeholder {
-    background: #0F1F2E;
-    border-color: #2A5A6A;
-    color: #7FA0B5;
-}
-[data-theme="dark"] .photo-placeholder .ph-label { color: #5A8A9A; }
-
-/* ── Footer ── */
-[data-theme="dark"] footer {
-    background: #080F18;
-    color: rgba(216,232,242,0.85);
-}
-[data-theme="dark"] .footer-counter {
-    background: rgba(255,255,255,0.05);
-}
-[data-theme="dark"] .footer-divider {
-    background: rgba(255,255,255,0.1);
-}
-
-/* ── Dark mode toggle button ── */
+/* Theme colours are defined with the shared Mediterranean palette below. */
 .dark-mode-toggle {
     background: rgba(255,255,255,0.15);
     border: none;
@@ -1643,7 +1477,23 @@ body .card:hover, body .info-card:hover, body .booking-card:hover { transform: n
 footer { background: #e2e8e0; color: var(--text); border-top: 1px solid var(--border); }
 footer a, footer .wa-link { color: var(--sea-deep); }
 .footer-copy { opacity: .8; }
-[data-theme="dark"] { --sand: #1c2623; --sand-mid: #26322d; --border: #47524a; --sea-deep: #bad3c5; --sea-light: #30463c; --text: #eee9de; --text-lt: #bdc5bb; --coral: #e1a7a5; }
+[data-theme="dark"] {
+    color-scheme: dark;
+    --sand: #1c2623;
+    --sand-mid: #26322d;
+    --sand-dark: #344239;
+    --sea: #486b5d;
+    --sea-deep: #bad3c5;
+    --sea-light: #30463c;
+    --coral: #e1a7a5;
+    --coral-dk: #efb9b7;
+    --sun: #ead9ae;
+    --sun-lt: #3b3727;
+    --sky: #30463c;
+    --border: #47524a;
+    --text: #eee9de;
+    --text-lt: #bdc5bb;
+}
 [data-theme="dark"] body, [data-theme="dark"] header { background: var(--sand); color: var(--text); }
 [data-theme="dark"] footer { background: var(--sand-mid); }
 [data-theme="dark"] .faq-question { background: transparent; box-shadow: none; }
@@ -1779,3 +1629,22 @@ header nav .dropdown-menu { background: var(--nav-surface); border-color: #fffff
     header nav { background: var(--nav-surface); }
     header nav .dropdown-menu { background: #ffffff08; box-shadow: none; }
 }
+
+/* Dark surfaces share the same hierarchy as light mode; imagery stays natural. */
+[data-theme="dark"] .consent-panel, [data-theme="dark"] .consent-toggle { background: var(--sand-mid); }
+[data-theme="dark"] .consent-languages button { background: var(--sand); }
+[data-theme="dark"] .consent-languages button[aria-pressed="true"] { background: #1e7a82; }
+[data-theme="dark"] .consent-badge { border-color: var(--border); }
+[data-theme="dark"] .cta-button, [data-theme="dark"] .book-now { color: #302623; }
+[data-theme="dark"] .cta-button.sea, [data-theme="dark"] .bch-map-btn,
+[data-theme="dark"] .external-content-placeholder button { color: #fff8ec; }
+[data-theme="dark"] .card .cta-button.sea, [data-theme="dark"] .about-text .cta-button.sea { color: var(--sea-deep); }
+[data-theme="dark"] .card .cta-button.sea:hover, [data-theme="dark"] .about-text .cta-button.sea:hover { color: var(--coral); }
+[data-theme="dark"] .back-to-top, [data-theme="dark"] .reviews-retry { background: var(--sea); color: #fff8ec; }
+[data-theme="dark"] .section-sea { background: var(--sea); }
+[data-theme="dark"] .deco { opacity: .22; }
+@media (max-width: 750px) { [data-theme="dark"] .deco-r { opacity: .08; } }
+
+[data-theme="dark"] .cta-button.sea:hover { background: #3c5d50; }
+[data-theme="dark"] .card .cta-button.sea:hover,
+[data-theme="dark"] .about-text .cta-button.sea:hover { background: transparent; }
