@@ -4078,19 +4078,21 @@ body .room-desc > p {
     max-width: 52ch;
 }
 .deco {
-    scale: 1;
+    scale: 1.05;
+    top: 46px;
+    bottom: -28px;
     width: clamp(220px, 20vw, 360px);
     background-size: 340px auto;
     clip-path: none;
 }
 .deco-l {
-    left: 0px;
+    left: -12px;
     background-position-x: right;
     -webkit-mask-image: linear-gradient(to right, #000 25%, transparent 85%);
     mask-image: linear-gradient(to right, #000 25%, transparent 85%);
 }
 .deco-r {
-    right: 0px;
+    right: -12px;
     background-position-x: left;
     -webkit-mask-image: linear-gradient(to left, #000 25%, transparent 85%);
     mask-image: linear-gradient(to left, #000 25%, transparent 85%);
@@ -4102,7 +4104,7 @@ body .room-desc > p {
     .deco-r {
         display: block;
         left: auto;
-        right: 0px;
+        right: -12px;
         width: min(65vw, 300px);
         opacity: 0.14;
         background-size: 340px auto;
