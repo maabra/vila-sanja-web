@@ -2490,6 +2490,9 @@ a.town-card {
     font-size: 1.18rem;
     color: var(--sea-deep, #1a5276);
 }
+.preman-hub-card .cta-button {
+    margin-top: auto;
+}
 .preman-hub-card p {
     color: var(--text-lt, #666);
     font-size: 0.96rem;
