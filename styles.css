@@ -3680,6 +3680,10 @@ body .page-section-title::after, body .cat-heading::after {
 body .cat-heading::after {
     margin: 0px 0px 0px auto;
 }
+body .page-section-title::after { margin-top: 16px; }
+body .section .page-section-title,
+body .section-alt .page-section-title { margin-bottom: 24px; }
+body .page-section-title + .u-33 { margin-top: 0; }
 body .privacy-section h2 {
     border-left: 0px;
     padding-left: 0px;
