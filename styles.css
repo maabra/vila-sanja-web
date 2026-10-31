@@ -1556,7 +1556,6 @@ footer .wa-link:hover { color: #25D366; }
     --radius: 2px;
 }
 body { background: var(--sand); }
-.deco { display: none; }
 h1, h2, h3, .section-title, .card-title, .stat-num, .header-logo .logo {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: 400;
@@ -1571,7 +1570,9 @@ header { background: var(--sand); color: var(--text); box-shadow: none; border-b
 }
 .dropdown-menu { border-radius: 0; box-shadow: 0 10px 24px #353e3712; }
 .hero {
-    height: min(820px, calc(100svh - 70px)); min-height: 590px;
+    height: auto;
+    min-height: calc(100vh - 70px);
+    min-height: calc(100dvh - 70px);
     align-items: flex-start; text-align: left;
     background: linear-gradient(90deg, #172d2ac4, #172d2a30 75%), url('images/depo/sunset.jpg') center/cover no-repeat;
 }
@@ -1651,7 +1652,6 @@ footer a, footer .wa-link { color: var(--sea-deep); }
     header .dark-mode-toggle { color: #fff; }
 }
 @media (max-width: 750px) {
-    .hero { min-height: 600px; height: calc(90svh - 70px); }
     .hero-content { margin: 0 24px; padding: 40px 0 72px; }
     .hero h1 { font-size: clamp(3.8rem, 16vw, 6rem); }
     .hero h2 { font-size: 1.65rem; }
@@ -1673,3 +1673,7 @@ main { overflow-wrap: anywhere; }
 /* Preserve the original layered villa panorama. */
 .feat-grid > .card:first-child { display: flex; gap: 0; }
 .feat-grid > .card:first-child .part-scene img { height: 100%; }
+
+@media (max-width: 480px) {
+    .hero { min-height: calc(100vh - 60px); min-height: calc(100dvh - 60px); }
+}
