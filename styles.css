@@ -4457,7 +4457,8 @@ body.page-contact .contact-block:last-child { margin-bottom: 0; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
 }
-.page-premantura-towns .town-entry {
+.page-premantura-towns .town-entry,
+.page-premantura-attractions .attraction-entry {
     min-width: 0;
     background: var(--sand-mid);
     border-radius: var(--radius);
@@ -4489,6 +4490,7 @@ body.page-contact .contact-block:last-child { margin-bottom: 0; }
 .page-premantura-attractions .attraction-feature {
     display:grid; grid-template-columns:1.15fr 1fr; gap:40px;
     align-items:center; margin:32px 0 40px;
+    background:var(--sand-mid); padding:clamp(20px,3vw,32px); border-radius:var(--radius);
 }
 .page-premantura-attractions .attraction-feature figure { margin:0; min-width:0; }
 .page-premantura-attractions .attraction-feature img {
@@ -4497,19 +4499,27 @@ body.page-contact .contact-block:last-child { margin-bottom: 0; }
 }
 .page-premantura-attractions .attraction-feature h3 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:400; line-height:1.2; margin-bottom:16px; }
 .page-premantura-attractions .attr-photo-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:32px; }
-.page-premantura-attractions .attr-photo-grid > .attr-card > img {
+.page-premantura-attractions .attr-photo-grid .attr-card > img {
     display:block; width:100%; height:auto; aspect-ratio:4 / 3;
     object-fit:cover; border-radius:var(--radius); box-shadow:var(--photo-shadow);
 }
-.page-premantura-attractions .attr-photo-grid .attr-body { padding:20px 0 0; }
+.page-premantura-attractions .attr-photo-grid .attr-body { padding:24px; }
 .page-premantura-attractions .attr-photo-grid h3 { font-size:1.65rem; }
 .page-premantura-attractions .attr-text-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 40px; margin-top:40px; }
-.page-premantura-attractions .attr-text-grid .attr-body { padding:0; }
+.page-premantura-attractions .attr-text-grid .attr-body { padding:24px; }
 .page-premantura-attractions .attr-text-grid h3 { font-size:1.4rem; }
 .page-premantura-attractions .attr-text-grid h3 > i { color:var(--bronze); font-size:1.1rem; }
 .page-premantura-attractions .attr-card p { line-height:1.75; }
 .page-premantura-attractions .attr-map-link { gap:8px; color:var(--sea-deep); font-size:.82rem; padding-top:12px; margin-top:auto; }
-.page-premantura-attractions .attr-card { outline-offset:8px; }
+.page-premantura-attractions .attr-card {
+    height:100%; box-sizing:border-box; border:0; border-radius:inherit; overflow:hidden; outline-offset:4px;
+}
+.page-premantura-attractions .attr-body { flex:1; display:flex; flex-direction:column; gap:12px; }
+.page-premantura-attractions .attr-body h3,
+.page-premantura-attractions .attr-body p { margin:0; }
+.page-premantura-attractions .attr-card:hover,
+.page-premantura-attractions .attr-card:focus-visible { background:var(--sea-light); }
+.page-premantura-attractions .attr-card:focus-visible { outline:2px solid var(--sea-deep); }
 .page-premantura-attractions .attr-card:hover h3,
 .page-premantura-attractions .attr-card:focus-visible h3 { color:var(--coral); }
 .page-premantura-attractions .attr-card:hover .attr-map-link { text-decoration:underline; text-underline-offset:4px; }
