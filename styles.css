@@ -2692,7 +2692,7 @@ a.town-card {
     text-align: center;
     color: var(--text-lt);
     font-size: 1.05rem;
-    margin: 8px 0px 40px;
+    margin: 8px auto 40px;
 }
 .u-20 {
     color: var(--sea-deep);
