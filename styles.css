@@ -4453,3 +4453,12 @@ body .faq-question[aria-expanded="true"] { background: var(--sea-light); }
 body .faq-answer { padding: 20px; }
 body .faq-answer:not([hidden]) { display: block; }
 .faq-item { margin-bottom: 12px; }
+
+/* Restore the contact page's previous introduction and section spacing. */
+.page-contact .section-title { margin-bottom: 8px; }
+.page-contact .contact-intro { color: var(--text-lt); font-size: 1.05rem; margin: 0 0 32px; }
+body.page-contact .contact-block { padding: 28px 0; margin-bottom: 24px; }
+body.page-contact .contact-block:last-child { margin-bottom: 0; }
+@media (max-width: 750px) {
+    body.page-contact .contact-block { padding: 24px 0; }
+}
