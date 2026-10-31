@@ -1704,6 +1704,10 @@ Object.assign(LANG_DATA.en, {'photo.credits.title': 'Photo credits', 'photo.cred
 Object.assign(LANG_DATA.hr, {'photo.credits.title': 'Autori fotografija', 'photo.credits.free': 'Nositelj autorskih prava dopušta slobodnu uporabu.', 'photo.credits.changes': 'Fotografije su smanjene i pretvorene u WebP; prikaz je izrezan prema rasporedu.'});
 Object.assign(LANG_DATA.de, {'photo.credits.title': 'Bildnachweise', 'photo.credits.free': 'Freie Nutzung vom Rechteinhaber gestattet.', 'photo.credits.changes': 'Fotos verkleinert und in WebP konvertiert; für das Layout zugeschnitten.'});
 
+Object.assign(LANG_DATA.en, {'abt.property.title': 'The house'});
+Object.assign(LANG_DATA.hr, {'abt.property.title': 'Kuća'});
+Object.assign(LANG_DATA.de, {'abt.property.title': 'Das Haus'});
+
 function applyLang(lang) {
   if (!LANG_DATA[lang]) lang = 'en';
   const T = LANG_DATA[lang];
