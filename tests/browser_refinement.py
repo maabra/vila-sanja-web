@@ -22,6 +22,25 @@ class Refinement(unittest.TestCase):
     def tearDown(self):
         self.site.tearDown()
 
+    def test_faq_keyboard_disclosure_and_translations(self):
+        self.site.go('rules.html', consent=False)
+        question = self.page.locator('.faq-question').first
+        answer = self.page.locator('#faq-answer-1')
+        for language in ('en', 'hr', 'de'):
+            self.page.evaluate('language=>applyLang(language)', language)
+            for theme in ('light', 'dark'):
+                self.page.evaluate('theme=>document.documentElement.dataset.theme=theme', theme)
+                question.focus()
+                self.page.keyboard.press('Enter')
+                self.assertEqual(question.get_attribute('aria-expanded'), 'true')
+                self.assertTrue(answer.is_visible())
+                self.assertEqual(question.locator('.faq-indicator').evaluate('(e)=>getComputedStyle(e,"::before").content'), '"\u2212"')
+                self.page.keyboard.press('Space')
+                self.assertEqual(question.get_attribute('aria-expanded'), 'false')
+                self.assertTrue(answer.is_hidden())
+        self.page.set_viewport_size({'width': 320, 'height': 800})
+        self.assertFalse(self.page.evaluate('document.documentElement.scrollWidth>innerWidth'))
+
     def test_shared_translation_coverage(self):
         for source in Path('.').glob('*.html'):
             self.site.go(source.name, consent=False)

@@ -4431,3 +4431,25 @@ body .f-icon {
     border-radius: var(--radius);
 }
 .page-premantura-beaches .beach-photo-wide { aspect-ratio: 16 / 7; }
+
+/* FAQ questions read and behave as disclosure controls. */
+body .faq-question {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; width: 100%; min-height: 60px; padding: 16px 20px;
+    text-align: left; font: 700 1rem/1.5 Nunito, sans-serif;
+    color: var(--sea-deep); background: var(--sand-mid);
+    border: 0; border-radius: var(--radius); cursor: pointer;
+}
+body .faq-question:hover, body .faq-question:focus-visible,
+body .faq-question[aria-expanded="true"] { background: var(--sea-light); }
+.faq-question > span:first-child { flex: 1; }
+.faq-indicator {
+    flex: 0 0 30px; width: 30px; height: 30px; display: grid;
+    place-items: center; border-radius: 50%; background: var(--sea-light);
+    color: var(--sea-deep); font: 400 1.5rem/1 Nunito, sans-serif;
+}
+.faq-indicator::before { content: '+'; }
+.faq-question[aria-expanded="true"] .faq-indicator::before { content: '\2212'; }
+body .faq-answer { padding: 20px; }
+body .faq-answer:not([hidden]) { display: block; }
+.faq-item { margin-bottom: 12px; }
