@@ -4420,3 +4420,14 @@ body .f-icon {
     align-items: center;
     min-height: 44px;
 }
+
+/* Preserve the beach guide's original photo crops despite intrinsic dimensions. */
+.page-premantura-beaches .beach-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+.page-premantura-beaches .beach-photo-wide { aspect-ratio: 16 / 7; }
