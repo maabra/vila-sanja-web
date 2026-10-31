@@ -1460,12 +1460,12 @@ body .card:hover, body .info-card:hover, body .booking-card:hover { transform: n
 .stats-bar { background: var(--sea-light); color: var(--sea-deep); padding: 36px 24px; gap: clamp(24px, 6vw, 96px); }
 .stat-num { font-size: 3rem; font-weight: 400; color: var(--sea-deep); }
 .stat-lbl { font-size: .8rem; }
-.info-card { padding: 24px 16px; text-align: left; border-top: 1px solid var(--border) !important; }
+.info-card { padding: 24px 16px; text-align: left; border-top: 0; }
 .info-card h2 { font-size: 1.6rem; font-weight: 400; }
 .info-card > i { font-size: 1.25rem !important; }
 .feat-chip { background: transparent; border-radius: 0; border-bottom: 1px solid var(--border); padding: 8px 0; font-weight: 400; }
 .features-bar { gap: 12px 28px; }
-.rule-card, .contact-block, .booking-card, .about-card, .privacy-section { border-top: 1px solid var(--border) !important; }
+.rule-card, .contact-block, .booking-card, .about-card, .privacy-section { border-top: 0; }
 .faq-question { border-radius: 0; background: transparent; box-shadow: none; border-bottom: 1px solid var(--border); }
 .note-box, .time-slot, .booking-contact-info, .privacy-summary { border-radius: 2px; box-shadow: none; }
 .external-content-placeholder { background: transparent; border: 1px solid var(--border); border-radius: 0; }
@@ -1683,4 +1683,54 @@ footer { padding: 48px var(--page-gutter) 28px; }
     .section-sub { margin-bottom: 28px; }
     .privacy-summary, .privacy-section { padding: 24px 20px; }
     footer { padding-top: 40px; }
+}
+
+/* A small Adriatic wave replaces the old ruled-line decoration. */
+:root { --coastal-mark: url('images/depo/coastal-wave.svg'); }
+.divider {
+    width: 64px; height: 20px; background: var(--sea); border: 0;
+    -webkit-mask: var(--coastal-mark) center / contain no-repeat;
+    mask: var(--coastal-mark) center / contain no-repeat;
+    margin-bottom: 24px;
+}
+[data-theme="dark"] .divider { background: var(--sea-deep); }
+body .attr-card, body .town-card, body .preman-hub-card,
+body .apt-sleep-card, body .apt-amen-col, body .beach-tip-card,
+body .faq-question, body .feat-chip, body .privacy-facts,
+body .page-section-title, body .cat-heading,
+body .apt-amen-col ul li { border: 0; }
+body .page-section-title { padding-bottom: 0; }
+body .page-section-title::after, body .cat-heading::after {
+    content: ''; display: block; width: 48px; height: 16px;
+    flex-shrink: 0; margin-top: 12px; background: var(--sea-deep);
+    -webkit-mask: var(--coastal-mark) center / contain no-repeat;
+    mask: var(--coastal-mark) center / contain no-repeat;
+}
+body .cat-heading::after { margin: 0 0 0 auto; }
+body .privacy-section h2 { border-left: 0; padding-left: 0; }
+body .note-box, body .info-banner { border: 0; }
+body .about-location-table th, body .about-location-table td { border-bottom: 0; }
+.about-location-table tbody tr:nth-child(even) { background: var(--sand-mid); }
+.card .cta-button.sea, .about-text .cta-button.sea { border-bottom: 0; }
+.card .cta-button.sea::after, .about-text .cta-button.sea::after {
+    content: ' \2192'; display: inline-block; margin-left: 8px;
+}
+header#site-header, footer { border: 0; }
+footer .footer-counter, footer .privacy-links {
+    border-top: 0; position: relative; padding-top: 40px;
+}
+footer .footer-counter::before, footer .privacy-links::before {
+    content: ''; position: absolute; top: 0; left: 50%;
+    width: 64px; height: 20px; transform: translateX(-50%);
+    background: var(--sea-deep);
+    -webkit-mask: var(--coastal-mark) center / contain no-repeat;
+    mask: var(--coastal-mark) center / contain no-repeat;
+}
+
+.hero-mini::after {
+    content: ''; position: absolute; bottom: 20px; left: 50%;
+    width: 56px; height: 18px; transform: translateX(-50%);
+    background: var(--sea-deep);
+    -webkit-mask: var(--coastal-mark) center / contain no-repeat;
+    mask: var(--coastal-mark) center / contain no-repeat;
 }
