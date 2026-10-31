@@ -1682,7 +1682,7 @@ main { overflow-wrap: anywhere; }
 .header-logo > img { filter: brightness(.58) saturate(.8); }
 [data-theme="dark"] .header-logo > img { filter: brightness(1.12) saturate(.8); }
 body .attr-card, body .town-card, body .preman-hub-card,
-body .apt-sleep-card, body .apt-amen-col {
+body .apt-sleep-card, body .apt-amen-col, body .beach-tip-card {
     background: transparent; border-radius: 0; box-shadow: none;
     border: 0; border-top: 1px solid var(--border);
 }
@@ -1690,7 +1690,7 @@ body .attr-card:hover, body .town-card:hover, body .preman-hub-card:hover {
     transform: none; box-shadow: none;
 }
 body .attr-card .attr-body, body .preman-hub-card .hub-body { padding: 24px 0; }
-body .town-card, body .apt-amen-col { padding: 24px 0; }
+body .town-card, body .apt-amen-col, body .beach-tip-card { padding: 24px 0; }
 body .apt-sleep-card { padding: 24px 20px; min-width: 0; flex: 1 1 160px; }
 body .preman-hub-card .hub-icon {
     background: var(--sea-light); color: var(--sea-deep); font-size: 2rem;
@@ -1754,4 +1754,8 @@ footer .footer-copy { opacity: 1; color: var(--text-lt); margin-top: 16px; font-
     .footer-icons { justify-content: flex-start; }
     footer .privacy-links { justify-content: flex-start; }
     footer .footer-copy { text-align: left; }
+}
+
+@media (min-width: 1201px) {
+    nav ul li .dropdown-toggle.active { color: var(--coral); background: transparent; }
 }
