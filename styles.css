@@ -1659,3 +1659,7 @@ footer a, footer .wa-link { color: var(--sea-deep); }
 /* Long translated headings must fit narrow phones. */
 main { overflow-wrap: anywhere; }
 .privacy-facts span { min-width: 0; flex-wrap: wrap; }
+
+/* Preserve the original layered villa panorama. */
+.feat-grid > .card:first-child { display: flex; gap: 0; }
+.feat-grid > .card:first-child .part-scene img { height: 100%; }
