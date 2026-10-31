@@ -3112,7 +3112,7 @@ body .section, body .section-alt .inner, body .room-intro {
     object-fit: cover;
 }
 #about-section .about-img img {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
 }
 body .card, body .info-card, body .host-box, body .about-card, body .rule-card, body .contact-block, body .booking-card, body .privacy-section {
     background: transparent;
