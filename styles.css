@@ -4614,3 +4614,74 @@ body footer { position: relative; }
     }
     body.page-index footer { padding-bottom: 100px; }
 }
+
+/* Local guides use the villa's photo prints, limestone and shutter-green accents. */
+.near-guide {
+    --guide-paper: #f4efe5;
+    --guide-light: rgba(255, 253, 243, .75);
+    --guide-shadow: rgba(67, 66, 43, .14);
+}
+[data-theme="dark"] .near-guide {
+    --guide-paper: #293b32;
+    --guide-light: rgba(214, 225, 192, .1);
+    --guide-shadow: rgba(0, 0, 0, .32);
+}
+.near-guide .hub-photo-link { display: block; padding: 6px; background: var(--guide-paper); }
+.near-guide .hub-photo {
+    display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
+}
+.near-guide .preman-hub-card { overflow: visible; }
+.near-guide .hub-photo-link,
+.near-guide .town-feature,
+.near-guide .attraction-feature,
+.near-guide .attraction-entry {
+    box-shadow: inset 0 1px 0 var(--guide-light), 0 16px 30px -24px var(--guide-shadow), 0 3px 8px -5px var(--guide-shadow);
+}
+.near-guide .hub-photo-link:focus-visible { outline: 2px solid var(--sea-deep); outline-offset: 4px; }
+.near-guide .town-entry,
+.near-guide .attraction-entry,
+.near-guide .attraction-feature {
+    background: linear-gradient(135deg, var(--guide-light), transparent 65%), var(--guide-paper);
+}
+.near-guide .town-feature { grid-column: 1 / -1; }
+.near-guide .town-feature .town-card {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; padding: 6px;
+}
+.near-guide .town-photo {
+    display: block; width: 100%; height: 100%; min-height: 280px;
+    object-fit: cover; aspect-ratio: 16 / 10;
+}
+.near-guide .town-copy {
+    display: flex; flex-direction: column; justify-content: center; gap: 20px;
+    padding: clamp(24px, 4vw, 48px); min-width: 0;
+}
+.near-guide .town-feature .town-copy .town-map-link { margin-top: 0; }
+.near-guide .town-feature h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+.near-guide .town-entry:not(.town-feature) {
+    box-shadow: inset 0 1px 0 var(--guide-light), 0 8px 20px -18px var(--guide-shadow);
+}
+.near-guide .town-dist { align-self: flex-start; }
+.near-guide .attr-text-grid .attraction-entry {
+    background: linear-gradient(135deg, var(--guide-light), transparent 80%);
+}
+.near-guide .attr-photo-grid .attr-card { padding: 6px 6px 0; }
+.near-guide .attr-photo-grid .attr-body { padding: 22px 18px 26px; }
+.near-guide .attraction-feature figure,
+.near-guide .zz-figure {
+    padding: 6px; box-sizing: border-box; background: var(--guide-paper);
+    box-shadow: 0 18px 36px -24px var(--guide-shadow), inset 0 1px 0 var(--guide-light);
+}
+.near-guide .beach-highlight {
+    background: linear-gradient(135deg, var(--guide-light), transparent 70%), var(--sea-light);
+    box-shadow: inset 3px 0 0 var(--sea), inset 0 1px 0 var(--guide-light), 0 12px 24px -22px var(--guide-shadow);
+}
+.near-guide .beach-tip-card {
+    padding: 24px; background: var(--guide-paper);
+    box-shadow: inset 0 1px 0 var(--guide-light), 0 8px 18px -16px var(--guide-shadow);
+}
+.near-guide .cat-heading { gap: 16px; }
+@media (max-width: 700px) {
+    .near-guide .town-feature .town-card { grid-template-columns: 1fr; }
+    .near-guide .town-photo { height: auto; min-height: 0; }
+    .near-guide .town-copy { padding: 24px 18px; }
+}
