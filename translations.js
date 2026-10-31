@@ -1696,6 +1696,10 @@ Object.assign(LANG_DATA.en, {'twn.map': 'View on map'});
 Object.assign(LANG_DATA.hr, {'twn.map': 'Pogledaj na karti'});
 Object.assign(LANG_DATA.de, {'twn.map': 'Auf der Karte ansehen'});
 
+Object.assign(LANG_DATA.en, {'prem.card.towns.tagline': 'Harbours, village lanes and Istrian town squares.'});
+Object.assign(LANG_DATA.hr, {'prem.card.towns.tagline': 'Lučice, seoske ulice i istarski trgovi.'});
+Object.assign(LANG_DATA.de, {'prem.card.towns.tagline': 'Häfen, Dorfgassen und istrische Stadtplätze.'});
+
 function applyLang(lang) {
   if (!LANG_DATA[lang]) lang = 'en';
   const T = LANG_DATA[lang];
