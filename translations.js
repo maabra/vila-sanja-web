@@ -149,7 +149,7 @@ const LANG_DATA = {
     'acc.apt.cap':    '2 + 2 people',
     'acc.apt.desc':   "Apartment for up to 4 guests with a kitchen, private bathroom and balcony.",
     'acc.room.cap':   '2 people',
-    'acc.room.desc':  'Cozy, freshly renovated room with a private bathroom and a balcony. Includes a mini-fridge, kettle and all essential amenities.',
+    'acc.room.desc':  'Cozy, freshly renovated room with a private bathroom and a balcony.',
     'acc.btn':        'View details',
     'acc.incl.title':  'Included in all units',
     'acc.incl.sub':    "Amenities available in every unit",
@@ -165,7 +165,7 @@ const LANG_DATA = {
     /* DUPLEX page */
     'dpl.hero':   'Duplex Apartment',
     'dpl.h2':     'Spacious Two-Floor Apartment',
-    'dpl.desc':   "The duplex apartment accommodates up to 6 guests on two floors. It has a kitchen, living area and two private balconies.",
+    'dpl.desc': 'With a private entrance, this air-conditioned 73 m² duplex apartment features 2 separate bedrooms, a living room, and 2 bathrooms with shower and hairdryer. The fully equipped kitchen has a stovetop, oven, refrigerator, kettle, coffee/tea maker and kitchenware. A terrace with sea views, flat-screen TV with cable and satellite channels, and free WiFi complete the space. The unit sleeps up to 6.',
     'dpl.gal':    'Gallery',
     'dpl.btn':    'Book this apartment',
     'dpl.l1': 'Up to 4 + 2 people',       'dpl.l2': 'Two floors, spacious layout',
@@ -206,7 +206,7 @@ const LANG_DATA = {
     /* ONE-BEDROOM page */
     'apt.hero':   'One-Bedroom Apartment',
     'apt.h2':     "Apartment for up to 4 guests",
-    'apt.desc':   "The apartment accommodates up to 4 guests and has a kitchen, private bathroom and balcony.",
+    'apt.desc': 'With a private entrance, this air-conditioned 35 m² apartment features a separate bedroom, living room and bathroom with shower and hairdryer. The fully equipped kitchen includes a stovetop, oven, refrigerator, kettle and kitchenware. A terrace with sea and garden views, flat-screen TV with cable and satellite channels, and free WiFi complete the space.',
     'apt.gal':    'Gallery',
     'apt.btn':    'Book this apartment',
     'apt.l1': 'Up to 2 + 2 people',         'apt.l2': 'Full kitchen with dining area',
@@ -244,7 +244,7 @@ const LANG_DATA = {
     /* ROOM page */
     'rm.hero':   'Double Room with Balcony',
     'rm.h2':     "Room for 2 guests",
-    'rm.desc':   "The room has a private bathroom, balcony, air conditioning, WiFi, refrigerator and kettle.",
+    'rm.desc': 'This air-conditioned double room of 15 m² features a private bathroom with shower and hairdryer, and a terrace with garden views. The room has a flat-screen TV with cable channels, a private entrance, a refrigerator, kettle, kitchenware and free WiFi.',
     'rm.gal':    'Gallery',
     'rm.btn':    'Book this room',
     'rm.l1': '15 m², 2-person room',         'rm.l2': 'Private balcony',
@@ -692,7 +692,7 @@ const LANG_DATA = {
     'acc.apt.cap':    '2 + 2 osobe',
     'acc.apt.desc':   "Apartman za do 4 gosta s kuhinjom, privatnom kupaonicom i balkonom.",
     'acc.room.cap':   '2 osobe',
-    'acc.room.desc':  'Ugodna, svježe renovirana soba s privatnom kupaonicom i balkonom. Uključuje hladnjak, kuhalo i sve potrebne potrepštine.',
+    'acc.room.desc':  'Ugodna, svježe renovirana soba s privatnom kupaonicom i balkonom.',
     'acc.btn':        'Pogledaj detalje',
     'acc.incl.title':  'Uključeno u svim jedinicama',
     'acc.incl.sub':    "Sadržaji dostupni u svakoj jedinici",
@@ -707,7 +707,7 @@ const LANG_DATA = {
 
     'dpl.hero':   'Dupleks apartman',
     'dpl.h2':     'Prostrani dvoetažni apartman',
-    'dpl.desc':   "Dupleks apartman prima do 6 gostiju na dvije etaže. Ima kuhinju, dnevni prostor i dva privatna balkona.",
+    'dpl.desc': 'Ovaj klimatizirani dupleks apartman od 73 m² s privatnim ulazom uključuje 2 zasebne spavaće sobe, dnevni boravak i 2 kupaonice s tušem i sušilom za kosu. Potpuno opremljena kuhinja ima ploče za kuhanje, pećnicu, hladnjak, kuhalo za vodu, aparat za kavu/čaj i kuhinjski pribor. Terasa s pogledom na more, TV ravnog ekrana s kabelskim i satelitskim programima te besplatni Wi-Fi upotpunjuju prostor. Apartman prima do 6 osoba.',
     'dpl.gal':    'Galerija',
     'dpl.btn':    'Rezerviraj ovaj apartman',
     'dpl.l1': 'Do 4 + 2 osobe',               'dpl.l2': 'Dvije etaže, prostran raspored',
@@ -747,7 +747,7 @@ const LANG_DATA = {
 
     'apt.hero':   'Jednosobni apartman',
     'apt.h2':     "Apartman za do 4 gosta",
-    'apt.desc':   "Apartman prima do 4 gosta te ima kuhinju, privatnu kupaonicu i balkon.",
+    'apt.desc': 'Ovaj klimatizirani apartman od 35 m² s privatnim ulazom uključuje zasebnu spavaću sobu, dnevni boravak i kupaonicu s tušem i sušilom za kosu. Potpuno opremljena kuhinja ima ploče za kuhanje, pećnicu, hladnjak, kuhalo za vodu i kuhinjski pribor. Terasa s pogledom na more i vrt, TV ravnog ekrana s kabelskim i satelitskim programima te besplatni Wi-Fi upotpunjuju prostor.',
     'apt.gal':    'Galerija',
     'apt.btn':    'Rezerviraj ovaj apartman',
     'apt.l1': 'Do 2 + 2 osobe',                'apt.l2': 'Potpuna kuhinja s blagovaonicom',
@@ -784,7 +784,7 @@ const LANG_DATA = {
 
     'rm.hero':   'Dvokrevetna soba s balkonom',
     'rm.h2':     "Soba za 2 gosta",
-    'rm.desc':   "Soba ima privatnu kupaonicu, balkon, klima-uređaj, WiFi, hladnjak i kuhalo za vodu.",
+    'rm.desc': 'Ova klimatizirana dvokrevetna soba od 15 m² ima privatnu kupaonicu s tušem i sušilom za kosu te terasu s pogledom na vrt. U sobi se nalazi TV ravnog ekrana s kabelskim programima, privatni ulaz, hladnjak, kuhalo za vodu, kuhinjski pribor i besplatni Wi-Fi.',
     'rm.gal':    'Galerija',
     'rm.btn':    'Rezerviraj ovu sobu',
     'rm.l1': '15 m², soba za 2 osobe',         'rm.l2': 'Privatni balkon',
@@ -1229,7 +1229,7 @@ const LANG_DATA = {
     'acc.apt.cap':    '2 + 2 Personen',
     'acc.apt.desc':   "Apartment für bis zu 4 Gäste mit Küche, eigenem Bad und Balkon.",
     'acc.room.cap':   '2 Personen',
-    'acc.room.desc':  'Gemütliches, frisch renoviertes Zimmer mit privatem Bad und Balkon. Mit Mini-Kühlschrank, Wasserkocher und allem Notwendigen.',
+    'acc.room.desc':  'Gemütliches, frisch renoviertes Zimmer mit privatem Bad und Balkon.',
     'acc.btn':        'Details ansehen',
     'acc.incl.title':  'In allen Einheiten enthalten',
     'acc.incl.sub':    "Ausstattung jeder Unterkunft",
@@ -1244,7 +1244,7 @@ const LANG_DATA = {
 
     'dpl.hero':   'Duplex-Wohnung',
     'dpl.h2':     'Geräumiges Apartment auf zwei Etagen',
-    'dpl.desc':   "Das Maisonette-Apartment bietet auf zwei Etagen Platz für bis zu 6 Gäste. Es verfügt über eine Küche, einen Wohnbereich und zwei private Balkone.",
+    'dpl.desc': 'Dieses klimatisierte 73 m² große Duplex-Apartment mit privatem Eingang verfügt über 2 separate Schlafzimmer, ein Wohnzimmer und 2 Badezimmer mit Dusche und Haartrockner. Die voll ausgestattete Küche bietet Herd, Backofen, Kühlschrank, Wasserkocher, Kaffee-/Teemaschine und Kochgeschirr. Eine Terrasse mit Meerblick, Flachbildfernseher mit Kabel- und Satellitenkanälen und kostenloses WLAN runden das Apartment ab. Das Apartment bietet Platz für bis zu 6 Personen.',
     'dpl.gal':    'Galerie',
     'dpl.btn':    'Dieses Apartment buchen',
     'dpl.l1': 'Bis zu 4 + 2 Personen',         'dpl.l2': 'Zwei Etagen, geräumig',
@@ -1284,7 +1284,7 @@ const LANG_DATA = {
 
     'apt.hero':   'Einzimmer-Apartment',
     'apt.h2':     "Apartment für bis zu 4 Gäste",
-    'apt.desc':   "Das Apartment bietet Platz für bis zu 4 Gäste sowie eine Küche, ein eigenes Bad und einen Balkon.",
+    'apt.desc': 'Dieses klimatisierte 35 m² große Apartment mit privatem Eingang verfügt über ein separates Schlafzimmer, Wohnzimmer und Bad mit Dusche und Haartrockner. Die voll ausgestattete Küche bietet Herd, Backofen, Kühlschrank, Wasserkocher und Kochgeschirr. Eine Terrasse mit Meer- und Gartenblick, Flachbildfernseher mit Kabel- und Satellitenkanälen und kostenlosem WLAN runden das Apartment ab.',
     'apt.gal':    'Galerie',
     'apt.btn':    'Dieses Apartment buchen',
     'apt.l1': 'Bis zu 2 + 2 Personen',          'apt.l2': 'Küche mit Essbereich',
@@ -1321,7 +1321,7 @@ const LANG_DATA = {
 
     'rm.hero':   'Doppelzimmer mit Balkon',
     'rm.h2':     "Zimmer für 2 Gäste",
-    'rm.desc':   "Das Zimmer verfügt über ein eigenes Bad, Balkon, Klimaanlage, WLAN, Kühlschrank und Wasserkocher.",
+    'rm.desc': 'Dieses klimatisierte Doppelzimmer von 15 m² verfügt über ein privates Bad mit Dusche und Haartrockner sowie eine Terrasse mit Gartenblick. Das Zimmer bietet einen Flachbildfernseher mit Kabelkanälen, privaten Eingang, Kühlschrank, Wasserkocher, Kochgeschirr und kostenloses WLAN.',
     'rm.gal':    'Galerie',
     'rm.btn':    'Dieses Zimmer buchen',
     'rm.l1': '15 m², Zimmer für 2 Personen',    'rm.l2': 'Privater Balkon',
