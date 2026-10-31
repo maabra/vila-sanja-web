@@ -2129,56 +2129,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 
-/* A slow, spatial ripple bends the floral artwork without moving its container. */
-(function initFloralWind() {
-  function init() {
-    if (!document.querySelector('.deco')) return;
-    const motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
-    let svg;
-    function sync() {
-      if (!motion.matches) {
-        if (svg) svg.remove();
-        svg = null;
-        return;
-      }
-      if (!svg) {
-        svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '0');
-        svg.setAttribute('height', '0');
-        svg.setAttribute('aria-hidden', 'true');
-        svg.style.position = 'absolute';
-        svg.style.pointerEvents = 'none';
-        svg.innerHTML = `<defs>
-          <filter id="floral-wind-left" x="-15%" y="-10%" width="130%" height="120%" color-interpolation-filters="sRGB">
-            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.007" numOctaves="1" seed="8" result="wind">
-              <animate attributeName="baseFrequency" values="0.012 0.007;0.009 0.009;0.014 0.006;0.012 0.007" dur="19s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.67;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="wind" scale="7" xChannelSelector="R" yChannelSelector="G">
-              <animate attributeName="scale" values="7;12;6;10;7" dur="13s" repeatCount="indefinite"/>
-            </feDisplacementMap>
-          </filter>
-          <filter id="floral-wind-right" x="-15%" y="-10%" width="130%" height="120%" color-interpolation-filters="sRGB">
-            <feTurbulence type="fractalNoise" baseFrequency="0.010 0.008" numOctaves="1" seed="21" result="wind">
-              <animate attributeName="baseFrequency" values="0.010 0.008;0.014 0.006;0.009 0.010;0.010 0.008" dur="23s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.33;0.67;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/>
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="wind" scale="9" xChannelSelector="R" yChannelSelector="G">
-              <animate attributeName="scale" values="9;6;11;7;9" dur="17s" repeatCount="indefinite"/>
-            </feDisplacementMap>
-          </filter>
-        </defs>`;
-        document.body.appendChild(svg);
-      }
-      if (document.hidden) svg.pauseAnimations();
-      else svg.unpauseAnimations();
-    }
-    sync();
-    motion.addEventListener('change', sync);
-    document.addEventListener('visibilitychange', sync);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-
 function updateDarkIcon(btn, theme) {
   const icon  = btn.querySelector('i');
   const label = btn.querySelector('.dm-label');

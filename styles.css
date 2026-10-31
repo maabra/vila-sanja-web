@@ -1481,22 +1481,17 @@ body .book-now:active { transform: translateY(1px); }
     z-index: 0;
     opacity: 1;
 }
+/* A gentle bend from the base, rather than a surface distortion. */
+.deco-l, .deco-r { transform-origin: center bottom; }
 @media (prefers-reduced-motion: no-preference) {
     @keyframes leaf-sway {
-  0%, 100% { translate: 0px; }
-  20% { translate: 4px -5px; }
-  40% { translate: -2px -10px; }
-  60% { translate: -5px -7px; }
-  80% { translate: 2px -3px; }
-}
-    .deco-l {
-        filter: url("#floral-wind-left");
-        animation: 14s ease-in-out -4s infinite normal none running leaf-sway;
+        0%, 100% { transform: rotate(-0.35deg) skewX(-0.15deg); }
+        30% { transform: rotate(0.45deg) skewX(0.2deg); }
+        55% { transform: rotate(0.15deg) skewX(0.08deg); }
+        75% { transform: rotate(-0.25deg) skewX(-0.12deg); }
     }
-    .deco-r {
-        filter: url("#floral-wind-right");
-        animation: 17s ease-in-out -0.5s infinite normal none running leaf-sway;
-    }
+    .deco-l { animation: leaf-sway 12s ease-in-out -3s infinite; }
+    .deco-r { animation: leaf-sway 15s ease-in-out -8s infinite reverse; }
 }
 @media (max-width: 1100px) {
     .deco-l {
