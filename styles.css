@@ -4746,7 +4746,7 @@ body .viber-link:hover, body .f-viber:hover { color: #563676; }
 /* Frame the review viewport so scrolling content has a deliberate cutoff. */
 body [data-elfsight-widget]:not([hidden]) {
     position: relative;
-    padding: 10px 0;
+    padding: 0;
     border-block: 1px solid var(--border);
     box-shadow: 0 -6px 12px -12px var(--edge-shadow), 0 8px 16px -14px var(--edge-shadow);
 }
