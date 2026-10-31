@@ -16,13 +16,13 @@ const LANG_DATA = {
 
     /* INDEX - hero */
     'idx.hero.title':  "Vila Sanja — Premantura",
-    'idx.hero.sub':    "Apartments and room in Premantura",
+    'idx.hero.sub':    "Your oasis of calm on the Adriatic",
     'idx.hero.desc':   'Comfortable apartments and room in Premantura, Istria. Air conditioning, private balconies, free WiFi and parking. Just minutes from the sea and Cape Kamenjak.',
     'idx.hero.cta':    'Book your holiday',
     'idx.hero.scroll': 'Scroll down',
 
     /* INDEX - about snippet */
-    'idx.about.title': "About Vila Sanja",
+    'idx.about.title': "Welcome to Vila Sanja",
     'idx.about.p1':    'Vila Sanja is a family villa in Premantura, just 300 m from the village center and close to the sea. We offer a duplex apartment for 6, an apartment for 4, and a cozy room for 2 - all with private balconies, air conditioning, and free WiFi.',
     'idx.about.p2':    "The property has a courtyard, garden and private parking.",
     'idx.about.btn':   'Learn more about us',
@@ -567,12 +567,12 @@ const LANG_DATA = {
     'nav.booknow':     'Rezerviraj!',
 
     'idx.hero.title':  "Vila Sanja — Premantura",
-    'idx.hero.sub':    "Apartmani i soba u Premanturi",
+    'idx.hero.sub':    "Vaša oaza mira na Jadranu",
     'idx.hero.desc':   'Udobni apartmani i soba u Premanturi, Istra. Klima uređaji, privatni balkoni, besplatni WiFi i parking, predivna i mirna lokacija. Ugodni i opremljeni smještaji. Samo nekoliko minuta od mora i rta Kamenjak.',
     'idx.hero.cta':    'Rezervirajte odmor',
     'idx.hero.scroll': 'Skrolajte dolje',
 
-    'idx.about.title': "O Vili Sanja",
+    'idx.about.title': "Dobrodošli u Vilu Sanja",
     'idx.about.p1':    'Vila Sanja je obiteljska vila u Premanturi, samo 300 m od centra sela i blizu mora. Nudimo dupleks apartman za 6, apartman za 4 i udobnu sobu za 2, sve s privatnim balkonima, klima uređajem i besplatnim WiFi-jem.',
     'idx.about.p2':    "Objekt ima dvorište, vrt i privatno parkiralište.",
     'idx.about.btn':   'Saznajte više o nama',
@@ -1104,12 +1104,12 @@ const LANG_DATA = {
     'nav.booknow':     'Buchen!',
 
     'idx.hero.title':  "Vila Sanja — Premantura",
-    'idx.hero.sub':    "Apartments und Zimmer in Premantura",
+    'idx.hero.sub':    "Ihre Ruheoase an der Adria",
     'idx.hero.desc':   'Komfortable Apartments und Zimmer in Premantura, Istrien. Klimaanlage, private Balkone, kostenfreies WLAN und Parkplatz. Nur wenige Minuten vom Meer und Kap Kamenjak.',
     'idx.hero.cta':    'Urlaub buchen',
     'idx.hero.scroll': 'Nach unten',
 
-    'idx.about.title': "Über Vila Sanja",
+    'idx.about.title': "Willkommen in der Vila Sanja",
     'idx.about.p1':    'Vila Sanja ist eine Familienvilla in Premantura, nur 300 m vom Dorfzentrum und nahe am Meer. Wir bieten eine Duplex-Wohnung für 6, ein Apartment für 4 und ein gemütliches Zimmer für 2 - alle mit privaten Balkonen, Klimaanlage und kostenfreiem WLAN.',
     'idx.about.p2':    "Zum Haus gehören ein Innenhof, ein Garten und private Parkplätze.",
     'idx.about.btn':   'Mehr über uns erfahren',
@@ -1629,6 +1629,64 @@ const LANG_DATA = {
 };
 
 /* ── Engine ── */
+/* Shared interface and accommodation captions. */
+Object.assign(LANG_DATA.en, {
+  "primary.cta": "Contact for availability",
+  "photo.exterior": "Vila Sanja exterior",
+  "photo.dpl": "Duplex apartment: kitchen, living area and internal stairs",
+  "photo.apt": "Apartment: living area and balcony entrance",
+  "photo.rm": "Double room with balcony access",
+  "gallery.label": "Accommodation photographs",
+  "gallery.photo": "Photo",
+  "stay.details": "Layout and amenities",
+  "stay.access": "Access information",
+  "stay.stairs": "Access to the upper floor is by stairs. Please contact the hosts to discuss access requirements before booking.",
+  "stay.booking": "Availability and reservations",
+  "stay.enquiry": "Contact Sanja and Matej for dates, prices and questions about this accommodation.",
+  "booking.direct.label": "Sanja & Matej",
+  "booking.online.label": "Online booking",
+  "counter.unavailable": "Visitor statistics are currently unavailable."
+});
+Object.assign(LANG_DATA.hr, {
+  "primary.cta": "Upit za dostupnost",
+  "photo.exterior": "Vanjski izgled Vile Sanja",
+  "photo.dpl": "Dupleks apartman: kuhinja, dnevni prostor i unutarnje stepenice",
+  "photo.apt": "Apartman: dnevni prostor i izlaz na balkon",
+  "photo.rm": "Dvokrevetna soba s izlazom na balkon",
+  "gallery.label": "Fotografije smještaja",
+  "gallery.photo": "Fotografija",
+  "stay.details": "Raspored i sadržaji",
+  "stay.access": "Informacije o pristupu",
+  "stay.stairs": "Pristup gornjoj etaži je stepenicama. Prije rezervacije kontaktirajte domaćine za pitanja o pristupu.",
+  "stay.booking": "Dostupnost i rezervacije",
+  "stay.enquiry": "Kontaktirajte Sanju i Mateja za termine, cijene i pitanja o ovom smještaju.",
+  "booking.direct.label": "Sanja & Matej",
+  "booking.online.label": "Online rezervacija",
+  "counter.unavailable": "Statistika posjeta trenutačno nije dostupna."
+});
+Object.assign(LANG_DATA.de, {
+  "primary.cta": "Verfügbarkeit anfragen",
+  "photo.exterior": "Außenansicht der Vila Sanja",
+  "photo.dpl": "Maisonette-Apartment: Küche, Wohnbereich und Innentreppe",
+  "photo.apt": "Apartment: Wohnbereich und Balkonzugang",
+  "photo.rm": "Doppelzimmer mit Balkonzugang",
+  "gallery.label": "Unterkunftsfotos",
+  "gallery.photo": "Foto",
+  "stay.details": "Aufteilung und Ausstattung",
+  "stay.access": "Informationen zum Zugang",
+  "stay.stairs": "Der Zugang zum Obergeschoss erfolgt über Treppen. Besprechen Sie Anforderungen an den Zugang vor der Buchung mit den Gastgebern.",
+  "stay.booking": "Verfügbarkeit und Reservierung",
+  "stay.enquiry": "Kontaktieren Sie Sanja und Matej zu Terminen, Preisen und Fragen zu dieser Unterkunft.",
+  "booking.direct.label": "Sanja & Matej",
+  "booking.online.label": "Online-Buchung",
+  "counter.unavailable": "Die Besucherstatistik ist derzeit nicht verfügbar."
+});
+
+
+Object.assign(LANG_DATA.en, {"gallery.open": "Open photograph", "gallery.previous": "Previous photograph", "gallery.next": "Next photograph", "gallery.close": "Close photographs"});
+Object.assign(LANG_DATA.hr, {"gallery.open": "Otvori fotografiju", "gallery.previous": "Prethodna fotografija", "gallery.next": "Sljedeća fotografija", "gallery.close": "Zatvori fotografije"});
+Object.assign(LANG_DATA.de, {"gallery.open": "Foto öffnen", "gallery.previous": "Vorheriges Foto", "gallery.next": "Nächstes Foto", "gallery.close": "Fotos schließen"});
+
 function applyLang(lang) {
   if (!LANG_DATA[lang]) lang = 'en';
   const T = LANG_DATA[lang];
@@ -1659,6 +1717,7 @@ function applyLang(lang) {
 
   try { localStorage.setItem('vs-lang', lang); } catch (e) {}
   document.documentElement.lang = lang;
+  document.dispatchEvent(new CustomEvent("site:language", {detail:lang}));
 }
 
 function parseRatingText(text) {

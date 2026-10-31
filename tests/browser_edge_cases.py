@@ -128,9 +128,9 @@ class EdgeCases(unittest.TestCase):
                   box.dispatchEvent(new TouchEvent('touchend', {changedTouches:[new Touch({identifier:1,target:box,clientX:200+dx,clientY:200+dy})]}));
                 }""", [dx,dy])
             swipe(-80, 0)
-            self.assertTrue(self.page.locator('#lbImg').get_attribute('src').endswith('/2.jpg'), name)
+            self.assertTrue(self.page.locator('#lbImg').get_attribute('src').endswith('/2.webp'), name)
             swipe(65, 180)
-            self.assertTrue(self.page.locator('#lbImg').get_attribute('src').endswith('/2.jpg'), name)
+            self.assertTrue(self.page.locator('#lbImg').get_attribute('src').endswith('/2.webp'), name)
             self.page.keyboard.press('Escape')
             self.assertNotIn('open', self.page.locator('#lightbox').get_attribute('class'))
 

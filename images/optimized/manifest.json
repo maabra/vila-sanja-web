@@ -1,0 +1,1864 @@
+{
+  "images/accom/apt1/1.jpg": {
+    "src": "images/optimized/accom/apt1/1.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/1-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/1-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/1-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/1.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/10.jpg": {
+    "src": "images/optimized/accom/apt1/10.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/10-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/10-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/10-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/10.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/11.jpg": {
+    "src": "images/optimized/accom/apt1/11.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/11-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/11-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/11-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/11.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/12.jpg": {
+    "src": "images/optimized/accom/apt1/12.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/12-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/12-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/12-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/12.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/13.jpg": {
+    "src": "images/optimized/accom/apt1/13.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/13-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/13-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/13-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/13.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/14.jpg": {
+    "src": "images/optimized/accom/apt1/14.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/14-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/14-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/14-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/14.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/2.jpg": {
+    "src": "images/optimized/accom/apt1/2.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/2-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/2-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/2-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/2.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/3.jpg": {
+    "src": "images/optimized/accom/apt1/3.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/3-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/3-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/3-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/3.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/4.jpg": {
+    "src": "images/optimized/accom/apt1/4.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/4-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/4-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/4-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/4.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/5.jpg": {
+    "src": "images/optimized/accom/apt1/5.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/5-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/5-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/5-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/5.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/6.jpg": {
+    "src": "images/optimized/accom/apt1/6.webp",
+    "width": 1021,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/6-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/6-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/6-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/6.webp",
+        1021
+      ]
+    ]
+  },
+  "images/accom/apt1/7.jpg": {
+    "src": "images/optimized/accom/apt1/7.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/7-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/7-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/7-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/7.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/8.jpg": {
+    "src": "images/optimized/accom/apt1/8.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/8-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/8-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/8-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/8.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt1/9.jpg": {
+    "src": "images/optimized/accom/apt1/9.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt1/9-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt1/9-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt1/9-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt1/9.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/1.jpg": {
+    "src": "images/optimized/accom/apt2/1.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/1-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/1-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/1-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/1.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/10.jpg": {
+    "src": "images/optimized/accom/apt2/10.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/10-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/10-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/10-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/10.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/11.jpg": {
+    "src": "images/optimized/accom/apt2/11.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/11-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/11-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/11-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/11.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/12.jpg": {
+    "src": "images/optimized/accom/apt2/12.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/12-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/12-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/12-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/12.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/13.jpg": {
+    "src": "images/optimized/accom/apt2/13.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/13-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/13-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/13-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/13.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/14.jpg": {
+    "src": "images/optimized/accom/apt2/14.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/14-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/14-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/14-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/14.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/15.jpg": {
+    "src": "images/optimized/accom/apt2/15.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/15-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/15-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/15-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/15.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/16.jpg": {
+    "src": "images/optimized/accom/apt2/16.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/16-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/16-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/16-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/16.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/17.jpg": {
+    "src": "images/optimized/accom/apt2/17.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/17-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/17-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/17-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/17.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/18.jpg": {
+    "src": "images/optimized/accom/apt2/18.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/18-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/18-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/18-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/18.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/19.jpg": {
+    "src": "images/optimized/accom/apt2/19.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/19-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/19-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/19-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/19.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/2.jpg": {
+    "src": "images/optimized/accom/apt2/2.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/2-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/2-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/2-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/2.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/20.jpg": {
+    "src": "images/optimized/accom/apt2/20.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/20-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/20-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/20-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/20.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/21.jpg": {
+    "src": "images/optimized/accom/apt2/21.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/21-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/21-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/21-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/21.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/22.jpg": {
+    "src": "images/optimized/accom/apt2/22.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/22-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/22-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/22-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/22.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/23.jpg": {
+    "src": "images/optimized/accom/apt2/23.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/23-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/23-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/23-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/23.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/24.jpg": {
+    "src": "images/optimized/accom/apt2/24.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/24-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/24-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/24-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/24.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/25.jpg": {
+    "src": "images/optimized/accom/apt2/25.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/25-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/25-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/25-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/25.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/26.jpg": {
+    "src": "images/optimized/accom/apt2/26.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/26-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/26-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/26-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/26.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/27.jpg": {
+    "src": "images/optimized/accom/apt2/27.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/27-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/27-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/27-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/27.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/28.jpg": {
+    "src": "images/optimized/accom/apt2/28.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/28-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/28-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/28-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/28.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/29.jpg": {
+    "src": "images/optimized/accom/apt2/29.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/29-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/29-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/29-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/29.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/3.jpg": {
+    "src": "images/optimized/accom/apt2/3.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/3-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/3-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/3-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/3.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/30.jpg": {
+    "src": "images/optimized/accom/apt2/30.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/30-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/30-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/30-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/30.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/31.jpg": {
+    "src": "images/optimized/accom/apt2/31.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/31-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/31-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/31-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/31.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/32.jpg": {
+    "src": "images/optimized/accom/apt2/32.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/32-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/32-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/32-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/32.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/33.jpg": {
+    "src": "images/optimized/accom/apt2/33.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/33-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/33-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/33-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/33.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/34.jpg": {
+    "src": "images/optimized/accom/apt2/34.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/34-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/34-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/34-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/34.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/4.jpg": {
+    "src": "images/optimized/accom/apt2/4.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/4-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/4-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/4-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/4.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/5.jpg": {
+    "src": "images/optimized/accom/apt2/5.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/5-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/5-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/5-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/5.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/6.jpg": {
+    "src": "images/optimized/accom/apt2/6.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/6-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/6-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/6-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/6.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/7.jpg": {
+    "src": "images/optimized/accom/apt2/7.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/7-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/7-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/7-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/7.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/8.jpg": {
+    "src": "images/optimized/accom/apt2/8.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/8-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/8-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/8-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/8.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/apt2/9.jpg": {
+    "src": "images/optimized/accom/apt2/9.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/apt2/9-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/apt2/9-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/apt2/9-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/apt2/9.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/1.jpg": {
+    "src": "images/optimized/accom/room/1.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/1-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/1-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/1-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/1.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/2.jpg": {
+    "src": "images/optimized/accom/room/2.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/2-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/2-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/2-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/2.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/3.jpg": {
+    "src": "images/optimized/accom/room/3.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/3-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/3-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/3-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/3.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/4.jpg": {
+    "src": "images/optimized/accom/room/4.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/4-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/4-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/4-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/4.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/5.jpg": {
+    "src": "images/optimized/accom/room/5.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/5-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/5-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/5-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/5.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/6.jpg": {
+    "src": "images/optimized/accom/room/6.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/6-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/6-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/6-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/6.webp",
+        1024
+      ]
+    ]
+  },
+  "images/accom/room/7.jpg": {
+    "src": "images/optimized/accom/room/7.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/accom/room/7-160.webp",
+        160
+      ],
+      [
+        "images/optimized/accom/room/7-480.webp",
+        480
+      ],
+      [
+        "images/optimized/accom/room/7-800.webp",
+        800
+      ],
+      [
+        "images/optimized/accom/room/7.webp",
+        1024
+      ]
+    ]
+  },
+  "images/depo/aerial rt kamenjak.png": {
+    "src": "images/optimized/depo/aerial rt kamenjak.webp",
+    "width": 1920,
+    "height": 960,
+    "variants": [
+      [
+        "images/optimized/depo/aerial rt kamenjak-160.webp",
+        160
+      ],
+      [
+        "images/optimized/depo/aerial rt kamenjak-480.webp",
+        480
+      ],
+      [
+        "images/optimized/depo/aerial rt kamenjak-800.webp",
+        800
+      ],
+      [
+        "images/optimized/depo/aerial rt kamenjak.webp",
+        1920
+      ]
+    ]
+  },
+  "images/depo/logo.png": {
+    "src": "images/optimized/depo/logo.webp",
+    "width": 720,
+    "height": 720,
+    "variants": [
+      [
+        "images/optimized/depo/logo.webp",
+        720
+      ]
+    ]
+  },
+  "images/depo/sideimage.png": {
+    "src": "images/optimized/depo/sideimage.webp",
+    "width": 262,
+    "height": 670,
+    "variants": [
+      [
+        "images/optimized/depo/sideimage.webp",
+        262
+      ]
+    ]
+  },
+  "images/depo/sunset.jpg": {
+    "src": "images/optimized/depo/sunset.webp",
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      [
+        "images/optimized/depo/sunset-160.webp",
+        160
+      ],
+      [
+        "images/optimized/depo/sunset-480.webp",
+        480
+      ],
+      [
+        "images/optimized/depo/sunset-800.webp",
+        800
+      ],
+      [
+        "images/optimized/depo/sunset.webp",
+        1920
+      ]
+    ]
+  },
+  "images/gallery/apt 1.jpg": {
+    "src": "images/optimized/gallery/apt 1.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/gallery/apt 1-160.webp",
+        160
+      ],
+      [
+        "images/optimized/gallery/apt 1-480.webp",
+        480
+      ],
+      [
+        "images/optimized/gallery/apt 1-800.webp",
+        800
+      ],
+      [
+        "images/optimized/gallery/apt 1.webp",
+        1024
+      ]
+    ]
+  },
+  "images/gallery/apt 2.jpg": {
+    "src": "images/optimized/gallery/apt 2.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/gallery/apt 2-160.webp",
+        160
+      ],
+      [
+        "images/optimized/gallery/apt 2-480.webp",
+        480
+      ],
+      [
+        "images/optimized/gallery/apt 2-800.webp",
+        800
+      ],
+      [
+        "images/optimized/gallery/apt 2.webp",
+        1024
+      ]
+    ]
+  },
+  "images/gallery/room.jpg": {
+    "src": "images/optimized/gallery/room.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/gallery/room-160.webp",
+        160
+      ],
+      [
+        "images/optimized/gallery/room-480.webp",
+        480
+      ],
+      [
+        "images/optimized/gallery/room-800.webp",
+        800
+      ],
+      [
+        "images/optimized/gallery/room.webp",
+        1024
+      ]
+    ]
+  },
+  "images/index/fronthouse.jpg": {
+    "src": "images/optimized/index/fronthouse.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/index/fronthouse-160.webp",
+        160
+      ],
+      [
+        "images/optimized/index/fronthouse-480.webp",
+        480
+      ],
+      [
+        "images/optimized/index/fronthouse-800.webp",
+        800
+      ],
+      [
+        "images/optimized/index/fronthouse.webp",
+        1024
+      ]
+    ]
+  },
+  "images/index/owners.jpg": {
+    "src": "images/optimized/index/owners.webp",
+    "width": 500,
+    "height": 375,
+    "variants": [
+      [
+        "images/optimized/index/owners.webp",
+        500
+      ]
+    ]
+  },
+  "images/index/partleft.jpg": {
+    "src": "images/optimized/index/partleft.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/index/partleft-160.webp",
+        160
+      ],
+      [
+        "images/optimized/index/partleft-480.webp",
+        480
+      ],
+      [
+        "images/optimized/index/partleft-800.webp",
+        800
+      ],
+      [
+        "images/optimized/index/partleft.webp",
+        1024
+      ]
+    ]
+  },
+  "images/index/partmiddle.png": {
+    "src": "images/optimized/index/partmiddle.webp",
+    "width": 1912,
+    "height": 1142,
+    "variants": [
+      [
+        "images/optimized/index/partmiddle.webp",
+        1912
+      ]
+    ]
+  },
+  "images/index/partmiddlemobile.png": {
+    "src": "images/optimized/index/partmiddlemobile.webp",
+    "width": 1754,
+    "height": 1762,
+    "variants": [
+      [
+        "images/optimized/index/partmiddlemobile.webp",
+        1754
+      ]
+    ]
+  },
+  "images/index/partright.jpg": {
+    "src": "images/optimized/index/partright.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      [
+        "images/optimized/index/partright-160.webp",
+        160
+      ],
+      [
+        "images/optimized/index/partright-480.webp",
+        480
+      ],
+      [
+        "images/optimized/index/partright-800.webp",
+        800
+      ],
+      [
+        "images/optimized/index/partright.webp",
+        1024
+      ]
+    ]
+  },
+  "images/near/attractions/augustov hram.jpg": {
+    "src": "images/optimized/near/attractions/augustov hram.webp",
+    "width": 836,
+    "height": 568,
+    "variants": [
+      [
+        "images/optimized/near/attractions/augustov hram-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/augustov hram-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/augustov hram-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/attractions/augustov hram.webp",
+        836
+      ]
+    ]
+  },
+  "images/near/attractions/brijuni otocje.jpg": {
+    "src": "images/optimized/near/attractions/brijuni otocje.webp",
+    "width": 1367,
+    "height": 911,
+    "variants": [
+      [
+        "images/optimized/near/attractions/brijuni otocje-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/brijuni otocje-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/brijuni otocje-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/attractions/brijuni otocje.webp",
+        1367
+      ]
+    ]
+  },
+  "images/near/attractions/Dvigrad.jpg": {
+    "src": "images/optimized/near/attractions/Dvigrad.webp",
+    "width": 1024,
+    "height": 576,
+    "variants": [
+      [
+        "images/optimized/near/attractions/Dvigrad-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/Dvigrad-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/Dvigrad-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/attractions/Dvigrad.webp",
+        1024
+      ]
+    ]
+  },
+  "images/near/attractions/Kamenolom Fantazija.jpg": {
+    "src": "images/optimized/near/attractions/Kamenolom Fantazija.webp",
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      [
+        "images/optimized/near/attractions/Kamenolom Fantazija-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/Kamenolom Fantazija-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/Kamenolom Fantazija-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/attractions/Kamenolom Fantazija.webp",
+        1200
+      ]
+    ]
+  },
+  "images/near/attractions/PULSKA ARENA.jpg": {
+    "src": "images/optimized/near/attractions/PULSKA ARENA.webp",
+    "width": 800,
+    "height": 500,
+    "variants": [
+      [
+        "images/optimized/near/attractions/PULSKA ARENA-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/PULSKA ARENA-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/PULSKA ARENA.webp",
+        800
+      ]
+    ]
+  },
+  "images/near/attractions/vizula.jpg": {
+    "src": "images/optimized/near/attractions/vizula.webp",
+    "width": 800,
+    "height": 505,
+    "variants": [
+      [
+        "images/optimized/near/attractions/vizula-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/vizula-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/vizula.webp",
+        800
+      ]
+    ]
+  },
+  "images/near/attractions/zlatni rt.jpg": {
+    "src": "images/optimized/near/attractions/zlatni rt.webp",
+    "width": 888,
+    "height": 666,
+    "variants": [
+      [
+        "images/optimized/near/attractions/zlatni rt-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/attractions/zlatni rt-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/attractions/zlatni rt-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/attractions/zlatni rt.webp",
+        888
+      ]
+    ]
+  },
+  "images/near/kamenjak/aerial rt kamenjak.png": {
+    "src": "images/optimized/near/kamenjak/aerial rt kamenjak.webp",
+    "width": 1920,
+    "height": 960,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/aerial rt kamenjak-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/aerial rt kamenjak-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/aerial rt kamenjak-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/aerial rt kamenjak.webp",
+        1920
+      ]
+    ]
+  },
+  "images/near/kamenjak/CLIFF JUMPING AT KAMENJAK.jpg": {
+    "src": "images/optimized/near/kamenjak/CLIFF JUMPING AT KAMENJAK.webp",
+    "width": 550,
+    "height": 354,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/CLIFF JUMPING AT KAMENJAK.webp",
+        550
+      ]
+    ]
+  },
+  "images/near/kamenjak/DINOSAUR FOOTPRINTS ON ROCK.jpg": {
+    "src": "images/optimized/near/kamenjak/DINOSAUR FOOTPRINTS ON ROCK.webp",
+    "width": 768,
+    "height": 576,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/DINOSAUR FOOTPRINTS ON ROCK.webp",
+        768
+      ]
+    ]
+  },
+  "images/near/kamenjak/FAMILY BEACH COVE.jpg": {
+    "src": "images/optimized/near/kamenjak/FAMILY BEACH COVE.webp",
+    "width": 761,
+    "height": 507,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/FAMILY BEACH COVE.webp",
+        761
+      ]
+    ]
+  },
+  "images/near/kamenjak/KAYAKING BETWEEN COVES.jpg": {
+    "src": "images/optimized/near/kamenjak/KAYAKING BETWEEN COVES.webp",
+    "width": 2560,
+    "height": 1918,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/KAYAKING BETWEEN COVES-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/KAYAKING BETWEEN COVES-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/KAYAKING BETWEEN COVES-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/KAYAKING BETWEEN COVES.webp",
+        2560
+      ]
+    ]
+  },
+  "images/near/kamenjak/MALI PORTIĆ SANDY BEACH.jpg": {
+    "src": "images/optimized/near/kamenjak/MALI PORTIĆ SANDY BEACH.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/MALI PORTIĆ SANDY BEACH-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/MALI PORTIĆ SANDY BEACH-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/MALI PORTIĆ SANDY BEACH-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/MALI PORTIĆ SANDY BEACH.webp",
+        1600
+      ]
+    ]
+  },
+  "images/near/kamenjak/pinizule.jpg": {
+    "src": "images/optimized/near/kamenjak/pinizule.webp",
+    "width": 1920,
+    "height": 1213,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/pinizule-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/pinizule-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/pinizule-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/pinizule.webp",
+        1920
+      ]
+    ]
+  },
+  "images/near/kamenjak/rocky cove at kamenjak.jpg": {
+    "src": "images/optimized/near/kamenjak/rocky cove at kamenjak.webp",
+    "width": 675,
+    "height": 900,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/rocky cove at kamenjak.webp",
+        675
+      ]
+    ]
+  },
+  "images/near/kamenjak/safari bar 1.jpg": {
+    "src": "images/optimized/near/kamenjak/safari bar 1.webp",
+    "width": 840,
+    "height": 473,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/safari bar 1-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/safari bar 1-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/safari bar 1-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/safari bar 1.webp",
+        840
+      ]
+    ]
+  },
+  "images/near/kamenjak/SUNSET AT KAMENJAK.jpeg": {
+    "src": "images/optimized/near/kamenjak/SUNSET AT KAMENJAK.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/SUNSET AT KAMENJAK-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/SUNSET AT KAMENJAK-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/SUNSET AT KAMENJAK-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/SUNSET AT KAMENJAK.webp",
+        1600
+      ]
+    ]
+  },
+  "images/near/kamenjak/WILD ORCHIDS AT KAMENJAK.jpg": {
+    "src": "images/optimized/near/kamenjak/WILD ORCHIDS AT KAMENJAK.webp",
+    "width": 1440,
+    "height": 1080,
+    "variants": [
+      [
+        "images/optimized/near/kamenjak/WILD ORCHIDS AT KAMENJAK-160.webp",
+        160
+      ],
+      [
+        "images/optimized/near/kamenjak/WILD ORCHIDS AT KAMENJAK-480.webp",
+        480
+      ],
+      [
+        "images/optimized/near/kamenjak/WILD ORCHIDS AT KAMENJAK-800.webp",
+        800
+      ],
+      [
+        "images/optimized/near/kamenjak/WILD ORCHIDS AT KAMENJAK.webp",
+        1440
+      ]
+    ]
+  }
+}

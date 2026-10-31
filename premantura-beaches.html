@@ -18,197 +18,8 @@
     <meta name="twitter:title" content="Cape Kamenjak Beaches &amp; Nature Guide | Vila Sanja">
     <meta name="twitter:description" content="Stay at Vila Sanja in Premantura, Istria. Comfortable accomodations for all parties, just minutes from the sea and Cape Kamenjak.">
     <meta name="twitter:image" content="https://vilasanja.com/images/index/Vila%20Sanja_banner.png">
-    <link rel="stylesheet" href="styles.css?v=20261031-symmetric-waves">
+    <link rel="stylesheet" href="styles.css?v=20261031-refined">
     <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('vs-theme')||'light')}catch(e){}</script>
-    <style>
-        /* ── Zig-zag photo + text rows ── */
-        .zigzag-row {
-            display: flex;
-            align-items: center;
-            gap: 44px;
-            margin-bottom: 56px;
-        }
-        .zigzag-row:last-child { margin-bottom: 0; }
-        .zigzag-row.zz-reverse { flex-direction: row-reverse; }
-        .zigzag-row .zz-figure {
-            flex: 0 0 44%;
-            margin: 0;
-        }
-        .zigzag-row .zz-text { flex: 1; }
-        .zigzag-row .zz-text h3 {
-            color: var(--sea-deep, #1a5276);
-            margin: 0 0 12px;
-            font-size: 1.18rem;
-        }
-        .zigzag-row .zz-text p, .zigzag-row .zz-text ul {
-            color: var(--text, #333);
-            line-height: 1.8;
-            margin: 0 0 10px;
-            font-size: 0.97rem;
-        }
-        .zigzag-row .zz-text ul { padding-left: 20px; }
-        .zigzag-row .zz-text p:last-child,
-        .zigzag-row .zz-text ul:last-child { margin-bottom: 0; }
-
-        /* ── Photo placeholder ── */
-        .photo-placeholder {
-            background: #ddeaf4;
-            border: 2px dashed #7aaec8;
-            border-radius: 12px;
-            aspect-ratio: 4 / 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            padding: 24px;
-            text-align: center;
-            color: #3a6a8a;
-        }
-        .photo-placeholder i {
-            font-size: 2.6rem;
-            opacity: 0.45;
-        }
-        .photo-placeholder .ph-label {
-            font-family: monospace;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: #2c5f7a;
-            line-height: 1.4;
-        }
-        .photo-placeholder.ph-wide {
-            aspect-ratio: 16 / 7;
-        }
-        figcaption {
-            margin-top: 9px;
-            font-size: 0.84rem;
-            color: var(--text-lt, #777);
-            font-style: italic;
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        /* ── Responsive: stack on mobile ── */
-        @media (max-width: 700px) {
-            .zigzag-row,
-            .zigzag-row.zz-reverse { flex-direction: column; }
-            .zigzag-row .zz-figure { flex: none; width: 100%; }
-        }
-
-        /* ── Photo strip (2-up) ── */
-        .photo-strip {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-            margin-top: 28px;
-        }
-        @media (max-width: 600px) {
-            .photo-strip { grid-template-columns: 1fr; }
-        }
-
-        /* ── Existing styles ── */
-        .beach-tip-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 24px;
-        }
-        .beach-tip-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 14px rgba(30,80,120,0.08);
-            padding: 22px 20px 20px;
-        }
-        .beach-tip-card .tip-icon {
-            font-size: 1.7rem;
-            color: var(--coral, #e05c44);
-            margin-bottom: 10px;
-        }
-        .beach-tip-card h4 {
-            margin: 0 0 8px;
-            font-size: 1rem;
-            color: var(--sea-deep, #1a5276);
-        }
-        .beach-tip-card p, .beach-tip-card ul {
-            margin: 0;
-            font-size: 0.93rem;
-            color: var(--text-lt, #666);
-            line-height: 1.65;
-        }
-        .beach-tip-card ul { padding-left: 16px; }
-        .beach-highlight {
-            background: linear-gradient(135deg, var(--sea-deep, #1a5276) 0%, #2471a3 100%);
-            color: #fff;
-            border-radius: 14px;
-            padding: 32px 30px;
-            margin: 36px 0 0;
-        }
-        .beach-highlight h3 { margin: 0 0 12px; font-size: 1.2rem; color: #fff; }
-        .beach-highlight p { margin: 0; font-size: 0.97rem; opacity: 0.92; line-height: 1.7; }
-        .beach-highlight ul { margin: 10px 0 0; padding-left: 20px; opacity: 0.92; font-size: 0.95rem; line-height: 1.8; }
-        .beach-type-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-        .beach-badge {
-            background: var(--sea-deep, #1a5276);
-            color: #fff;
-            border-radius: 20px;
-            padding: 5px 15px;
-            font-size: 0.88rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .beach-badge.alt { background: var(--coral, #e05c44); }
-        .badge-sand { background: #c8a96e; }
-        .info-banner {
-            background: #fff7ed;
-            border-left: 4px solid var(--coral, #e05c44);
-            border-radius: 0 10px 10px 0;
-            padding: 16px 20px;
-            margin: 24px 0;
-            font-size: 0.95rem;
-            color: var(--text, #333);
-            line-height: 1.6;
-        }
-        .section-nav-breadcrumb { font-size: 0.88rem; color: var(--text-lt, #888); margin-bottom: 8px; }
-        .section-nav-breadcrumb a { color: var(--sea-deep, #1a5276); text-decoration: none; }
-        .section-nav-breadcrumb a:hover { text-decoration: underline; }
-        .bch-map-link {
-            display: inline-flex; align-items: center; gap: 5px;
-            font-size: 0.82rem; color: var(--sea); font-weight: 600;
-            text-decoration: none; margin-top: 10px;
-        }
-        .bch-map-link:hover { color: var(--sea-deep); text-decoration: underline; }
-        .bch-map-btn {
-            display: inline-flex; align-items: center; gap: 7px;
-            background: var(--sea-deep); color: #fff; font-size: 0.88rem;
-            font-weight: 600; padding: 8px 16px; border-radius: 20px;
-            text-decoration: none; margin-top: 14px;
-        }
-        .bch-map-btn:hover { background: var(--sea); }
-
-        /* ── Bottom CTA buttons ── */
-        .cta-btn-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            margin-top: 16px;
-        }
-        @media (max-width: 500px) {
-            .cta-btn-row {
-                flex-direction: column;
-                align-items: stretch;
-                max-width: 320px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .cta-btn-row .cta-button {
-                text-align: center;
-                box-sizing: border-box;
-            }
-        }
-    </style>
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta property="og:image:alt" content="Vila Sanja accommodation in Premantura, Istria">
     <script type="application/ld+json">
@@ -285,21 +96,21 @@
   ]
 }
     </script>
-    <link rel="stylesheet" href="spacing.css?v=20261031-standard">
-</head>
-<body>
+    </head>
+<body class="page-premantura-beaches">
 <a class="skip-link" href="#main-content">Skip to content</a>
 <div class="deco deco-l" aria-hidden="true"></div>
 <div class="deco deco-r" aria-hidden="true"></div>
 
 <header id="site-header">
     <a href="index.html" class="header-logo">
-        <img src="images/depo/logo.png" alt="Vila Sanja Logo" style="height:42px;width:auto;">
-        <div class="logo">Vila Sanja</div>
+        <img src="images/optimized/depo/logo.webp" alt="Vila Sanja Logo" class="u-1" width="720" height="720" decoding="async">
+        <div class="logo">Vila Sanja<small class="brand-location">Premantura · Istria</small></div>
     </a>
     <div class="menu-toggle" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></div>
     <nav>
         <ul>
+            <li class="nav-booking"><a href="contact.html" data-i18n="primary.cta">Contact for availability</a></li>
             <li><a href="index.html" data-i18n="nav.home">Home</a></li>
             <li class="dropdown">
                 <a href="accommodations.html" class="dropdown-toggle" data-i18n="nav.accom">Accommodations</a>
@@ -322,7 +133,7 @@
             <li><a href="rules.html" data-i18n="nav.rules">Rules</a></li>
             <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle lang-toggle" id="lang-current"><i class="fa-solid fa-globe" style="font-size:0.85em;margin-right:4px;opacity:0.85;"></i>EN</a>
+                <a href="#" class="dropdown-toggle lang-toggle" id="lang-current"><i class="fa-solid fa-globe u-2"></i>EN</a>
                 <ul class="dropdown-menu">
                     <li><a href="#" class="lang-option" data-lang="en">EN - English</a></li>
                     <li><a href="#" class="lang-option" data-lang="hr">HR - Hrvatski</a></li>
@@ -347,13 +158,13 @@
                 <a href="premantura.html">Premantura</a> &rsaquo; <span data-i18n="bch.crumb">Rt Kamenjak</span>
             </div>
             <div class="divider"></div>
-            <h2 data-i18n="bch.intro.h2" style="color:var(--sea-deep);margin:0 0 16px;">Cape Kamenjak</h2>
-            <p data-i18n="bch.intro.p" style="color:var(--text);line-height:1.8;max-width:780px;font-size:1.03rem;">Cape Kamenjak is a protected area at the southern tip of Istria, about 5 minutes by car from Vila Sanja. The cape has rocky and pebble coves, cliffs, walking paths and beach bars.</p>
+            <h2 data-i18n="bch.intro.h2" class="u-54">Cape Kamenjak</h2>
+            <p data-i18n="bch.intro.p" class="u-55">Cape Kamenjak is a protected area at the southern tip of Istria, about 5 minutes by car from Vila Sanja. The cape has rocky and pebble coves, cliffs, walking paths and beach bars.</p>
 
             <a href="https://maps.google.com/?q=Rt+Kamenjak+Nature+Park,+Croatia" target="_blank" rel="noopener" class="bch-map-btn"><i class="fa-solid fa-location-dot"></i><span data-i18n="bch.map.cape"> View Cape Kamenjak on map</span></a>
 
-            <figure style="margin:28px 0 0;">
-                <img loading="lazy" src="images/near/kamenjak/aerial rt kamenjak.png" alt="Aerial view of Cape Kamenjak" style="width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:var(--radius);">
+            <figure class="u-56">
+                <img loading="lazy" src="images/optimized/near/kamenjak/aerial rt kamenjak.webp" alt="Aerial view of Cape Kamenjak" class="u-57" width="1920" height="960" decoding="async" srcset="images/optimized/near/kamenjak/aerial%20rt%20kamenjak-480.webp 480w, images/optimized/near/kamenjak/aerial%20rt%20kamenjak-800.webp 800w, images/optimized/near/kamenjak/aerial%20rt%20kamenjak.webp 1920w" sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 50vw, 580px">
                 <figcaption data-i18n="bch.intro.fig">Aerial view of Cape Kamenjak's turquoise coves stretching into the Adriatic Sea.</figcaption>
             </figure>
 
@@ -366,8 +177,8 @@
             </div>
 
             <!-- Entry & Parking -->
-            <div class="beach-highlight" style="margin-top:36px;">
-                <h3><i class="fa-solid fa-ticket" style="margin-right:10px;"></i><span data-i18n="bch.entry.h3">Entry &amp; Parking</span></h3>
+            <div class="beach-highlight u-58">
+                <h3><i class="fa-solid fa-ticket u-59"></i><span data-i18n="bch.entry.h3">Entry &amp; Parking</span></h3>
                 <p data-i18n="bch.entry.p">Pedestrians and cyclists enter for free. Vehicles require a paid day-ticket, collect it at the entrance barrier (check the current season's prices at kamenjak.hr). The road inside the park starts as asphalt then turns to unpaved macadam; the speed limit is 20 km/h. Parking areas are signed near every beach, and there is a large car park at the Safari Bar.</p>
                 <ul>
                     <li data-i18n="bch.entry.l1">Pick up a map at the entrance, it shows every cove, bar and facility</li>
@@ -386,26 +197,26 @@
             <!-- row 1, image left -->
             <div class="zigzag-row">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/pinizule.jpg" alt="Rocky beach at Cape Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/pinizule.webp" alt="Rocky beach at Cape Kamenjak" class="u-60" width="1920" height="1213" decoding="async" srcset="images/optimized/near/kamenjak/pinizule-480.webp 480w, images/optimized/near/kamenjak/pinizule-800.webp 800w, images/optimized/near/kamenjak/pinizule.webp 1920w" sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 50vw, 580px">
                     <figcaption data-i18n="bch.rocky.fig">A typical rocky karst beach at Kamenjak, clear water, white pebbles, and total seclusion.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-circle-dot" style="color:var(--coral);margin-right:9px;"></i><span data-i18n="bch.rocky.h3">Rocky &amp; Pebble Coves</span></h3>
+                    <h3><i class="fa-solid fa-circle-dot u-61"></i><span data-i18n="bch.rocky.h3">Rocky &amp; Pebble Coves</span></h3>
                     <p data-i18n="bch.rocky.p1">Most of Kamenjak's beaches are rocky with small white pebble sections, typical Istrian karst coastline. The water is exceptionally clear and deep close to shore, with visibility of several metres on calm days. Pictured on the image is our favourite beach, Pinižule.</p>
-                    <p style="color:var(--text-lt);font-size:0.93rem;"><i class="fa-solid fa-circle-info" style="margin-right:6px;color:var(--coral);"></i><span data-i18n="bch.rocky.tip">Water shoes are strongly recommended for comfortable entry and exit on rocky coves.</span></p>
+                    <p class="u-62"><i class="fa-solid fa-circle-info u-63"></i><span data-i18n="bch.rocky.tip">Water shoes are strongly recommended for comfortable entry and exit on rocky coves.</span></p>
                 </div>
             </div>
 
             <!-- row 2, image right -->
             <div class="zigzag-row zz-reverse">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/MALI PORTIĆ SANDY BEACH.jpg" alt="Mali Portić sandy beach" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/MALI PORTIĆ SANDY BEACH.webp" alt="Mali Portić sandy beach" class="u-60" width="1600" height="900" decoding="async" srcset="images/optimized/near/kamenjak/MALI%20PORTI%C4%86%20SANDY%20BEACH-480.webp 480w, images/optimized/near/kamenjak/MALI%20PORTI%C4%86%20SANDY%20BEACH-800.webp 800w, images/optimized/near/kamenjak/MALI%20PORTI%C4%86%20SANDY%20BEACH.webp 1600w" sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 50vw, 580px">
                     <figcaption data-i18n="bch.sand.fig">Mali Portić, the only sandy beach on Cape Kamenjak, shaded and family-friendly.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-mound" style="color:#c8a96e;margin-right:9px;"></i><span data-i18n="bch.sand.h3">Mali Portić - The Sandy Beach</span></h3>
+                    <h3><i class="fa-solid fa-mound u-64"></i><span data-i18n="bch.sand.h3">Mali Portić - The Sandy Beach</span></h3>
                     <p data-i18n="bch.sand.p1">The only true sandy beach on the cape. It is small and naturally shaded, with a beach bar right on site. Popular with families with young children, arrive early to secure a spot in peak season.</p>
-                    <p style="color:var(--text-lt);font-size:0.93rem;"><i class="fa-solid fa-circle-info" style="margin-right:6px;color:var(--coral);"></i><span data-i18n="bch.sand.tip">One of the few spots on Kamenjak where you don't need water shoes.</span></p>
+                    <p class="u-62"><i class="fa-solid fa-circle-info u-63"></i><span data-i18n="bch.sand.tip">One of the few spots on Kamenjak where you don't need water shoes.</span></p>
                     <a href="https://maps.google.com/?q=Mali+Porti%C4%87+Kamenjak,+Croatia" target="_blank" rel="noopener" class="bch-map-link"><i class="fa-solid fa-location-dot"></i><span data-i18n="bch.map.mali"> View Mali Portić on map</span></a>
                 </div>
             </div>
@@ -413,26 +224,26 @@
             <!-- row 3, image left -->
             <div class="zigzag-row">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/CLIFF JUMPING AT KAMENJAK.jpg" alt="Cliff jumping at Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/CLIFF JUMPING AT KAMENJAK.webp" alt="Cliff jumping at Kamenjak" class="u-60" width="550" height="354" decoding="async">
                     <figcaption data-i18n="bch.cliff.fig">Cliff jumping at one of Kamenjak's many drop points, heights range from easy to serious.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-person-falling" style="color:#2e86c1;margin-right:9px;"></i><span data-i18n="bch.cliff.h3">Cliff Jumping Spots</span></h3>
+                    <h3><i class="fa-solid fa-person-falling u-65"></i><span data-i18n="bch.cliff.h3">Cliff Jumping Spots</span></h3>
                     <p data-i18n="bch.cliff.p1">The cape has cliffs of varying heights used for jumping into the sea.</p>
-                    <p style="color:var(--text-lt);font-size:0.93rem;"><i class="fa-solid fa-triangle-exclamation" style="margin-right:6px;color:var(--coral);"></i><span data-i18n="bch.cliff.tip">Always check the water depth below before jumping. Never dive head-first from any cliff.</span></p>
+                    <p class="u-62"><i class="fa-solid fa-triangle-exclamation u-63"></i><span data-i18n="bch.cliff.tip">Always check the water depth below before jumping. Never dive head-first from any cliff.</span></p>
                 </div>
             </div>
 
             <!-- row 4, image right -->
             <div class="zigzag-row zz-reverse">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/FAMILY BEACH COVE.jpg" alt="Family beach cove at Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/FAMILY BEACH COVE.webp" alt="Family beach cove at Kamenjak" class="u-60" width="761" height="507" decoding="async">
                     <figcaption data-i18n="bch.fam.fig">A pebble cove near Safari Bar.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-children" style="color:#1e8449;margin-right:9px;"></i><span data-i18n="bch.fam.h3">Family-Friendly Spots</span></h3>
+                    <h3><i class="fa-solid fa-children u-66"></i><span data-i18n="bch.fam.h3">Family-Friendly Spots</span></h3>
                     <p data-i18n="bch.fam.p1">Several shingle coves offer gradual entry suitable for children. Look for beaches near the Safari Bar area and Mali Portić. The shallow, calm water on the western side of the cape is generally gentler than the exposed eastern cliffs.</p>
-                    <p style="color:var(--text-lt);font-size:0.93rem;"><i class="fa-solid fa-circle-info" style="margin-right:6px;color:var(--coral);"></i><span data-i18n="bch.fam.tip">Pick up the entrance map, it marks the gentlest beaches with icons for families.</span></p>
+                    <p class="u-62"><i class="fa-solid fa-circle-info u-63"></i><span data-i18n="bch.fam.tip">Pick up the entrance map, it marks the gentlest beaches with icons for families.</span></p>
                 </div>
             </div>
         </div>
@@ -447,7 +258,7 @@
             <div class="zigzag-row">
                 <figure class="zz-figure">
                     <div class="slideshow-wrap">
-                        <img id="safari-img" loading="lazy" src="images/near/kamenjak/safari bar 1.jpg" alt="Safari Bar at Cape Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                        <img id="safari-img" loading="lazy" src="images/optimized/near/kamenjak/safari bar 1.webp" alt="Safari Bar at Cape Kamenjak" class="u-60" width="840" height="473" decoding="async">
                         <div class="slideshow-dots">
                             <span class="sdot active"></span>
                             <span class="sdot"></span>
@@ -458,8 +269,8 @@
                     <figcaption data-i18n="bch.safari.fig">Outdoor seating at Safari Bar.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-martini-glass-citrus" style="color:var(--coral);margin-right:9px;"></i>Safari Bar</h3>
-                    <a href="https://maps.google.com/?q=Safari+Bar+Kamenjak,+Croatia" target="_blank" rel="noopener" class="bch-map-link" style="margin-top:0;margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i><span data-i18n="map.view"> View on map</span></a>
+                    <h3><i class="fa-solid fa-martini-glass-citrus u-61"></i>Safari Bar</h3>
+                    <a href="https://maps.google.com/?q=Safari+Bar+Kamenjak,+Croatia" target="_blank" rel="noopener" class="bch-map-link u-67"><i class="fa-solid fa-location-dot"></i><span data-i18n="map.view"> View on map</span></a>
                     <p data-i18n="bch.safari.p1">Safari Bar is by the sea, surrounded by vegetation. It has wooden tables and views of the Adriatic.</p>
                     <ul>
                         <li data-i18n="bch.safari.l1">Order the cheesecake early, it sells out fast</li>
@@ -474,27 +285,27 @@
             <!-- Iconic Rocky Coves -->
             <div class="zigzag-row zz-reverse">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/rocky cove at kamenjak.jpg" alt="Iconic rocky cove at Cape Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/rocky cove at kamenjak.webp" alt="Iconic rocky cove at Cape Kamenjak" class="u-60" width="675" height="900" decoding="async">
                     <figcaption data-i18n="bch.cave.fig">Crystal-clear turquoise water tucked between white limestone cliffs at Cape Kamenjak.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-water" style="color:var(--coral);margin-right:9px;"></i><span data-i18n="bch.cave.h3">Rocky coves</span></h3>
+                    <h3><i class="fa-solid fa-water u-61"></i><span data-i18n="bch.cave.h3">Rocky coves</span></h3>
                     <p data-i18n="bch.cave.p1">The cape has limestone cliffs and rocky coves. Access to some coves involves walking over uneven rocks.</p>
-                    <p style="color:var(--text-lt);font-size:0.93rem;"><i class="fa-solid fa-circle-info" style="margin-right:6px;color:var(--coral);"></i><span data-i18n="bch.cave.tip">Bring water and food; remote coves have no facilities.</span></p>
+                    <p class="u-62"><i class="fa-solid fa-circle-info u-63"></i><span data-i18n="bch.cave.tip">Bring water and food; remote coves have no facilities.</span></p>
                 </div>
             </div>
 
             <!-- Dinosaur trail, image left -->
             <div class="zigzag-row">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/DINOSAUR FOOTPRINTS ON ROCK.jpg" alt="Dinosaur footprints at Cape Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/DINOSAUR FOOTPRINTS ON ROCK.webp" alt="Dinosaur footprints at Cape Kamenjak" class="u-60" width="768" height="576" decoding="async">
                     <figcaption data-i18n="bch.dino.fig">Fossilized dinosaur footprints preserved directly in the coastal rock at Cape Kamenjak.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-bone" style="color:var(--coral);margin-right:9px;"></i><span data-i18n="bch.dino.h3">Dinosaur Footprint Trail</span></h3>
-                    <a href="https://maps.google.com/?q=Dinosaur+footprints+Kamenjak,+Croatia" target="_blank" rel="noopener" class="bch-map-link" style="margin-top:0;margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i><span data-i18n="map.view"> View on map</span></a>
+                    <h3><i class="fa-solid fa-bone u-61"></i><span data-i18n="bch.dino.h3">Dinosaur Footprint Trail</span></h3>
+                    <a href="https://maps.google.com/?q=Dinosaur+footprints+Kamenjak,+Croatia" target="_blank" rel="noopener" class="bch-map-link u-67"><i class="fa-solid fa-location-dot"></i><span data-i18n="map.view"> View on map</span></a>
                     <p data-i18n="bch.dino.p1">A 15-20 minute walking trail through forested terrain leads to fossilized dinosaur footprints preserved directly in the coastal rock. Educational displays along the route explain prehistoric life in Istria.</p>
-                    <p style="color:var(--text-lt);font-size:0.93rem;"><i class="fa-solid fa-triangle-exclamation" style="margin-right:6px;color:var(--coral);"></i><span data-i18n="bch.dino.tip">The path is uneven and not suitable for strollers. Wear proper shoes, flip-flops won't do.</span></p>
+                    <p class="u-62"><i class="fa-solid fa-triangle-exclamation u-63"></i><span data-i18n="bch.dino.tip">The path is uneven and not suitable for strollers. Wear proper shoes, flip-flops won't do.</span></p>
                 </div>
             </div>
         </div>
@@ -511,17 +322,17 @@
                     <p data-i18n="bch.act.swim.p">The water around Kamenjak is among the clearest in the Adriatic. Visibility of several metres is normal. Bring a snorkel mask, the rocky seabed is home to sea urchins, fish, and occasional octopus.</p>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-sailboat" style="color:#2e86c1;"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-sailboat u-68"></i></div>
                     <h4 data-i18n="bch.act.kayak.h4">Kayak &amp; SUP Rentals</h4>
                     <p data-i18n="bch.act.kayak.p">Kayaks and stand-up paddleboards can be rented on the cape. Some coves are accessible from the sea.</p>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-bicycle" style="color:#1e8449;"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-bicycle u-69"></i></div>
                     <h4 data-i18n="bch.act.cycle.h4">Cycling</h4>
                     <p data-i18n="bch.act.cycle.p">Cycling into the park is free. The terrain is challenging in places, macadam roads and some hills, so a hybrid or mountain bike works best. Go early in the morning to avoid the midday heat. Good fitness required.</p>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-water-ladder" style="color:var(--coral);"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-water-ladder u-70"></i></div>
                     <h4 data-i18n="bch.act.aqua.h4">Aqua Park</h4>
                     <p data-i18n="bch.act.aqua.p">An inflatable water park is set up seasonally on the cape, great fun for children and teenagers. Check the park entrance for the current season's schedule and location.</p>
                 </div>
@@ -529,12 +340,12 @@
 
             <!-- 2-up photo strip for activities -->
             <div class="photo-strip">
-                <figure style="margin:0;">
-                    <img loading="lazy" src="images/near/kamenjak/KAYAKING BETWEEN COVES.jpg" alt="Kayaking between coves at Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                <figure class="u-44">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/KAYAKING BETWEEN COVES.webp" alt="Kayaking between coves at Kamenjak" class="u-60" width="2560" height="1918" decoding="async" srcset="images/optimized/near/kamenjak/KAYAKING%20BETWEEN%20COVES-480.webp 480w, images/optimized/near/kamenjak/KAYAKING%20BETWEEN%20COVES-800.webp 800w, images/optimized/near/kamenjak/KAYAKING%20BETWEEN%20COVES.webp 2560w" sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 50vw, 580px">
                     <figcaption data-i18n="bch.act.kayak.fig">Kayaking along the coast of Cape Kamenjak.</figcaption>
                 </figure>
-                <figure style="margin:0;">
-                    <img loading="lazy" src="images/near/kamenjak/SUNSET AT KAMENJAK.jpeg" alt="Sunset at Cape Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                <figure class="u-44">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/SUNSET AT KAMENJAK.webp" alt="Sunset at Cape Kamenjak" class="u-60" width="1600" height="900" decoding="async" srcset="images/optimized/near/kamenjak/SUNSET%20AT%20KAMENJAK-480.webp 480w, images/optimized/near/kamenjak/SUNSET%20AT%20KAMENJAK-800.webp 800w, images/optimized/near/kamenjak/SUNSET%20AT%20KAMENJAK.webp 1600w" sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 50vw, 580px">
                     <figcaption data-i18n="bch.act.sunset.fig">Sunset at Cape Kamenjak.</figcaption>
                 </figure>
             </div>
@@ -545,23 +356,23 @@
     <section class="section">
         <div class="inner">
             <div class="page-section-title" data-i18n="bch.nat.h2">Nature &amp; Wildlife</div>
-            <p data-i18n="bch.nat.intro" style="color:var(--text);line-height:1.8;max-width:780px;margin-bottom:20px;">Cape Kamenjak is a protected nature park not just for its coastline but for its extraordinary biodiversity. Please stay on marked paths and never pick plants.</p>
+            <p data-i18n="bch.nat.intro" class="u-71">Cape Kamenjak is a protected nature park not just for its coastline but for its extraordinary biodiversity. Please stay on marked paths and never pick plants.</p>
 
             <!-- Nature zig-zag, orchids -->
             <div class="zigzag-row">
                 <figure class="zz-figure">
-                    <img loading="lazy" src="images/near/kamenjak/WILD ORCHIDS AT KAMENJAK.jpg" alt="Wild orchids at Cape Kamenjak" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);">
+                    <img loading="lazy" src="images/optimized/near/kamenjak/WILD ORCHIDS AT KAMENJAK.webp" alt="Wild orchids at Cape Kamenjak" class="u-60" width="1440" height="1080" decoding="async" srcset="images/optimized/near/kamenjak/WILD%20ORCHIDS%20AT%20KAMENJAK-480.webp 480w, images/optimized/near/kamenjak/WILD%20ORCHIDS%20AT%20KAMENJAK-800.webp 800w, images/optimized/near/kamenjak/WILD%20ORCHIDS%20AT%20KAMENJAK.webp 1440w" sizes="(max-width: 750px) calc(100vw - 40px), (max-width: 1200px) 50vw, 580px">
                     <figcaption data-i18n="bch.nat.fig">Wild orchids in bloom at Cape Kamenjak, two of the 30+ species here are found nowhere else on Earth.</figcaption>
                 </figure>
                 <div class="zz-text">
-                    <h3><i class="fa-solid fa-seedling" style="color:#1e8449;margin-right:9px;"></i><span data-i18n="bch.nat.flora.h3">Extraordinary Flora &amp; Fauna</span></h3>
+                    <h3><i class="fa-solid fa-seedling u-66"></i><span data-i18n="bch.nat.flora.h3">Extraordinary Flora &amp; Fauna</span></h3>
                     <ul>
                         <li data-i18n="bch.nat.l1"><strong>30+ orchid species</strong>, including two endemic to this cape. Spring is the best time to spot them in bloom.</li>
                         <li data-i18n="bch.nat.l2"><strong>~50 butterfly species</strong>, one of the richest butterfly habitats in Istria. Look in sunny clearings between the pines.</li>
                         <li data-i18n="bch.nat.l3"><strong>Shark eggs (mermaid's purses)</strong>, leathery black pouches sometimes washed ashore, a sign of healthy marine life nearby.</li>
                         <li data-i18n="bch.nat.l4"><strong>Seabirds &amp; red squirrels</strong>, various seabirds nest along the cliffs; squirrels are occasionally spotted in the pine woodland.</li>
                     </ul>
-                    <p data-i18n="bch.nat.note" style="color:var(--text-lt);font-size:0.93rem;margin-top:12px;"><i class="fa-solid fa-leaf" style="color:#1e8449;margin-right:6px;"></i>All plants on the cape are legally protected, please leave everything as you find it.</p>
+                    <p data-i18n="bch.nat.note" class="u-72"><i class="fa-solid fa-leaf u-73"></i>All plants on the cape are legally protected, please leave everything as you find it.</p>
                 </div>
             </div>
         </div>
@@ -573,7 +384,7 @@
             <div class="page-section-title" data-i18n="bch.tips.h2">Practical Tips for Your Visit</div>
 
             <div class="info-banner">
-                <i class="fa-solid fa-store" style="color:var(--coral);margin-right:8px;"></i>
+                <i class="fa-solid fa-store u-4"></i>
                 <span data-i18n="bch.tips.banner">Stock up in Premantura before you enter. There is a supermarket and bakery in the village. Food and drinks inside the park are available at the bars, but choice is limited and prices are higher, especially at peak times.</span>
             </div>
 
@@ -584,17 +395,17 @@
                     <p data-i18n="bch.tips.sun.p">Most coves have little or no shade. Bring high-factor sun cream, a hat, and a beach umbrella. Avoid the beach between 12:00 and 15:00 in July and August.</p>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-shoe-prints" style="color:#8e44ad;"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-shoe-prints u-74"></i></div>
                     <h4 data-i18n="bch.tips.shoes.h4">Footwear</h4>
                     <p data-i18n="bch.tips.shoes.p">Water shoes for rocky beach entry, and proper walking shoes if you plan to do the Dinosaur Trail or explore the interior paths. Flip-flops are fine for the bars.</p>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-mobile-screen-button" style="color:#2e86c1;"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-mobile-screen-button u-68"></i></div>
                     <h4 data-i18n="bch.tips.mobile.h4">Connectivity &amp; Maps</h4>
                     <p data-i18n="bch.tips.mobile.p">Mobile signal is weak or non-existent in many parts of the cape. Download an offline map before you arrive and grab a paper map at the entrance barrier.</p>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-clock" style="color:#1e8449;"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-clock u-69"></i></div>
                     <h4 data-i18n="bch.tips.time.h4">Best Times to Visit</h4>
                     <p data-i18n="bch.tips.time.p">Early morning and late afternoon are usually cooler. Weekdays can be less crowded than weekends in July and August.</p>
                 </div>
@@ -610,15 +421,15 @@
                     </ul>
                 </div>
                 <div class="beach-tip-card">
-                    <div class="tip-icon"><i class="fa-solid fa-car" style="color:var(--coral);"></i></div>
+                    <div class="tip-icon"><i class="fa-solid fa-car u-70"></i></div>
                     <h4 data-i18n="bch.tips.getting.h4">Getting There from Vila Sanja</h4>
                     <p data-i18n="bch.tips.getting.p">The entrance to Cape Kamenjak is approximately 5 minutes by car from Vila Sanja. Follow signs for "Rt Kamenjak" from the village. Cycling is possible but requires fitness, the route inside the park has rough terrain.</p>
                 </div>
             </div>
 
             <!-- CTA -->
-            <div style="text-align:center;margin-top:40px;">
-                <p data-i18n="bch.cta.p" style="color:var(--text-lt);margin-bottom:16px;">For accommodation near Cape Kamenjak, see the booking options.</p>
+            <div class="u-52">
+                <p data-i18n="bch.cta.p" class="u-53">For accommodation near Cape Kamenjak, see the booking options.</p>
                 <div class="cta-btn-row">
                     <a href="premantura.html" class="cta-button sea" data-i18n="bch.back">Back to Premantura</a>
                     <a href="contact.html" class="cta-button" data-i18n="bch.cta.book">Book your stay &rarr;</a>
@@ -634,11 +445,11 @@
     <div class="footer-main">
         <div class="footer-info">
             <strong>Vila Sanja</strong>, Selo Varoš 70 D, 52100 Premantura, Croatia<br>
-            Mob: <span class="phone-pair"><a href="tel:+385955445102">+385 95 544 5102</a> <a href="https://wa.me/385955445102" target="_blank" class="wa-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></span> / <span class="phone-pair"><a href="tel:+385955152150">+385 95 515 2150</a> <a href="https://wa.me/385955152150" target="_blank" class="wa-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></span><br>
+            Mob: <span class="phone-pair"><a href="tel:+385955445102">+385 95 544 5102</a> <a href="https://wa.me/385955445102" target="_blank" class="wa-link" aria-label="WhatsApp" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></span> / <span class="phone-pair"><a href="tel:+385955152150">+385 95 515 2150</a> <a href="https://wa.me/385955152150" target="_blank" class="wa-link" aria-label="WhatsApp" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></span><br>
             Email: <a href="mailto:vila-sanja@hotmail.com">vila-sanja@hotmail.com</a> &nbsp;|&nbsp; PO 35815982997
             <div class="footer-icons">
-                <a href="https://goo.gl/maps/4n1o6Q5zZ8w6j7yF8" target="_blank" class="f-icon f-g" aria-label="Google Maps"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></a>
-                <a href="https://wa.me/385955445102" target="_blank" class="f-icon f-wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=44.79983427107091%2C13.90932657757006" target="_blank" class="f-icon f-g" aria-label="Google Maps" rel="noopener noreferrer"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></a>
+                <a href="https://wa.me/385955445102" target="_blank" class="f-icon f-wa" aria-label="WhatsApp" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -654,11 +465,11 @@
     <div class="footer-copy">&copy; 2026 Matej Abramović. All rights reserved.</div>
 </footer>
 
-<script src="translations.js?v=20261031-plain-copy"></script>
+<script src="translations.js?v=20261031-refined"></script>
 <script>
 (function() {
     var imgs = [
-        'images/near/kamenjak/safari bar 1.jpg',
+        'images/optimized/near/kamenjak/safari bar 1.webp',
         'images/near/kamenjak/safari bar 2.jpg',
         'images/near/kamenjak/safari bar 3.jpg',
         'images/near/kamenjak/safari bar 4.jpg'
@@ -712,5 +523,6 @@ document.querySelectorAll('nav a:not(.lang-option):not(.lang-toggle):not(.dropdo
 </script>
 <button class="back-to-top" id="back-to-top-btn" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 <script src="privacy-consent.js?v=20261031-plain-copy"></script>
+<script src="site.js?v=20261031-refined"></script>
 </body>
 </html>
