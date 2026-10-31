@@ -2,13 +2,17 @@
 :root {
     --review-text: #344b43;
     --review-muted: #53665b;
-    --review-card: rgba(255, 255, 255, .5);
+    --review-card: #e7eee7;
+    --review-border: #b5c4b8;
     --review-ink: #152d25;
 }
 html, body { margin: 0; background: transparent; font-family: Nunito, Arial, sans-serif; }
 body { color: var(--review-text); }
 .global-styles, .es-main-container { background: transparent !important; }
-.es-review-background-container { background: var(--review-card) !important; }
+.es-review-background-container {
+    background: var(--review-card) !important;
+    box-shadow: inset 0 0 0 1px var(--review-border), 0 5px 14px rgba(35, 63, 53, .1) !important;
+}
 .es-review-card-tail path { fill: var(--review-card) !important; }
 .es-review-content,
 .es-review-content *,

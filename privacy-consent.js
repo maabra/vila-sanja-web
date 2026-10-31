@@ -134,6 +134,8 @@
                 var root = frame.contentDocument.documentElement;
                 root.style.setProperty('--review-text', dark ? '#e8eee5' : '#344b43');
                 root.style.setProperty('--review-muted', dark ? '#becbbf' : '#53665b');
+                root.style.setProperty('--review-card', dark ? 'rgba(255,255,255,.5)' : '#e7eee7');
+                root.style.setProperty('--review-border', dark ? 'rgba(255,255,255,.3)' : '#b5c4b8');
                 root.style.colorScheme = dark ? 'dark' : 'light';
             } catch (error) {
                 // A provider-owned cross-origin frame requires its editor's theme settings.
@@ -168,7 +170,7 @@
         frame.style.border = '0';
         frame.referrerPolicy = 'no-referrer';
         // Consent already controls loading; a second lazy gate can stall an iframe.
-        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="review-theme.css?v=20261031-white-header"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
+        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="review-theme.css?v=20261031-defined-bubbles"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
         widget.appendChild(frame);
         var timeout = setTimeout(function () {
             text.dataset.privacyCopy = 'reviewsUnavailable';
