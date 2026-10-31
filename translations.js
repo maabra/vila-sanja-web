@@ -1687,6 +1687,11 @@ Object.assign(LANG_DATA.en, {"gallery.open": "Open photograph", "gallery.previou
 Object.assign(LANG_DATA.hr, {"gallery.open": "Otvori fotografiju", "gallery.previous": "Prethodna fotografija", "gallery.next": "Sljedeća fotografija", "gallery.close": "Zatvori fotografije"});
 Object.assign(LANG_DATA.de, {"gallery.open": "Foto öffnen", "gallery.previous": "Vorheriges Foto", "gallery.next": "Nächstes Foto", "gallery.close": "Fotos schließen"});
 
+
+Object.assign(LANG_DATA.en, {"atr.place.0": "Pula Arena", "atr.place.2": "Temple of Augustus", "atr.place.3": "Arch of the Sergii", "atr.place.4": "Hercules' Gate", "atr.place.5": "Pula Fortress", "atr.place.6": "Holy Trinity Baptistery", "atr.place.7": "City walls and gates", "atr.place.8": "Brijuni Islands", "atr.place.10": "Zlatni Rt Forest Park", "atr.place.11": "Palud Wetland", "atr.place.12": "Two Sisters Islands", "atr.place.13": "Fantazija Quarry", "atr.place.15": "Castle on St Andrew's Island", "atr.place.17": "Pula Night"});
+Object.assign(LANG_DATA.hr, {"atr.place.0": "Pulska arena", "atr.place.2": "Augustov hram", "atr.place.3": "Slavoluk Sergijevaca", "atr.place.4": "Herkulova vrata", "atr.place.5": "Kaštel – Mletačka utvrda", "atr.place.6": "Krstionica Sv. Trojstva", "atr.place.7": "Gradski bedemi i vrata", "atr.place.8": "Otočje Brijuni", "atr.place.10": "Park šuma Zlatni rt", "atr.place.11": "Močvara Palud", "atr.place.12": "Otoci Dvije Sestrice", "atr.place.13": "Kamenolom Fantazija", "atr.place.15": "Dvorac na otoku Sv. Andrije", "atr.place.17": "Pulska noć"});
+Object.assign(LANG_DATA.de, {"atr.place.0": "Arena von Pula", "atr.place.2": "Augustustempel", "atr.place.3": "Sergierbogen", "atr.place.4": "Herkulestor", "atr.place.5": "Kastell von Pula", "atr.place.6": "Dreifaltigkeitsbaptisterium", "atr.place.7": "Stadtmauern und Tore", "atr.place.8": "Brijuni-Inseln", "atr.place.10": "Waldpark Zlatni Rt", "atr.place.11": "Feuchtgebiet Palud", "atr.place.12": "Inseln Dvije Sestrice", "atr.place.13": "Steinbruch Fantazija", "atr.place.15": "Schloss auf der Insel Sveti Andrija", "atr.place.17": "Pula Night"});
+
 function applyLang(lang) {
   if (!LANG_DATA[lang]) lang = 'en';
   const T = LANG_DATA[lang];

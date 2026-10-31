@@ -4045,10 +4045,6 @@ body .privacy-section {
 body .room-desc > p {
     max-width: 52ch;
 }
-.brand-location {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-}
 .deco {
     scale: 1;
     width: clamp(220px, 20vw, 360px);
@@ -4338,13 +4334,6 @@ body .footer-icons {
         transition: none !important;
     }
 }
-.brand-location {
-    display: block;
-    font: 400 0.58rem / 1.2 Nunito, sans-serif;
-    color: var(--nav-accent);
-    letter-spacing: 0.08em;
-    margin-top: 3px;
-}
 body .apt-amen-grid {
     grid-template-columns: repeat(3, minmax(0px, 1fr));
 }
@@ -4461,4 +4450,43 @@ body.page-contact .contact-block { padding: 28px 0; margin-bottom: 24px; }
 body.page-contact .contact-block:last-child { margin-bottom: 0; }
 @media (max-width: 750px) {
     body.page-contact .contact-block { padding: 24px 0; }
+}
+
+/* The attractions guide distinguishes photo features from its location directory. */
+.page-premantura-attractions .attraction-feature {
+    display:grid; grid-template-columns:1.15fr 1fr; gap:40px;
+    align-items:center; margin:32px 0 40px;
+}
+.page-premantura-attractions .attraction-feature figure { margin:0; min-width:0; }
+.page-premantura-attractions .attraction-feature img {
+    display:block; width:100%; height:auto; aspect-ratio:16 / 10;
+    object-fit:cover; border-radius:var(--radius); box-shadow:var(--photo-shadow);
+}
+.page-premantura-attractions .attraction-feature h3 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:400; line-height:1.2; margin-bottom:16px; }
+.page-premantura-attractions .attr-photo-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:32px; }
+.page-premantura-attractions .attr-photo-grid > .attr-card > img {
+    display:block; width:100%; height:auto; aspect-ratio:4 / 3;
+    object-fit:cover; border-radius:var(--radius); box-shadow:var(--photo-shadow);
+}
+.page-premantura-attractions .attr-photo-grid .attr-body { padding:20px 0 0; }
+.page-premantura-attractions .attr-photo-grid h3 { font-size:1.65rem; }
+.page-premantura-attractions .attr-text-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 40px; margin-top:40px; }
+.page-premantura-attractions .attr-text-grid .attr-body { padding:0; }
+.page-premantura-attractions .attr-text-grid h3 { font-size:1.4rem; }
+.page-premantura-attractions .attr-text-grid h3 > i { color:var(--bronze); font-size:1.1rem; }
+.page-premantura-attractions .attr-card p { line-height:1.75; }
+.page-premantura-attractions .attr-map-link { gap:8px; color:var(--sea-deep); font-size:.82rem; padding-top:12px; margin-top:auto; }
+.page-premantura-attractions .attr-card { outline-offset:8px; }
+.page-premantura-attractions .attr-card:hover h3,
+.page-premantura-attractions .attr-card:focus-visible h3 { color:var(--coral); }
+.page-premantura-attractions .attr-card:hover .attr-map-link { text-decoration:underline; text-underline-offset:4px; }
+.page-premantura-attractions .cat-heading { margin-top:56px; }
+@media(max-width:900px) {
+    .page-premantura-attractions .attr-photo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:700px) {
+    .page-premantura-attractions .attraction-feature { grid-template-columns:1fr; gap:24px; margin:24px 0 32px; }
+    .page-premantura-attractions .attr-photo-grid,
+    .page-premantura-attractions .attr-text-grid { grid-template-columns:1fr; gap:32px; }
+    .page-premantura-attractions .cat-heading { margin-top:40px; }
 }
