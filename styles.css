@@ -1734,3 +1734,10 @@ footer .footer-counter::before, footer .privacy-links::before {
     -webkit-mask: var(--coastal-mark) center / contain no-repeat;
     mask: var(--coastal-mark) center / contain no-repeat;
 }
+
+/* Swap the booking choices' accents, including their supporting details. */
+.booking-online { --booking-accent: var(--coral); }
+.booking-direct { --booking-accent: var(--sea-deep); }
+.booking-online h2, .booking-direct h2,
+.booking-online ul li::before, .booking-direct ul li::before,
+.booking-direct .booking-contact-info a { color: var(--booking-accent); }
