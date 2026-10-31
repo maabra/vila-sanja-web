@@ -4719,3 +4719,5 @@ body footer { position: relative; }
     .near-guide .town-photo { height: auto; min-height: 0; }
     .near-guide .town-copy { padding: 24px 18px; }
 }
+
+.page-premantura-towns .town-entry:last-child:not(.town-feature) { grid-column: 1 / -1; }
