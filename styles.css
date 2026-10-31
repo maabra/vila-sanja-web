@@ -3128,7 +3128,7 @@ body .card:hover, body .info-card:hover, body .booking-card:hover {
 }
 .feat-grid > .card:first-child {
     grid-template-columns: 1.2fr 1fr;
-    align-items: center;
+    align-items: stretch;
 }
 .feat-grid > .card:first-child .card-body {
     padding: 24px 0px;
