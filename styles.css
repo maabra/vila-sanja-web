@@ -1657,7 +1657,7 @@ header nav .dropdown-menu { background: var(--nav-surface); border-color: #fffff
 /* Shared layout spacing is maintained in spacing.css. */
 
 /* A small Adriatic wave replaces the old ruled-line decoration. */
-:root { --coastal-mark: url('images/depo/coastal-wave.svg'); }
+:root { --coastal-mark: url('images/depo/coastal-wave.svg?v=2'); }
 .divider {
     width: 64px; height: 20px; background: var(--sea); border: 0;
     -webkit-mask: var(--coastal-mark) center / contain no-repeat;
