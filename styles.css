@@ -3775,6 +3775,14 @@ body .hero-mini {
     background-image: radial-gradient(ellipse at 35% 0, var(--light-wash), transparent 70%),
                       linear-gradient(90deg, transparent, var(--sand-mid) 18%, var(--sand-mid) 82%, transparent);
 }
+@media (min-width: 1201px) {
+    body .hero-mini {
+        /* Keep the banner wash inside the floral gutters, without fading its text. */
+        background-size: calc(100% - clamp(360px, 40vw, 720px)) 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
 body .section-alt {
     background-color: transparent;
     background-image: radial-gradient(ellipse at 50% 15%, var(--light-wash), transparent 65%),
