@@ -4724,3 +4724,21 @@ body .viber-link, body .f-viber { color: #795497; }
 body .viber-link:hover, body .f-viber:hover { color: #563676; }
 [data-theme="dark"] .viber-link, [data-theme="dark"] .f-viber { color: #cfb5e5; }
 [data-theme="dark"] .viber-link:hover, [data-theme="dark"] .f-viber:hover { color: #e8d6f6; }
+
+@media (max-width: 750px) {
+    .page-index .info-grid { grid-template-columns: 1fr; gap: 0; }
+    .page-index .info-grid .info-card { position: relative; padding: 28px 0; }
+    .page-index .info-grid .info-card:first-child { padding-top: 0; }
+    .page-index .info-grid .info-card:last-child { padding-bottom: 0; }
+    .page-index .info-grid .info-card + .info-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, var(--sea-deep), transparent 90%);
+        opacity: .3;
+        pointer-events: none;
+    }
+}
