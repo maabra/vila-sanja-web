@@ -4452,6 +4452,39 @@ body.page-contact .contact-block:last-child { margin-bottom: 0; }
     body.page-contact .contact-block { padding: 24px 0; }
 }
 
+/* Separate town entries keep names, distances and map actions easy to scan. */
+.page-premantura-towns .towns-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+.page-premantura-towns .town-entry {
+    min-width: 0;
+    background: var(--sand-mid);
+    border-radius: var(--radius);
+}
+.page-premantura-towns .town-card {
+    height: 100%;
+    box-sizing: border-box;
+    padding: clamp(20px, 3vw, 32px);
+    gap: 16px;
+    border: 0;
+    border-radius: inherit;
+}
+.page-premantura-towns .town-card h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+.page-premantura-towns .town-map-link { margin-top: auto; padding-top: 8px; }
+.page-premantura-towns .town-card:hover,
+.page-premantura-towns .town-card:focus-visible { background: var(--sea-light); }
+.page-premantura-towns .town-card:focus-visible { outline: 2px solid var(--sea-deep); outline-offset: 4px; }
+.page-premantura-towns .towns-booking { text-align: left; margin-top: 40px; }
+@media (max-width: 700px) {
+    .page-premantura-towns .towns-grid { grid-template-columns: 1fr; }
+}
+
 /* The attractions guide distinguishes photo features from its location directory. */
 .page-premantura-attractions .attraction-feature {
     display:grid; grid-template-columns:1.15fr 1fr; gap:40px;

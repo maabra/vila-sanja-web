@@ -1692,6 +1692,10 @@ Object.assign(LANG_DATA.en, {"atr.place.0": "Pula Arena", "atr.place.2": "Temple
 Object.assign(LANG_DATA.hr, {"atr.place.0": "Pulska arena", "atr.place.2": "Augustov hram", "atr.place.3": "Slavoluk Sergijevaca", "atr.place.4": "Herkulova vrata", "atr.place.5": "Kaštel – Mletačka utvrda", "atr.place.6": "Krstionica Sv. Trojstva", "atr.place.7": "Gradski bedemi i vrata", "atr.place.8": "Otočje Brijuni", "atr.place.10": "Park šuma Zlatni rt", "atr.place.11": "Močvara Palud", "atr.place.12": "Otoci Dvije Sestrice", "atr.place.13": "Kamenolom Fantazija", "atr.place.15": "Dvorac na otoku Sv. Andrije", "atr.place.17": "Pulska noć"});
 Object.assign(LANG_DATA.de, {"atr.place.0": "Arena von Pula", "atr.place.2": "Augustustempel", "atr.place.3": "Sergierbogen", "atr.place.4": "Herkulestor", "atr.place.5": "Kastell von Pula", "atr.place.6": "Dreifaltigkeitsbaptisterium", "atr.place.7": "Stadtmauern und Tore", "atr.place.8": "Brijuni-Inseln", "atr.place.10": "Waldpark Zlatni Rt", "atr.place.11": "Feuchtgebiet Palud", "atr.place.12": "Inseln Dvije Sestrice", "atr.place.13": "Steinbruch Fantazija", "atr.place.15": "Schloss auf der Insel Sveti Andrija", "atr.place.17": "Pula Night"});
 
+Object.assign(LANG_DATA.en, {'twn.map': 'View on map'});
+Object.assign(LANG_DATA.hr, {'twn.map': 'Pogledaj na karti'});
+Object.assign(LANG_DATA.de, {'twn.map': 'Auf der Karte ansehen'});
+
 function applyLang(lang) {
   if (!LANG_DATA[lang]) lang = 'en';
   const T = LANG_DATA[lang];
