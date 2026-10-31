@@ -1457,7 +1457,12 @@ body .card:hover, body .info-card:hover, body .booking-card:hover { transform: n
     border-radius: 0; padding: 8px 0 !important;
 }
 .card .cta-button.sea:hover, .about-text .cta-button.sea:hover { color: var(--coral); border-color: var(--coral); }
-.stats-bar { background: var(--sea-light); color: var(--sea-deep); padding: 36px 24px; gap: clamp(24px, 6vw, 96px); }
+.stats-bar {
+    /* Fade only the background, preserving the text and the floating flowers. */
+    --stats-fade: clamp(24px, 8vw, 128px);
+    background: linear-gradient(90deg, transparent, var(--sea-light) var(--stats-fade), var(--sea-light) calc(100% - var(--stats-fade)), transparent)
+                center / min(100%, 1280px) 100% no-repeat;
+    color: var(--sea-deep); padding: 36px 24px; gap: clamp(24px, 6vw, 96px); }
 .stat-num { font-size: 3rem; font-weight: 400; color: var(--sea-deep); }
 .stat-lbl { font-size: .8rem; }
 .info-card { padding: 24px 16px; text-align: left; border-top: 0; }
