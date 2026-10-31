@@ -1436,6 +1436,7 @@ body .section, body .section-alt .inner, body .room-intro {
 .about-text p { line-height: 1.9; }
 .about-img img, .room-image img, .gallery-main { border-radius: 2px; box-shadow: none; }
 .about-img img { aspect-ratio: 4 / 5; object-fit: cover; }
+#about-section .about-img img { aspect-ratio: 1 / 1; }
 body .card, body .info-card, body .host-box, body .about-card,
 body .rule-card, body .contact-block, body .booking-card, body .privacy-section {
     background: transparent; border: 0; border-radius: 0; box-shadow: none;
