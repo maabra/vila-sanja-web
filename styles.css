@@ -104,7 +104,6 @@ html.consent-open { overflow: hidden; }
 .privacy-section p:last-child { margin-bottom: 0; }
 .privacy-local-assets { font-size: .88rem; color: var(--text-lt); }
 .privacy-page code { font-size: .85em; overflow-wrap: anywhere; padding: 2px 5px; background: var(--sand-mid); border-radius: 4px; }
-[data-theme="dark"] .consent-panel, [data-theme="dark"] .privacy-section, [data-theme="dark"] .consent-toggle { background: #1A2B3D; }
 @media (max-width: 600px) {
     .consent-panel { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); padding: 22px 20px; border-radius: 16px; }
     .consent-brand { margin-bottom: 14px; }
@@ -120,172 +119,7 @@ html.consent-open { overflow: hidden; }
     .consent-toggle input::after { display: none; }
 }
 
-/* === DARK MODE PALETTE === */
-/*
- * --white stays #fff: it is used for text/icons on colored surfaces (nav, buttons,
- * hero). Card/panel backgrounds are overridden explicitly per-component below.
- */
-[data-theme="dark"] {
-    --sand:      #0F1923;
-    --sand-mid:  #152031;
-    --sand-dark: #1A2B3D;
-    --sea:       #0D8F89;
-    --sea-deep:  #17A09A;
-    --sea-light: #1A4550;
-    --coral:     #E07898;
-    --coral-dk:  #C85E80;
-    --sun:       #FFD26B;
-    --sun-lt:    #251C08;
-    --sky:       #1A3A5C;
-    --text:      #D8E8F2;
-    --text-lt:   #7FA0B5;
-    --white:     #FFFFFF;
-    --border:    #243A4E;
-}
-
-[data-theme="dark"] body {
-    background: #0F1923;
-    color: #D8E8F2;
-}
-
-/* ── Header ── */
-[data-theme="dark"] header {
-    background: #0B1520;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.45);
-}
-
-/* ── Nav dropdown menus ── */
-[data-theme="dark"] .dropdown-menu {
-    background: #152031;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
-    border: 1px solid #243A4E;
-    border-top: none;
-}
-[data-theme="dark"] .dropdown-menu a {
-    color: #17A09A;
-}
-[data-theme="dark"] .dropdown-menu a:hover,
-[data-theme="dark"] .dropdown-menu a.active {
-    background: #1A2B3D;
-    color: #FFD26B;
-}
-
-/* ── Mobile nav sidebar ── */
-@media (max-width: 1200px) {
-    [data-theme="dark"] nav {
-        background: #0d3a3e;
-    }
-    [data-theme="dark"] .dropdown-menu {
-        background: #0d3a3e;
-        border: none;
-        border-top: none;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-}
-
-/* ── Cards and white-background panels ── */
-[data-theme="dark"] .card,
-[data-theme="dark"] .info-card,
-[data-theme="dark"] .host-box,
-[data-theme="dark"] .about-card,
-[data-theme="dark"] .rule-card,
-[data-theme="dark"] .contact-block,
-[data-theme="dark"] .booking-card,
-[data-theme="dark"] .faq-question {
-    background: #1A2B3D;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-[data-theme="dark"] .faq-question:hover { background: #1E3347; }
-[data-theme="dark"] .faq-answer       { background: #0F1923; }
-
-/* ── Sections (hardcoded rgba in base styles — must override explicitly) ── */
-[data-theme="dark"] .section {
-    background: rgba(26, 43, 61, 0.88);
-}
-[data-theme="dark"] .section-alt .inner {
-    background: rgba(21, 32, 49, 0.95);
-}
-[data-theme="dark"] .room-intro {
-    background: rgba(21, 32, 49, 0.97);
-}
-
-/* ── Feat chip — fix near-zero contrast (sea-light bg + sea-deep text) ── */
-[data-theme="dark"] .feat-chip {
-    background: rgba(46, 196, 182, 0.13);
-    color: #17A09A;
-}
-
-/* ── Note box & time slot ── */
-[data-theme="dark"] .note-box {
-    background: #1A1800;
-    border-left-color: #FFD26B;
-    color: #D8E8F2;
-}
-[data-theme="dark"] .time-slot {
-    background: #251C08;
-    color: #FFD26B;
-}
-
-/* ── Booking contact info ── */
-[data-theme="dark"] .booking-contact-info {
-    background: #152031;
-}
-
-/* ── About location table ── */
-[data-theme="dark"] .about-location-table th {
-    background: #152031;
-    border-bottom-color: #243A4E;
-}
-[data-theme="dark"] .about-location-table td {
-    border-bottom-color: #243A4E;
-}
-
-/* ── Page-specific cards (inline <style> blocks in individual pages) ── */
-[data-theme="dark"] .attr-card,
-[data-theme="dark"] .beach-tip-card,
-[data-theme="dark"] .preman-hub-card,
-[data-theme="dark"] .apt-sleep-card,
-[data-theme="dark"] .apt-amen-col {
-    background: #1A2B3D;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-[data-theme="dark"] .town-card {
-    background: #1A2B3D;
-    border-color: #243A4E;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-}
-[data-theme="dark"] .apt-amen-col ul li {
-    border-bottom-color: rgba(255,255,255,0.06);
-}
-
-/* ── Info banner ── */
-[data-theme="dark"] .info-banner {
-    background: #1A1800;
-    border-left-color: var(--coral);
-    color: #D8E8F2;
-}
-
-/* ── Photo placeholder ── */
-[data-theme="dark"] .photo-placeholder {
-    background: #0F1F2E;
-    border-color: #2A5A6A;
-    color: #7FA0B5;
-}
-[data-theme="dark"] .photo-placeholder .ph-label { color: #5A8A9A; }
-
-/* ── Footer ── */
-[data-theme="dark"] footer {
-    background: #080F18;
-    color: rgba(216,232,242,0.85);
-}
-[data-theme="dark"] .footer-counter {
-    background: rgba(255,255,255,0.05);
-}
-[data-theme="dark"] .footer-divider {
-    background: rgba(255,255,255,0.1);
-}
-
-/* ── Dark mode toggle button ── */
+/* Theme colours are defined with the shared Mediterranean palette below. */
 .dark-mode-toggle {
     background: rgba(255,255,255,0.15);
     border: none;
@@ -1556,7 +1390,6 @@ footer .wa-link:hover { color: #25D366; }
     --radius: 2px;
 }
 body { background: var(--sand); }
-.deco { display: none; }
 h1, h2, h3, .section-title, .card-title, .stat-num, .header-logo .logo {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: 400;
@@ -1571,7 +1404,9 @@ header { background: var(--sand); color: var(--text); box-shadow: none; border-b
 }
 .dropdown-menu { border-radius: 0; box-shadow: 0 10px 24px #353e3712; }
 .hero {
-    height: min(820px, calc(100svh - 70px)); min-height: 590px;
+    height: auto;
+    min-height: calc(100vh - 70px);
+    min-height: calc(100dvh - 70px);
     align-items: flex-start; text-align: left;
     background: linear-gradient(90deg, #172d2ac4, #172d2a30 75%), url('images/depo/sunset.jpg') center/cover no-repeat;
 }
@@ -1614,7 +1449,7 @@ body .card:hover, body .info-card:hover, body .booking-card:hover { transform: n
 .feat-grid { column-gap: 40px !important; row-gap: 64px !important; }
 .feat-grid > .card:first-child { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
 .feat-grid > .card:first-child .card-body { padding: 24px 0; }
-.feat-grid > .card:first-child img { height: 420px; }
+
 .cta-button, .cta-button.sea, .book-now {
     border-radius: 2px; box-shadow: none; font-size: .86rem; font-weight: 700; letter-spacing: .025em;
 }
@@ -1642,7 +1477,23 @@ body .card:hover, body .info-card:hover, body .booking-card:hover { transform: n
 footer { background: #e2e8e0; color: var(--text); border-top: 1px solid var(--border); }
 footer a, footer .wa-link { color: var(--sea-deep); }
 .footer-copy { opacity: .8; }
-[data-theme="dark"] { --sand: #1c2623; --sand-mid: #26322d; --border: #47524a; --sea-deep: #bad3c5; --sea-light: #30463c; --text: #eee9de; --text-lt: #bdc5bb; --coral: #e1a7a5; }
+[data-theme="dark"] {
+    color-scheme: dark;
+    --sand: #1c2623;
+    --sand-mid: #26322d;
+    --sand-dark: #344239;
+    --sea: #486b5d;
+    --sea-deep: #bad3c5;
+    --sea-light: #30463c;
+    --coral: #e1a7a5;
+    --coral-dk: #efb9b7;
+    --sun: #ead9ae;
+    --sun-lt: #3b3727;
+    --sky: #30463c;
+    --border: #47524a;
+    --text: #eee9de;
+    --text-lt: #bdc5bb;
+}
 [data-theme="dark"] body, [data-theme="dark"] header { background: var(--sand); color: var(--text); }
 [data-theme="dark"] footer { background: var(--sand-mid); }
 [data-theme="dark"] .faq-question { background: transparent; box-shadow: none; }
@@ -1651,7 +1502,6 @@ footer a, footer .wa-link { color: var(--sea-deep); }
     header .dark-mode-toggle { color: #fff; }
 }
 @media (max-width: 750px) {
-    .hero { min-height: 600px; height: calc(90svh - 70px); }
     .hero-content { margin: 0 24px; padding: 40px 0 72px; }
     .hero h1 { font-size: clamp(3.8rem, 16vw, 6rem); }
     .hero h2 { font-size: 1.65rem; }
@@ -1661,7 +1511,7 @@ footer a, footer .wa-link { color: var(--sea-deep); }
     .about-img img { aspect-ratio: 4 / 3; }
     .feat-grid { grid-template-columns: 1fr !important; row-gap: 40px !important; }
     .feat-grid > .card:first-child { display: flex; gap: 0; }
-    .feat-grid > .card:first-child img { height: 300px; }
+
     .stats-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .info-card { padding: 24px 0; }
 }
@@ -1672,4 +1522,129 @@ main { overflow-wrap: anywhere; }
 
 /* Preserve the original layered villa panorama. */
 .feat-grid > .card:first-child { display: flex; gap: 0; }
-.feat-grid > .card:first-child .part-scene img { height: 100%; }
+
+
+@media (max-width: 480px) {
+    .hero { min-height: calc(100vh - 60px); min-height: calc(100dvh - 60px); }
+}
+
+/* Shared finishing details for accommodation and village guide pages. */
+.header-logo > img { filter: brightness(.58) saturate(.8); }
+[data-theme="dark"] .header-logo > img { filter: brightness(1.12) saturate(.8); }
+body .attr-card, body .town-card, body .preman-hub-card,
+body .apt-sleep-card, body .apt-amen-col, body .beach-tip-card {
+    background: transparent; border-radius: 0; box-shadow: none;
+    border: 0; border-top: 1px solid var(--border);
+}
+body .attr-card:hover, body .town-card:hover, body .preman-hub-card:hover {
+    transform: none; box-shadow: none;
+}
+body .attr-card .attr-body, body .preman-hub-card .hub-body { padding: 24px 0; }
+body .town-card, body .apt-amen-col, body .beach-tip-card { padding: 24px 0; }
+body .apt-sleep-card { padding: 24px 20px; min-width: 0; flex: 1 1 160px; }
+body .preman-hub-card .hub-icon {
+    background: var(--sea-light); color: var(--sea-deep); font-size: 2rem;
+    padding: 32px 0;
+}
+body .attr-card h3, body .town-card h3, body .preman-hub-card h3,
+body .zigzag-row .zz-text h3, .page-section-title, .rules-h1,
+.rule-card h2, .booking-card h2, .faq-section h2, .room-gallery h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400;
+    line-height: 1.25; letter-spacing: -.025em;
+}
+.page-section-title, body .cat-heading {
+    border-bottom: 1px solid var(--border); padding-bottom: 16px;
+    font-family: Georgia, 'Times New Roman', serif; font-weight: 400;
+}
+body .cat-heading { font-size: 1.8rem; }
+.contact-block h2 { font-size: 1.5rem; text-transform: none; letter-spacing: -.025em; font-weight: 400; }
+body .attr-grid, body .towns-grid, body .preman-hub-grid { gap: 32px; }
+body .attr-card p, body .town-card p, body .preman-hub-card p { line-height: 1.85; }
+body .beach-highlight { background: var(--sea-light); color: var(--sea-deep); border-radius: var(--radius); box-shadow: none; }
+body .beach-highlight h2, body .beach-highlight h3 { color: inherit; font-weight: 400; }
+body .info-banner, body .photo-placeholder { background: var(--sand-mid); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); }
+body .photo-placeholder .ph-label { color: var(--text-lt); font-family: inherit; }
+body .town-dist, body .beach-badge { background: var(--sea-light); color: var(--sea-deep); border-radius: var(--radius); }
+body .beach-badge.alt { background: #eddbd7; color: #75464b; }
+body .bch-map-btn { background: var(--sea); border-radius: var(--radius); }
+body .apt-amen-col ul li { border-color: var(--border); }
+body .faq-question { border-left: 0; padding: 18px 0; }
+body .faq-answer { border-radius: 0; padding: 18px 0; background: transparent; }
+.gallery-thumb { border-radius: var(--radius); }
+body .external-content-placeholder button { border-radius: var(--radius); background: var(--sea); }
+[data-theme="dark"] .dropdown-menu { background: var(--sand-mid); border-color: var(--border); box-shadow: none; }
+[data-theme="dark"] .dropdown-menu a { color: var(--text); }
+[data-theme="dark"] .dropdown-menu a:hover { background: var(--sand-dark); color: var(--text); }
+[data-theme="dark"] .feat-chip { background: transparent; color: var(--sea-deep); }
+[data-theme="dark"] .note-box, [data-theme="dark"] .time-slot,
+[data-theme="dark"] .booking-contact-info { background: var(--sand-mid); color: var(--text); }
+@media (max-width: 750px) {
+    body .town-card, body .apt-amen-col { padding: 22px 0; }
+    body .attr-grid, body .towns-grid, body .preman-hub-grid { gap: 28px; }
+}
+
+/* One calm, legible footer across every page. */
+footer { padding: 56px 24px 28px; background: #e2e8e0; color: var(--text); }
+.footer-main { max-width: 1152px; justify-content: space-between; gap: 32px 72px; }
+.footer-brand { display: inline-flex; align-items: center; gap: 16px; color: var(--sea-deep); flex-shrink: 0; text-decoration: none; }
+.footer-brand img { object-fit: contain; filter: brightness(.58) saturate(.8); }
+.footer-brand span { font: 400 2rem/1.2 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; }
+.footer-brand small { display: block; margin-top: 8px; font: 400 .75rem/1.5 'Nunito', sans-serif; letter-spacing: .08em; }
+.footer-info { flex: 0 1 auto; text-align: left; overflow-wrap: anywhere; }
+.footer-icons { justify-content: flex-start; gap: 12px; margin-top: 20px; }
+footer .f-icon { color: var(--sea-deep); background: transparent; border: 1px solid var(--sea); border-radius: var(--radius); font-size: 1rem; }
+footer .f-icon:hover { transform: none; background: var(--sea-light); text-decoration: none; }
+footer .privacy-links { max-width: 1152px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+footer .footer-copy { opacity: 1; color: var(--text-lt); margin-top: 16px; font-size: .78rem; }
+[data-theme="dark"] .footer-brand img { filter: brightness(1.12) saturate(.8); }
+@media (max-width: 600px) {
+    .footer-main { flex-direction: column; align-items: flex-start; gap: 28px; }
+    .footer-info { text-align: left; }
+    .footer-icons { justify-content: flex-start; }
+    footer .privacy-links { justify-content: flex-start; }
+    footer .footer-copy { text-align: left; }
+}
+
+@media (min-width: 1201px) {
+    nav ul li .dropdown-toggle.active { color: var(--coral); background: transparent; }
+}
+
+/* Faded green shutters distinguish the navigation from limestone pages. */
+:root { --nav-surface: #49665e; --nav-ink: #fff8ec; --nav-accent: #f0dca9; }
+[data-theme="dark"] { --nav-surface: #293f37; }
+header#site-header { background: var(--nav-surface); color: var(--nav-ink); border-bottom: 1px solid #ffffff26; box-shadow: none; }
+header .header-logo .logo, header .header-logo:hover .logo { color: var(--nav-ink); }
+header .header-logo > img { filter: brightness(1.08) saturate(.85); }
+header nav ul li a, header nav ul li .dropdown-toggle { color: var(--nav-ink); border-radius: 2px; }
+header nav ul li a.active, header nav ul li a:hover,
+header nav ul li .dropdown-toggle.active, header nav ul li .dropdown-toggle:hover {
+    color: var(--nav-accent); background: #ffffff0d;
+}
+header .dark-mode-toggle { color: var(--nav-ink); background: #ffffff12; }
+header .dark-mode-toggle:hover { color: var(--nav-accent); background: #ffffff20; }
+header .menu-toggle span { background: var(--nav-ink); }
+header nav .dropdown-menu { background: var(--nav-surface); border-color: #ffffff26; border-radius: 2px; box-shadow: 0 10px 24px #16251e18; }
+@media (max-width: 1200px) {
+    header nav { background: var(--nav-surface); }
+    header nav .dropdown-menu { background: #ffffff08; box-shadow: none; }
+}
+
+/* Dark surfaces share the same hierarchy as light mode; imagery stays natural. */
+[data-theme="dark"] .consent-panel, [data-theme="dark"] .consent-toggle { background: var(--sand-mid); }
+[data-theme="dark"] .consent-languages button { background: var(--sand); }
+[data-theme="dark"] .consent-languages button[aria-pressed="true"] { background: #1e7a82; }
+[data-theme="dark"] .consent-badge { border-color: var(--border); }
+[data-theme="dark"] .cta-button, [data-theme="dark"] .book-now { color: #302623; }
+[data-theme="dark"] .cta-button.sea, [data-theme="dark"] .bch-map-btn,
+[data-theme="dark"] .external-content-placeholder button { color: #fff8ec; }
+[data-theme="dark"] .card .cta-button.sea, [data-theme="dark"] .about-text .cta-button.sea { color: var(--sea-deep); }
+[data-theme="dark"] .card .cta-button.sea:hover, [data-theme="dark"] .about-text .cta-button.sea:hover { color: var(--coral); }
+[data-theme="dark"] .back-to-top, [data-theme="dark"] .reviews-retry { background: var(--sea); color: #fff8ec; }
+[data-theme="dark"] .section-sea { background: var(--sea); }
+[data-theme="dark"] .deco { opacity: .22; }
+@media (max-width: 750px) { [data-theme="dark"] .deco-r { opacity: .08; } }
+
+[data-theme="dark"] .cta-button.sea:hover { background: #3c5d50; }
+[data-theme="dark"] .card .cta-button.sea:hover,
+[data-theme="dark"] .about-text .cta-button.sea:hover { background: transparent; }
