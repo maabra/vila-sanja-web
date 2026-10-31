@@ -804,11 +804,6 @@ body .book-now:focus-visible {
     outline-offset: 5px;
 }
 body .book-now:active { transform: translateY(1px); }
-.book-now.scroll-hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(10px);
-}
 .section {
     max-width: 1200px;
     position: relative;
@@ -4239,10 +4234,6 @@ body .booking-options {
 .nav-booking {
     display: none;
 }
-body .book-now.near-action {
-    opacity: 0;
-    pointer-events: none;
-}
 a, button {
     -webkit-tap-highlight-color: transparent;
 }
@@ -4330,22 +4321,20 @@ body .footer-icons {
 }
 @media (max-width: 750px) {
     body .book-now {
-        position: static;
-        display: block;
-        width: max-content;
-        max-width: calc(100% - 40px);
-        margin: 24px auto;
+        position: fixed;
+        display: inline-flex;
+        right: 16px;
+        bottom: max(16px, env(safe-area-inset-bottom));
+        width: auto;
+        max-width: calc(100% - 32px);
+        min-height: 52px;
+        padding: 12px 22px;
+        margin: 0;
         text-align: center;
         opacity: 1;
         transform: none;
     }
-    body .book-now.scroll-hidden {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    body .book-now.near-action {
-        display: none;
-    }
+    body footer { padding-bottom: 100px; }
     body .back-to-top {
         display: none;
     }
@@ -4600,20 +4589,6 @@ body footer::before {
 }
 body footer { position: relative; }
 
-@media (max-width: 750px) {
-    body.page-index #book-now-btn {
-        position: fixed;
-        display: inline-flex;
-        right: 16px;
-        bottom: max(16px, env(safe-area-inset-bottom));
-        width: auto;
-        max-width: calc(100% - 32px);
-        min-height: 52px;
-        padding: 12px 22px;
-        margin: 0;
-    }
-    body.page-index footer { padding-bottom: 100px; }
-}
 
 /* About: separate the people, the property, facilities and travel information. */
 .page-about .about-story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }

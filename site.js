@@ -14,15 +14,6 @@
             else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
         });
     }
-    const floating = document.querySelector('.book-now');
-    if (floating && !floating.hasAttribute('data-always-visible') && 'IntersectionObserver' in window) {
-        const visible = new Set();
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));
-            floating.classList.toggle('near-action', visible.size > 0);
-        });
-        document.querySelectorAll('footer,.stay-booking,.booking-options').forEach(node => observer.observe(node));
-    }
     const counter = document.querySelector('.footer-counter img');
     if (counter) {
         const failed = () => {
