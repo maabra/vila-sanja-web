@@ -1,0 +1,25 @@
+/* Loaded inside the consent-controlled Elfsight iframe. */
+:root {
+    --review-text: #344b43;
+    --review-muted: #53665b;
+    --review-card: rgba(255, 255, 255, .5);
+    --review-ink: #152d25;
+}
+html, body { margin: 0; background: transparent; font-family: Nunito, Arial, sans-serif; }
+body { color: var(--review-text); }
+.global-styles, .es-main-container { background: transparent !important; }
+.es-review-background-container { background: var(--review-card) !important; }
+.es-review-card-tail path { fill: var(--review-card) !important; }
+.es-review-content,
+.es-review-content *,
+.es-review-source-review-info,
+.es-review-source-review-info * { color: var(--review-ink) !important; }
+body .es-review-author-block-container .es-review-author-name-container,
+body .es-review-author-block-container .es-review-author-name { color: var(--review-text) !important; }
+.es-review-info-date,
+.es-review-info-date-container { color: var(--review-muted) !important; opacity: 1 !important; }
+.es-review-background-container .es-review-info-date { color: #344b43 !important; }
+.es-header-container { background: var(--review-card) !important; color: var(--review-ink) !important; }
+.es-header-heading-text,
+.es-header-rating-container,
+.es-header-rating-reviews-count { color: var(--review-ink) !important; }

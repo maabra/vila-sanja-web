@@ -133,7 +133,7 @@
             try {
                 var root = frame.contentDocument.documentElement;
                 root.style.setProperty('--review-text', dark ? '#e8eee5' : '#344b43');
-                root.style.setProperty('--review-card', dark ? '#2b4037' : '#f3eee4');
+                root.style.setProperty('--review-muted', dark ? '#becbbf' : '#53665b');
                 root.style.colorScheme = dark ? 'dark' : 'light';
             } catch (error) {
                 // A provider-owned cross-origin frame requires its editor's theme settings.
@@ -168,7 +168,7 @@
         frame.style.border = '0';
         frame.referrerPolicy = 'no-referrer';
         // Consent already controls loading; a second lazy gate can stall an iframe.
-        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><style>html,body{margin:0;background:transparent;font-family:Nunito,Arial,sans-serif}body{color:var(--review-text,#344b43)}.global-styles{background:transparent!important}.es-main-container{background:transparent!important}.es-review-background-container{background:var(--review-card,#f3eee4)!important}.es-review-content-text,.es-review-author-name{color:var(--review-text,#344b43)!important}</style></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
+        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="review-theme.css?v=20261031-bubbles"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
         widget.appendChild(frame);
         var timeout = setTimeout(function () {
             text.dataset.privacyCopy = 'reviewsUnavailable';
