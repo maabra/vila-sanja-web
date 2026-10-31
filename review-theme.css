@@ -19,7 +19,9 @@ body .es-review-author-block-container .es-review-author-name { color: var(--rev
 .es-review-info-date,
 .es-review-info-date-container { color: var(--review-muted) !important; opacity: 1 !important; }
 .es-review-background-container .es-review-info-date { color: #344b43 !important; }
-.es-header-container { background: var(--review-card) !important; color: var(--review-ink) !important; }
+.es-header-container { background: #fff !important; color: var(--review-ink) !important; }
 .es-header-heading-text,
 .es-header-rating-container,
 .es-header-rating-reviews-count { color: var(--review-ink) !important; }
+
+.es-header-component-top, .es-tabs-container { background: #fff !important; }

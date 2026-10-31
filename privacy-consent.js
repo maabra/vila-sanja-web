@@ -168,7 +168,7 @@
         frame.style.border = '0';
         frame.referrerPolicy = 'no-referrer';
         // Consent already controls loading; a second lazy gate can stall an iframe.
-        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="review-theme.css?v=20261031-bubbles"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
+        frame.srcdoc = '<!doctype html><html><head><meta name="referrer" content="no-referrer"><link rel="stylesheet" href="review-theme.css?v=20261031-white-header"></head><body><div class="elfsight-app-8ae2e8e5-09be-43ec-853b-b421f041f45c"></div><script src="https://static.elfsight.com/platform/platform.js" async><\/script></body></html>';
         widget.appendChild(frame);
         var timeout = setTimeout(function () {
             text.dataset.privacyCopy = 'reviewsUnavailable';
