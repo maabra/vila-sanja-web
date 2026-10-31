@@ -1700,6 +1700,10 @@ Object.assign(LANG_DATA.en, {'prem.card.towns.tagline': 'Harbours, village lanes
 Object.assign(LANG_DATA.hr, {'prem.card.towns.tagline': 'Lučice, seoske ulice i istarski trgovi.'});
 Object.assign(LANG_DATA.de, {'prem.card.towns.tagline': 'Häfen, Dorfgassen und istrische Stadtplätze.'});
 
+Object.assign(LANG_DATA.en, {'photo.credits.title': 'Photo credits', 'photo.credits.free': 'Free use permitted by the copyright holder.', 'photo.credits.changes': 'Photographs resized and converted to WebP; cropped to fit their layouts.'});
+Object.assign(LANG_DATA.hr, {'photo.credits.title': 'Autori fotografija', 'photo.credits.free': 'Nositelj autorskih prava dopušta slobodnu uporabu.', 'photo.credits.changes': 'Fotografije su smanjene i pretvorene u WebP; prikaz je izrezan prema rasporedu.'});
+Object.assign(LANG_DATA.de, {'photo.credits.title': 'Bildnachweise', 'photo.credits.free': 'Freie Nutzung vom Rechteinhaber gestattet.', 'photo.credits.changes': 'Fotos verkleinert und in WebP konvertiert; für das Layout zugeschnitten.'});
+
 function applyLang(lang) {
   if (!LANG_DATA[lang]) lang = 'en';
   const T = LANG_DATA[lang];
