@@ -1586,24 +1586,19 @@ body .external-content-placeholder button { border-radius: var(--radius); backgr
 
 /* One calm, legible footer across every page. */
 footer { padding: 56px 24px 28px; background: #e2e8e0; color: var(--text); }
-.footer-main { max-width: 1152px; justify-content: space-between; gap: 32px 72px; }
-.footer-brand { display: inline-flex; align-items: center; gap: 16px; color: var(--sea-deep); flex-shrink: 0; text-decoration: none; }
-.footer-brand img { object-fit: contain; filter: brightness(.58) saturate(.8); }
-.footer-brand span { font: 400 2rem/1.2 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; }
-.footer-brand small { display: block; margin-top: 8px; font: 400 .75rem/1.5 'Nunito', sans-serif; letter-spacing: .08em; }
-.footer-info { flex: 0 1 auto; text-align: left; overflow-wrap: anywhere; }
-.footer-icons { justify-content: flex-start; gap: 12px; margin-top: 20px; }
+.footer-main { max-width: 1152px; justify-content: center; gap: 0; }
+.footer-info { flex: 0 1 auto; text-align: center; overflow-wrap: anywhere; }
+.footer-icons { justify-content: center; gap: 12px; margin-top: 20px; }
 footer .f-icon { color: var(--sea-deep); background: transparent; border: 1px solid var(--sea); border-radius: var(--radius); font-size: 1rem; }
 footer .f-icon:hover { transform: none; background: var(--sea-light); text-decoration: none; }
 footer .privacy-links { max-width: 1152px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
 footer .footer-copy { opacity: 1; color: var(--text-lt); margin-top: 16px; font-size: .78rem; }
-[data-theme="dark"] .footer-brand img { filter: brightness(1.12) saturate(.8); }
 @media (max-width: 600px) {
-    .footer-main { flex-direction: column; align-items: flex-start; gap: 28px; }
-    .footer-info { text-align: left; }
-    .footer-icons { justify-content: flex-start; }
-    footer .privacy-links { justify-content: flex-start; }
-    footer .footer-copy { text-align: left; }
+    .footer-main { flex-direction: column; align-items: center; gap: 0; }
+    .footer-info { text-align: center; }
+    .footer-icons { justify-content: center; }
+    footer .privacy-links { justify-content: center; }
+    footer .footer-copy { text-align: center; }
 }
 
 @media (min-width: 1201px) {
@@ -1648,3 +1643,10 @@ header nav .dropdown-menu { background: var(--nav-surface); border-color: #fffff
 [data-theme="dark"] .cta-button.sea:hover { background: #3c5d50; }
 [data-theme="dark"] .card .cta-button.sea:hover,
 [data-theme="dark"] .about-text .cta-button.sea:hover { background: transparent; }
+
+/* Dropdown labels use the navigation palette in every theme and state. */
+#site-header nav .dropdown-menu a { color: var(--nav-ink); background: transparent; }
+#site-header nav .dropdown-menu a:hover,
+#site-header nav .dropdown-menu a:focus-visible,
+#site-header nav .dropdown-menu a.active { color: var(--nav-accent); background: #ffffff12; }
+#site-header nav .dropdown-menu { background: var(--nav-surface); }
